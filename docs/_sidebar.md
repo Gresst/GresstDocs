@@ -4,3 +4,4 @@
 * [Guía de Usuario](guia_usuarios.md)
 * [Guía Técnica](guia_tecnica.md)
 * [Procesos Operativos](procesos_operativos.md)
+* [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md)

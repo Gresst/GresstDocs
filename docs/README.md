@@ -44,6 +44,7 @@ Aplicación para dispositivos móviles (iOS/Android) para:
 - [Guía de usuario](guia_usuarios.md)
 - [Guía técnica](guia_tecnica.md)
 - [Procesos operativos](procesos_operativos.md)
+- [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md)
 
 ---
 **Versión:** 1.0  

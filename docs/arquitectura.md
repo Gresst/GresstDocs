@@ -2,287 +2,146 @@
 
 ## Visión General
 
-Gresst es una plataforma multicomponente diseñada para gestionar el ciclo completo de logística de residuos, conectando a generadores, gestores y personal de campo a través de diferentes interfaces especializadas.
+Gresst es una plataforma SaaS multitenant de gestión de residuos que conecta **Generadores** (empresas que producen residuos) y **Gestores** (empresas gestoras/transportadoras que los recolectan, tratan y disponen), incluyendo operadores logísticos que interconectan parte del proceso. Cubre generación, inventario, logística de transporte, procesamiento y disposición/almacenamiento final.
+
+El sistema está en **migración activa** (patrón *strangler fig*): un monolito .NET Framework 4.8 (**Legacy**) sigue en producción atendiendo `gestor.gresst.com` y `generador.gresst.com`, mientras una nueva **API** en Clean Architecture (.NET) y dos clientes nuevos (**App** móvil, **WebApp** web) lo van reemplazando función por función. Los clientes nuevos **solo hablan con la API nueva** — nunca con el API legacy. Ambos stacks comparten la misma base de datos **SQL Server**.
 
 ---
 
-## Componentes Principales
+## Repositorios activos
 
-### 1. 🏢 Portal de Gestores de Residuos
+| Repo | Rol | Stack |
+|---|---|---|
+| `Legacy/` | Sistema en producción, en migración (Gestor + Generador) | .NET Framework 4.8, WebForms + DevExpress |
+| `API/` | Backend nuevo, fuente de verdad del stack objetivo | .NET, Clean Architecture |
+| `App/` | Cliente móvil (personal de campo / conductores) | Expo + React Native + TypeScript |
+| `WebApp/` | Cliente web nuevo (reemplaza gradualmente a Gestor/Generador) | React 18 + Vite 6 + TypeScript |
+| `DB/` | Scripts SQL Server compartidos (funciones, procedimientos, tipos) | T-SQL |
 
-**Propósito:** Interfaz web para empresas gestoras que administran la recolección y tratamiento de residuos.
-
-#### Estructura del Menú Principal
-
-El Portal de Gestores presenta un menú lateral izquierdo que organiza todas las funcionalidades del sistema para facilitar la gestión operativa y administrativa:
-
-##### 📋 **Solicitudes**
-- **Funcionalidad:** Gestión integral de todas las solicitudes de recolección de residuos
-- **Incluye:** 
-  - Recepción de nuevas solicitudes
-  - Asignación a vehículos y conductores
-  - Seguimiento del estado de las solicitudes
-  - Reprogramación y cancelaciones
-  - Priorización de servicios
-
-##### 🔄 **Procesos**
-- **Funcionalidad:** Supervisión y gestión de flujos de trabajo operativos
-- **Incluye:**
-  - Planificación de rutas de recolección
-  - Ejecución y seguimiento en tiempo real
-  - Gestión de procesos de tratamiento
-  - Control de calidad en cada etapa
-  - Optimización de operaciones
-
-##### 🛡️ **Certificados**
-- **Funcionalidad:** Generación y administración de documentación legal
-- **Incluye:**
-  - Certificados de disposición final
-  - Manifiestos de transporte
-  - Documentos de cumplimiento normativo
-  - Firmas digitales y validaciones
-  - Archivo y consulta de documentos
-
-##### 📦 **Inventario**
-- **Funcionalidad:** Control y seguimiento de recursos operativos
-- **Incluye:**
-  - Inventario de residuos recolectados
-  - Control de materiales y equipos
-  - Gestión de almacenes y centros de acopio
-  - Seguimiento de existencias
-  - Alertas de stock mínimo
-
-##### 🔗 **Integraciones**
-- **Funcionalidad:** Configuración de conexiones con sistemas externos
-- **Incluye:**
-  - APIs de terceros
-  - Sistemas ERP empresariales
-  - Plataformas de geolocalización
-  - Sistemas de facturación
-  - Dispositivos IoT y sensores
-
-##### 📊 **Históricos**
-- **Funcionalidad:** Acceso a registros históricos y auditoría
-- **Incluye:**
-  - Historial de operaciones completadas
-  - Registro de movimientos de inventario
-  - Log de actividades del sistema
-  - Trazabilidad completa de residuos
-  - Consultas históricas avanzadas
-
-##### 📈 **Reportes**
-- **Funcionalidad:** Generación de informes analíticos y estadísticos
-- **Incluye:**
-  - Reportes de rendimiento operativo
-  - Estadísticas de cumplimiento
-  - Análisis de costos y eficiencia
-  - Indicadores clave de gestión
-  - Exportación a múltiples formatos
-
-##### ⚙️ **Configuración**
-- **Funcionalidad:** Administración del sistema y personalización
-- **Incluye:**
-  - Perfiles de usuario y permisos
-  - Configuración de notificaciones
-  - Parámetros del sistema
-  - Personalización de interfaz
-  - Mantenimiento y respaldos
-
-#### Funcionalidades principales:
-- **Gestión de solicitudes:** Recepción y asignación de órdenes de recolección
-- **Administración de flota:** Control de vehículos, conductores y rutas
-- **Panel de control operativo:** Monitoreo en tiempo real de operaciones activas
-- **Gestión documental:** Generación de certificados, manifiestos y reportes legales
-- **Facturación:** Control de servicios prestados y cobros
-- **Análisis y reportes:** Estadísticas de operación y cumplimiento
-
-#### Usuarios objetivo:
-- Coordinadores de operaciones
-- Administradores de flota
-- Personal administrativo
-- Gerentes y directivos
+Cada repo tiene su propio `CLAUDE.md` con el detalle completo; este documento resume cómo encajan entre sí.
 
 ---
 
-### 2. 🏭 Portal de Generadores de Residuos
-
-**Propósito:** Interfaz web para empresas que generan residuos y necesitan servicios de recolección.
-
-#### Funcionalidades principales:
-- **Solicitud de servicios:** Creación de órdenes de recolección
-- **Gestión de puntos de generación:** Registro de ubicaciones y tipos de residuos
-- **Consulta de historial:** Acceso a recolecciones pasadas y certificados
-- **Cumplimiento normativo:** Verificación de documentación legal
-- **Reportes:** Estadísticas de generación y disposición de residuos
-- **Notificaciones:** Alertas de recolección programada y completada
-
-#### Usuarios objetivo:
-- Personal de seguridad y salud ocupacional
-- Coordinadores ambientales
-- Administradores de planta
-- Responsables de cumplimiento
-
----
-
-### 3. 📱 Aplicación Móvil
-
-**Propósito:** App nativa para dispositivos móviles que permite al personal de campo ejecutar y documentar las operaciones.
-
-#### Funcionalidades principales:
-- **Recepción de órdenes:** Notificación de recolecciones asignadas
-- **Navegación GPS:** Rutas optimizadas a puntos de recolección
-- **Registro de operaciones:** Captura de datos en sitio (peso, tipo, estado)
-- **Evidencia fotográfica:** Documentación visual del proceso
-- **Firmas digitales:** Confirmación de entrega/recepción
-- **Modo offline:** Operación sin conexión con sincronización posterior
-- **Comunicación:** Chat o notificaciones con coordinadores
-
-#### Usuarios objetivo:
-- Conductores de vehículos de recolección
-- Personal de campo
-- Supervisores de ruta
-
-#### Plataformas:
-- **iOS:** App nativa para iPhone/iPad
-- **Android:** App nativa para dispositivos Android
-
----
-
-## Arquitectura Técnica
-
-### Arquitectura de Alto Nivel
+## Arquitectura de Alto Nivel
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    USUARIOS FINALES                      │
-├──────────────┬──────────────────┬──────────────────────┤
-│   Portal     │      Portal      │    App Móvil         │
-│   Gestores   │   Generadores    │   (iOS/Android)      │
-│    (Web)     │      (Web)       │                      │
-└──────┬───────┴─────────┬────────┴──────────┬───────────┘
-       │                 │                   │
-       └─────────────────┼───────────────────┘
-                         │
-                ┌────────▼────────┐
-                │   API Gateway   │
-                │   (REST/GraphQL)│
-                └────────┬────────┘
-                         │
-         ┌───────────────┼───────────────┐
-         │               │               │
-    ┌────▼────┐    ┌────▼────┐    ┌────▼────┐
-    │ Servicio│    │ Servicio│    │ Servicio│
-    │ Gestión │    │  Rutas  │    │Documentos│
-    └────┬────┘    └────┬────┘    └────┬────┘
-         │               │               │
-         └───────────────┼───────────────┘
-                         │
-                ┌────────▼────────┐
-                │   Base de Datos │
-                │   (PostgreSQL)  │
-                └─────────────────┘
+┌───────────────────────────────┐        ┌─────────────────────────────────┐
+│         CLIENTES NUEVOS        │        │      LEGACY (.NET FW 4.8)        │
+│                                 │        │                                   │
+│   App (Expo/RN)   WebApp (Vite)│        │   Gestor (WebForms+DevExpress)   │
+│         │               │      │        │   Generador (WebForms+DevExpress)│
+└─────────┼───────────────┼──────┘        │         │             │          │
+          │               │               └─────────┼─────────────┼──────────┘
+          │  REST /api/v1 │                          │             │
+          │  GraphQL      │                          │ Servicios/  │ (lógica
+          │               │                          │ Dominio     │  duplicada
+          └───────┬───────┘                          │ (parcial)   │  en parte)
+                  │                                  │             │
+          ┌───────▼────────┐                         │             │
+          │   API (.NET)    │◄────SSO refresh_token───┘             │
+          │ Clean Architecture│    (cookie compartida .residuario.com)
+          └───────┬────────┘                                       │
+                  │                                                 │
+                  └──────────────────┬──────────────────────────────┘
+                                     │
+                            ┌────────▼────────┐
+                            │   SQL Server     │
+                            │ (esquema legado, │
+                            │  español)        │
+                            └─────────────────┘
 ```
 
-### Stack Tecnológico (Propuesto)
-
-#### Frontend
-- **Portales Web:** React.js / Vue.js / Angular
-- **App Móvil:** React Native / Flutter / Nativo (Swift/Kotlin)
-- **UI Framework:** Material-UI / Tailwind CSS
-
-#### Backend
-- **API:** Node.js (Express) / Python (Django/FastAPI) / .NET Core
-- **Autenticación:** JWT / OAuth 2.0
-- **WebSockets:** Para notificaciones en tiempo real
-
-#### Base de Datos
-- **Principal:** PostgreSQL / MySQL
-- **Cache:** Redis
-- **Almacenamiento:** AWS S3 / Azure Blob Storage (documentos e imágenes)
-
-#### Infraestructura
-- **Cloud:** AWS / Azure / Google Cloud
-- **Contenedores:** Docker / Kubernetes
-- **CI/CD:** GitHub Actions / GitLab CI
+**Puntos clave de esta arquitectura:**
+- **API** adapta el esquema legacy en español (`Orden`, `Residuo`, `Deposito`, `Gestion`, `Persona`, …) a un dominio en inglés vía `LegacyDbContext` y mappers — nunca se renombran columnas legacy.
+- **Gestor** y **API** comparten SSO: una cookie `refresh_token` (HttpOnly, dominio `.residuario.com`) permite que un usuario autenticado en uno navegue al otro sin volver a iniciar sesión, mientras Gestor migra pantallas hacia WebApp (`Site.Master.cs` resuelve dinámicamente qué ítems de menú ya están migrados y redirige a `WebAppBaseUrl`).
+- **Generador**, en cambio, no consume la API nueva — accede directo a SQL Server vía EF6 + SQL embebido, y duplica lógica de negocio propia en vez de reusar `Servicios` (confirmado: ningún `.aspx.cs` de Generador referencia el namespace `Servicios`).
+- Multitenancy: todo está acotado por cuenta (`IdCuenta` / JWT `AccountId`).
 
 ---
 
-## Integración entre Componentes
+## Componentes
 
-### Flujo típico de operación:
+### 1. API — Backend nuevo
 
-1. **Solicitud:** Generador crea orden de recolección en Portal de Generadores
-2. **Asignación:** Gestor recibe y asigna la orden a un conductor en Portal de Gestores
-3. **Notificación:** Conductor recibe notificación en App Móvil
-4. **Ejecución:** Conductor navega, recoge residuos y registra evidencias en App
-5. **Confirmación:** Sistema actualiza estados en ambos portales
-6. **Documentación:** Se genera certificado automáticamente
-7. **Cierre:** Generador recibe notificación y puede descargar certificado
+**Rol:** fuente de verdad del stack objetivo, Clean Architecture (.NET): `Domain → Application → Infrastructure → API`, organización feature-driven, Minimal APIs en `/api/v1/...`, GraphQL en `/graphql` para operaciones/rutas. Auth JWT Bearer con refresh vía cookie HttpOnly (clientes web) o SecureStore (móvil).
 
----
+### 2. App — Aplicación móvil (Expo/React Native)
 
-## Seguridad
+**Propósito:** ejecución y documentación en campo de operaciones de recolección/transporte/entrega de residuos.
 
-### Medidas implementadas:
-- **Autenticación multifactor (MFA)**
-- **Encriptación SSL/TLS** en todas las comunicaciones
-- **Control de acceso basado en roles (RBAC)**
-- **Auditoría de acciones** críticas
-- **Respaldo automático** de datos
-- **Cumplimiento GDPR/LGPD** para protección de datos personales
+**Stack:** Expo `^57`, React Native `0.86`, React `19`, TypeScript `~6`. Navegación con `@react-navigation` v7, mapas con `react-native-maps` (requiere dev build, no funciona en Expo Go), i18n con `i18next`/`react-i18next`, tests con Jest + React Native Testing Library.
 
----
+**Arquitectura:** Clean Architecture feature-based bajo `src/lib/` (`core`, `domain`, `application`, `infrastructure`, `features`, `shared`). Features reales hoy: `account`, `activities`, `auth`, `developer`, `facilities`, `facility`, `home`, `inventory`, `map`, `operations`, `packagings`, `parties`, `plantProcesses`, `profile`, `route`, `search`, `subprocesses`, `tasks`, `wasteTypes`.
 
-## Escalabilidad
+**Auth y API:** login contra `POST /api/v1/authentication/login` (`client: "mobile"`); token de acceso y usuario persistidos en `expo-secure-store`, con refresh y restauración de sesión al arrancar. Dominios CRUD estándar vía repositorios REST; **operaciones de transporte** (con impacto en inventario) vía una capa GraphQL dedicada con auditoría propia. Offline-first: mutaciones de transporte se encolan en un **Outbox** local cuando no hay red y se reenvían al reconectar.
 
-La arquitectura está diseñada para escalar horizontalmente:
+**Build:** iOS/Android nativos vía EAS Build (perfiles development/preview/production); soporte web experimental con proxy CORS local.
 
-- **Microservicios:** Permite escalar componentes independientemente
-- **Balanceo de carga:** Distribución de tráfico entre servidores
-- **CDN:** Entrega optimizada de contenido estático
-- **Cache distribuido:** Redis para mejorar tiempos de respuesta
-- **Base de datos:** Réplicas de lectura para consultas pesadas
+### 3. WebApp — Cliente web nuevo
 
----
+**Propósito:** reemplazo gradual de los portales legacy Gestor/Generador para operación web (recepción, clasificación, tratamiento, disposición, transferencia/handover, solicitudes, catálogos).
 
-## Integraciones Externas
+**Stack:** React 18 + Vite 6 + TypeScript estricto (sin `any`). Routing `react-router-dom` v7, grid principal `ag-grid-community`/`ag-grid-react`, mapas `@vis.gl/react-google-maps`. Sin Apollo/axios/Redux/React Query por convención — `fetch` propio + `executeGraphql` propio. Tests con Vitest + Testing Library.
 
-### Previstas:
-- **Mapas y geolocalización:** Google Maps API / Mapbox
-- **Notificaciones push:** Firebase Cloud Messaging / OneSignal
-- **Facturación electrónica:** Integración con sistemas tributarios locales
-- **ERP:** Conexión con sistemas empresariales (SAP, Oracle)
-- **Certificaciones:** Firma digital y timestamping
+**Arquitectura:** Feature-Driven obligatorio bajo `src/features/<name>/` (`components`, `hooks`, `services`, `types`, `tests`); `src/shared/` solo UI/utils sin lógica de negocio, `src/core/` config global/auth/http/routing. Features reales: auth y cuenta (`auth`, `home`, `account-settings`, `change-password`, `user-profile`), maestros/catálogos (`facility-list`, `party-list`, `vehicle-list`, `packaging-list`, `service-list`, `supply-list`, `waste-class-list`, `waste-type-list`, `treatment-list`), solicitudes (`request-form`, `request-list`), y operaciones por etapa de proceso (`operation-dashboard`, `operation-reception`, `operation-classification`, `operation-transport`, `operation-handover`, `operation-disposal`, `operation-treatment`, `plant-backlog`).
 
----
+**Auth y API:** JWT de acceso en memoria (nunca localStorage), refresh vía cookie `HttpOnly + Secure + SameSite=Lax` (`refresh_token`, compartida con Gestor para SSO). REST `/api/v1/*` (kebab-case) para auth y maestros; GraphQL `/graphql` (enums `SCREAMING_SNAKE_CASE`) para operaciones/rutas.
 
-## Roadmap Técnico
+**Deploy:** dev local con proxy Vite; **staging** se despliega automáticamente a Azure Static Web Apps al hacer push a la rama `staging`; **producción** se buildea en CI (`main`) y se copia por SSH/SCP a un servidor Windows con IIS, con backup automático y rollback manual.
 
-### Fase 1 - MVP (Actual)
-- ✅ Portales web básicos
-- ✅ App móvil básica
-- ✅ Funcionalidades core
+### 4. Legacy/Gestor — Portal de gestores (en migración)
 
-### Fase 2 - Expansión
-- 🔄 Dashboard analytics avanzado
-- 🔄 Optimización automática de rutas
-- 🔄 Módulo de facturación integrado
+**Propósito:** portal web para empresas gestoras — hoy en `gestor.gresst.com`, siendo reemplazado gradualmente por WebApp.
 
-### Fase 3 - IA y Automatización
-- 📋 Predicción de generación de residuos
-- 📋 Optimización inteligente de rutas
-- 📋 Chatbot de soporte
+**Stack:** .NET Framework 4.8, mayormente ASP.NET WebForms (`.aspx`/`.aspx.cs`) con DevExpress v19.2 (`ASPxTreeList`, `ASPxScheduler`, `ASPxPivotGrid`, `XtraReports`, etc.) como UI; algunos fragmentos MVC puntuales. Acceso a datos con EF6 Database-First + SQL embebido directo (`Aranea.Data.Sql`) para lógica que no pasa por `Servicios`.
+
+**Menú real** (confirmado en `Site.Master.cs`), organizado por proceso de residuo más consultas/configuración:
+- **Operación:** Entrada, Recolección, Recepción, Clasificación, Tratamiento, Transferencia, Disposición, Salida.
+- **Administración:** Certificados, Integraciones, Inventarios, Solicitudes.
+- **Consultas:** Certificados, Residuos, Solicitudes, Órdenes, Documentos, Reportes, KPI.
+- **Configuración:** Personas, Localizaciones, Vehículos, Servicios, Materiales.
+
+**Auth:** modelo híbrido — sesión clásica InProc para el login tradicional, más un SSO nuevo (`AuthSsoService`) que valida y rota el `refresh_token` compartido con API/WebApp, y un JWT legacy propio (`ApiManager` → `Api` legacy) para integraciones internas.
+
+**Integraciones:** SQL Server (EF6), API nueva (SSO), API legacy (JWT propio), filesystem compartido para soportes/certificados, PayU (pagos en línea), Ecopositiva (integración sectorial externa).
+
+### 5. Legacy/Generador — Portal de generadores (en migración)
+
+**Propósito:** portal web para empresas generadoras — hoy en `generador.gresst.com`.
+
+**Stack:** .NET Framework 4.8, WebForms (`.aspx` en raíz del proyecto) con DevExpress v19.2; carpetas `Controllers/Models/Views` de MVC presentes pero WebForms predomina. Auth propia (no Forms Authentication): validación de usuario/clave contra SQL directo, estado en `Session`.
+
+**Menú real:**
+- **Procesos:** Almacenamiento, Tratamiento, Solicitud/Salida, Entrega.
+- **Banco de residuos:** Publicar, Consultar.
+- **Consultas:** Certificados, Residuos/Saldos, Tránsito, Movimientos, Trazabilidad, Solicitudes, Documentos.
+- **Reportes:** Solicitudes.
+- **Configuración:** Personas, Localizaciones, Vehículos, Clasificación de materiales.
+
+**Particularidad importante:** Generador **no llama a `Servicios`** — tiene sus propios managers (`AccountManager`, `SolicitudManager`, `MasterManager`) con las mismas firmas que sus equivalentes en `Servicios`/`Gestor`/`SuperUser`, pero implementados de forma independiente (lógica duplicada, no compartida). Tampoco consume la API nueva ni la legacy — accede directo a SQL Server.
+
+**Integraciones:** SQL Server (EF6 + SQL directo), PayU (pagos en línea).
 
 ---
 
-## Soporte y Mantenimiento
+## Flujo típico de operación
 
-- **Monitoreo 24/7:** Alertas automáticas de incidentes
-- **SLA:** 99.9% de disponibilidad
-- **Actualizaciones:** Releases quincenales
-- **Soporte técnico:** Canal dedicado para cada tipo de usuario
+1. **Solicitud:** el Generador crea una solicitud de recolección (Legacy/Generador o, a futuro, WebApp).
+2. **Asignación:** el Gestor recibe y planifica la recolección/ruta (Legacy/Gestor o WebApp).
+3. **Ejecución en campo:** el conductor recibe la operación en la **App**, navega, ejecuta las paradas y registra evidencia; las mutaciones de transporte quedan en el Outbox si no hay red.
+4. **Sincronización:** al reconectar, la App envía las mutaciones vía GraphQL a la **API**, que actualiza inventario y estados sobre SQL Server.
+5. **Documentación:** se generan certificados/manifiestos (hoy vía DevExpress/XtraReports en Legacy; en migración hacia API).
+6. **Consulta:** Generador y Gestor consultan el estado, historial y certificados desde su portal (Legacy o WebApp, según qué tanto se haya migrado esa cuenta/flujo).
 
 ---
 
-¿Dudas sobre la arquitectura? Consulta la [Guía Técnica](guia_tecnica.md) o contacta al equipo de desarrollo.
+## Seguridad y multitenancy
 
+- **Multitenancy:** todo el sistema está acotado por cuenta (`IdCuenta` en Legacy / JWT `AccountId` en API), vía Bearer tokens en los clientes nuevos.
+- **SSO entre Legacy y stack nuevo:** cookie `refresh_token` HttpOnly compartida en el dominio `.residuario.com` entre Gestor, WebApp y API — permite migrar pantallas sin forzar un nuevo login.
+- **Auth por cliente:** App usa Bearer + refresh en SecureStore; WebApp usa Bearer en memoria + refresh en cookie HttpOnly; Legacy/Gestor combina sesión InProc clásica + el SSO nuevo + un JWT legacy propio para integraciones; Legacy/Generador usa solo sesión propia validada contra SQL directo.
+- **Secretos:** se prioriza Azure Key Vault cuando está configurado (orden de resolución: `appsettings → user secrets → Key Vault → variables de entorno`).
+
+---
+
+¿Dudas técnicas de instalación/despliegue por repo? Consulta la [Guía Técnica](guia_tecnica.md). Para el detalle de casos de negocio de entrada/salida de residuos, ve a [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md).

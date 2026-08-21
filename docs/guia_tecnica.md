@@ -2,426 +2,142 @@
 
 Esta guía está dirigida a desarrolladores, personal técnico y administradores del sistema Gresst.
 
----
-
-## Arquitectura General
-
-Para entender la arquitectura completa del sistema, consulta la [Arquitectura del Sistema](arquitectura.md).
-
-La plataforma Gresst consta de **tres componentes principales**:
-1. **Portal de Gestores** (Web)
-2. **Portal de Generadores** (Web)
-3. **App Móvil** (iOS/Android)
+Para el panorama completo de componentes y cómo encajan entre sí, consulta primero la [Arquitectura del Sistema](arquitectura.md). La plataforma consta de **cinco repositorios**: `API` (backend nuevo), `App` (móvil), `WebApp` (web nuevo), `Legacy` (Gestor + Generador, en migración) y `DB` (scripts SQL Server compartidos).
 
 ---
 
-## Requerimientos del Sistema
+## Requerimientos por repositorio
 
-### Portales Web
+### App (Expo / React Native)
+- Node.js compatible con Expo `^57` (LTS recomendado).
+- Expo CLI (`npx expo`), simulador iOS (Xcode) y/o emulador Android para desarrollo nativo — Expo Go **no** soporta mapas (`react-native-maps`), se necesita un dev build.
+- Cuenta EAS para builds de producción (perfiles `development` / `preview` / `production`).
 
-#### Requisitos del cliente:
-- **Navegadores soportados:**
-  - Google Chrome 90+
-  - Mozilla Firefox 88+
-  - Microsoft Edge 90+
-  - Safari 14+ (macOS/iOS)
-- **Resolución mínima:** 1280x720
-- **Conexión a internet:** Banda ancha recomendada
+### WebApp (React / Vite)
+- Node.js **≥ 22**.
+- Navegador moderno (Chrome/Edge/Firefox/Safari recientes) para desarrollo y pruebas.
 
-#### Requisitos del servidor:
-- **Node.js:** v16+ o v18+ (LTS recomendado)
-- **Base de datos:** PostgreSQL 13+ o MySQL 8+
-- **Memoria RAM:** Mínimo 2GB (4GB recomendado)
-- **Almacenamiento:** 20GB+ para datos y documentos
-- **Certificado SSL:** Requerido (Let's Encrypt gratuito)
+### Legacy (Gestor / Generador)
+- Windows Server con IIS, .NET Framework **4.8**.
+- Visual Studio con soporte DevExpress **v19.2** instalado localmente (las referencias de proyecto apuntan a `C:\Program Files (x86)\DevExpress 19.2\...`, no vienen de NuGet).
+- SQL Server (esquema legacy en español, compartido con API).
 
-### App Móvil
+### API
+- .NET SDK (ver `API/CLAUDE.md` para la versión exacta), acceso a SQL Server.
 
-#### iOS:
-- **Versión mínima:** iOS 13.0+
-- **Dispositivos:** iPhone 6s o superior, iPad Air 2 o superior
-- **Espacio:** 150MB mínimo
-
-#### Android:
-- **Versión mínima:** Android 8.0 (API 26)+
-- **RAM:** 2GB mínimo
-- **Espacio:** 150MB mínimo
-- **Permisos requeridos:** Cámara, GPS, Almacenamiento
+### DB
+- SQL Server Management Studio o similar para ejecutar `DB/GresstScripts.sql` (funciones, procedimientos, tipos).
 
 ---
 
-## Instalación y Despliegue
+## Puesta en marcha (desarrollo local)
 
-### Portal Web (Desarrollo)
+### App
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/TU-ORGANIZACION/gresst-portal.git
-cd gresst-portal
+npm install                     # también instala hooks de Husky vía `prepare`
+cp .env.example .env            # define EXPO_PUBLIC_API_URL (ej. https://qa.api.gresst.com)
+npx expo start                  # presiona i/a para iOS/Android, o escanea el QR
+npm run ios / npm run android / npm run web
+```
 
-# Instalar dependencias
-npm install
+Si el backend no permite CORS desde `http://localhost:8081` (modo web), levanta el proxy local:
 
-# Configurar variables de entorno
-cp .env.example .env
-# Editar .env con tus credenciales
+```bash
+npm run proxy                   # y apunta EXPO_PUBLIC_API_URL a http://localhost:3001
+```
 
-# Iniciar servidor de desarrollo
+### WebApp
+
+```bash
+npm install                      # también instala hooks de Husky vía `prepare`
+cp .env.example .env             # define VITE_API_BASE_URL y VITE_GOOGLE_MAPS_API_KEY
 npm run dev
-
-# Acceder a: http://localhost:3000
 ```
 
-### Portal Web (Producción)
+Si `VITE_API_BASE_URL` está definido, Vite usa URLs relativas y proxea `/api` y `/login.aspx` en desarrollo — no hace falta configurar CORS.
+
+### Legacy (Gestor / Generador)
+
+Se abre la solución en Visual Studio (con DevExpress 19.2 instalado) y se ejecuta contra IIS Express o un IIS local; la cadena de conexión a SQL Server vive en `Web.config` de cada proyecto. No hay build vía npm/Node — es un proyecto .NET Framework clásico.
+
+---
+
+## Build y despliegue
+
+### App
+Build de producción con **EAS Build**:
 
 ```bash
-# Construir para producción
-npm run build
-
-# Iniciar servidor de producción
-npm start
-
-# O con PM2 (recomendado)
-pm2 start npm --name "gresst-portal" -- start
-pm2 save
-pm2 startup
+node scripts/bump-app-version.js   # sube versión antes de un release
+# build y submit gestionados vía EAS (perfiles development/preview/production)
 ```
 
-### Base de Datos
+Variables `EXPO_PUBLIC_API_URL` y `EXPO_PUBLIC_GOOGLE_MAPS_API_KEY` se gestionan como secrets en EAS. Al cambiar contratos consumidos por la App, revisar la política de versión mínima (`API/.cursor/rules/app-version-policy.mdc`).
 
-```sql
--- Crear base de datos
-CREATE DATABASE gresst_db;
-
--- Crear usuario
-CREATE USER gresst_user WITH PASSWORD 'tu_password_seguro';
-
--- Otorgar permisos
-GRANT ALL PRIVILEGES ON DATABASE gresst_db TO gresst_user;
-
--- Ejecutar migraciones
-npm run migrate
-```
-
-### Variables de Entorno
-
-Archivo `.env` de ejemplo:
+### WebApp
 
 ```bash
-# Base de datos
-DATABASE_URL=postgresql://usuario:password@localhost:5432/gresst_db
-
-# JWT
-JWT_SECRET=tu_secreto_muy_seguro_cambialo
-JWT_EXPIRES_IN=24h
-
-# API
-API_PORT=3000
-API_URL=https://api.gresst.com
-
-# Servicios externos
-GOOGLE_MAPS_API_KEY=tu_api_key
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=tu_email@gmail.com
-SMTP_PASS=tu_password
-
-# Almacenamiento
-AWS_BUCKET=gresst-documents
-AWS_REGION=us-east-1
-AWS_ACCESS_KEY=tu_access_key
-AWS_SECRET_KEY=tu_secret_key
-
-# Notificaciones
-FIREBASE_PROJECT_ID=gresst-app
-FIREBASE_PRIVATE_KEY=tu_private_key
+npm run build            # tsc -b && vite build — usa .env.production, deploy desde main
+npm run build:staging    # usa .env.staging, deploy desde la rama staging
 ```
+
+- **Staging:** GitHub Actions despliega automáticamente a **Azure Static Web Apps** en cada push a `staging`.
+- **Producción:** CI (`build.yml`: lint + test + build) corre en push/PR a `main`; luego `deploy.yml` copia el artefacto por SSH/SCP a un **servidor Windows con IIS**, con backup automático del sitio anterior y `rollback.yml` para restaurarlo manualmente.
+- `VITE_GOOGLE_MAPS_API_KEY` se inyecta en build time desde un secret de GitHub Actions (origen: Azure Key Vault) — Vite la embebe en el bundle, por lo que la key de Maps debe estar restringida por referrer HTTP.
+
+### Legacy
+Despliegue manual/IIS sobre `gestor.gresst.com` y `generador.gresst.com` — no hay pipeline CI/CD versionado en el repo para este stack (a diferencia de WebApp).
 
 ---
 
-## Configuración de Servidores
+## Autenticación
 
-### Nginx (Reverse Proxy)
+| Cliente | Access token | Refresh |
+|---|---|---|
+| App | Bearer JWT, `client: "mobile"` | `expo-secure-store` |
+| WebApp | Bearer JWT en memoria (nunca localStorage) | Cookie `HttpOnly + Secure + SameSite=Lax` (`refresh_token`) |
+| Legacy/Gestor | Sesión InProc clásica **+** SSO nuevo (`AuthSsoService`) que valida/rota el mismo `refresh_token` | Cookie compartida con API/WebApp en dominio `.residuario.com` |
+| Legacy/Generador | Sesión InProc propia, validada contra SQL directo | No aplica (sin SSO ni API nueva) |
 
-```nginx
-server {
-    listen 80;
-    server_name portal.gresst.com;
-    return 301 https://$server_name$request_uri;
-}
+El SSO entre Gestor y el stack nuevo permite que un usuario autenticado navegue entre Gestor y WebApp sin volver a iniciar sesión, mientras se migran pantallas gradualmente (`Site.Master.cs` en Gestor resuelve dinámicamente qué rutas ya están migradas a WebApp).
 
-server {
-    listen 443 ssl http2;
-    server_name portal.gresst.com;
-
-    ssl_certificate /etc/letsencrypt/live/portal.gresst.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/portal.gresst.com/privkey.pem;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-}
-```
-
-### Docker (Opcional)
-
-```dockerfile
-FROM node:18-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY . .
-RUN npm run build
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
-```
-
-```yaml
-# docker-compose.yml
-version: '3.8'
-services:
-  web:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - DATABASE_URL=postgresql://postgres:password@db:5432/gresst_db
-    depends_on:
-      - db
-  
-  db:
-    image: postgres:15-alpine
-    environment:
-      - POSTGRES_DB=gresst_db
-      - POSTGRES_PASSWORD=password
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
-```
-
----
-
-## API Endpoints
-
-### Autenticación
-
-```http
-POST /api/auth/login
-POST /api/auth/register
-POST /api/auth/refresh
-POST /api/auth/logout
-```
-
-### Órdenes de Recolección
-
-```http
-GET    /api/orders          # Listar órdenes
-POST   /api/orders          # Crear orden
-GET    /api/orders/:id      # Obtener detalle
-PUT    /api/orders/:id      # Actualizar orden
-DELETE /api/orders/:id      # Eliminar orden
-```
-
-### Usuarios y Permisos
-
-```http
-GET    /api/users           # Listar usuarios
-POST   /api/users           # Crear usuario
-GET    /api/users/:id       # Obtener usuario
-PUT    /api/users/:id       # Actualizar usuario
-DELETE /api/users/:id       # Eliminar usuario
-```
-
-Documentación completa de API: [Swagger/OpenAPI](https://api.gresst.com/docs)
-
----
-
-## Seguridad
-
-### Mejores Prácticas
-
-1. **Autenticación:**
-   - Usar JWT con expiración corta (24h)
-   - Implementar refresh tokens
-   - MFA para cuentas administrativas
-
-2. **Encriptación:**
-   - HTTPS obligatorio (TLS 1.3)
-   - Encriptar datos sensibles en base de datos
-   - Hash de contraseñas con bcrypt (10+ rounds)
-
-3. **Validación:**
-   - Sanitizar todas las entradas
-   - Validar tipos de datos
-   - Límites de rate limiting
-
-4. **Auditoría:**
-   - Log de acciones críticas
-   - Monitoreo de intentos fallidos
-   - Alertas automáticas de actividad sospechosa
-
----
-
-## Monitoreo y Logs
-
-### Herramientas recomendadas:
-
-- **APM:** New Relic / Datadog
-- **Logs:** ELK Stack (Elasticsearch, Logstash, Kibana)
-- **Uptime:** UptimeRobot / Pingdom
-- **Errors:** Sentry / Rollbar
-
-### Logs de aplicación:
-
-```javascript
-// Ejemplo con Winston (Node.js)
-const winston = require('winston');
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' })
-  ]
-});
-```
+Contratos REST usan `/api/v1/*` en kebab-case; GraphQL usa `/graphql` con enums en `SCREAMING_SNAKE_CASE`. Cualquier cambio de contrato debe actualizarse en `API/docs/` y en los consumidores (App/WebApp) en el mismo cambio.
 
 ---
 
 ## Testing
 
-### Unit Tests
-
-```bash
-# Ejecutar tests
-npm test
-
-# Con cobertura
-npm run test:coverage
-```
-
-### Integration Tests
-
-```bash
-# Tests de integración
-npm run test:integration
-```
-
-### E2E Tests
-
-```bash
-# Tests end-to-end (Cypress)
-npm run test:e2e
-```
+| Repo | Framework | Comandos |
+|---|---|---|
+| App | Jest + React Native Testing Library | `npm test`, `npm run test:watch`, `npm run test:coverage` |
+| WebApp | Vitest + Testing Library | `npm run test` (watch), `npm run test:run` (una vez), `npm run test:coverage` (umbral 70%, `test:coverage:strict` 80%) |
+| Legacy | Sin suite automatizada versionada en el repo | — |
 
 ---
 
-## Respaldos (Backups)
+## Convenciones de código y commits
 
-### Base de datos automática:
-
-```bash
-#!/bin/bash
-# backup.sh
-
-DATE=$(date +%Y%m%d_%H%M%S)
-BACKUP_DIR="/backups/postgres"
-DB_NAME="gresst_db"
-
-pg_dump $DB_NAME | gzip > $BACKUP_DIR/backup_$DATE.sql.gz
-
-# Mantener solo los últimos 30 días
-find $BACKUP_DIR -type f -mtime +30 -delete
-```
-
-Configurar cron:
-```bash
-# Backup diario a las 2 AM
-0 2 * * * /scripts/backup.sh
-```
+- **Conventional Commits** en todos los repos (`feat`, `fix`, `feat!`, …), header ≤ 100 caracteres.
+- **App / WebApp:** hooks de Husky + commitlint instalados automáticamente por `npm install` (`prepare`).
+- **API / Legacy:** hooks instalados manualmente una vez con `sh scripts/install-git-hooks.sh` (shell, sin Node).
+- **App:** TypeScript estricto, sin `any`; componentes funcionales + hooks; naming `*Screen`/`*Service`/`use*`; i18n con `react-i18next` (`assets/i18n/{en,es}.json`).
+- **WebApp:** TypeScript estricto, sin `any`; Feature-Driven obligatorio (`src/features/<name>/`); componentes de UI presentacionales, lógica en `hooks`/`services`; sin Apollo/axios/Redux/React Query — `fetch` propio.
+- **Legacy:** capas desiguales por herencia del monolito — `Api`/`Gestor` llaman a `Servicios`; `Generador`/`SuperUser` a veces duplican lógica en vez de reusarla. No renombrar columnas/contratos de la base de datos legacy sin un proyecto de migración explícito.
 
 ---
 
-## Solución de Problemas
+## Documentación complementaria por repo
 
-### Portal no carga
-
-1. Verificar logs: `tail -f logs/error.log`
-2. Verificar proceso: `pm2 status`
-3. Verificar puertos: `netstat -tlnp | grep 3000`
-4. Reiniciar: `pm2 restart gresst-portal`
-
-### Error de conexión a base de datos
-
-1. Verificar PostgreSQL: `systemctl status postgresql`
-2. Probar conexión: `psql -U gresst_user -d gresst_db`
-3. Revisar credenciales en `.env`
-
-### App móvil no sincroniza
-
-1. Verificar conectividad de red
-2. Revisar logs en Firebase Crashlytics
-3. Forzar sincronización desde configuración
-4. Limpiar cache de la app
+| Doc | Dónde |
+|---|---|
+| Arquitectura Feature-Driven de WebApp | `WebApp/docs/ARCHITECTURE.md` |
+| Integración con la API (WebApp) | `WebApp/docs/API-INTEGRATION.md` |
+| Autenticación multi-sesión (WebApp) | `WebApp/docs/AUTHENTICATION.md` |
+| Setup completo, i18n, mapas/rutas, EAS build (App) | `App/README.md` |
+| Arquitectura, dominio, GraphQL, homologación legacy (API) | `API/docs/` |
+| Casos canónicos de entrada/salida de residuos | [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md) |
 
 ---
 
-## Actualizaciones
-
-### Proceso de actualización:
-
-```bash
-# 1. Backup
-npm run backup
-
-# 2. Pull cambios
-git pull origin main
-
-# 3. Instalar dependencias
-npm install
-
-# 4. Ejecutar migraciones
-npm run migrate
-
-# 5. Construir
-npm run build
-
-# 6. Reiniciar
-pm2 restart gresst-portal
-
-# 7. Verificar
-curl https://portal.gresst.com/health
-```
-
----
-
-## Soporte Técnico
-
-- **Documentación:** [docs.gresst.com](https://docs.gresst.com)
-- **Email:** soporte@gresst.com
-- **Slack/Discord:** Canal #soporte-tecnico
-- **Issues:** [GitHub Issues](https://github.com/TU-ORG/gresst/issues)
-
----
-
-## Recursos Adicionales
-
-- [Arquitectura del Sistema](arquitectura.md)
-- [Guía de Usuario](guia_usuarios.md)
-- [Procesos Operativos](procesos_operativos.md)
-- [Changelog](https://github.com/TU-ORG/gresst/releases)
+¿Dudas sobre la arquitectura general? Consulta [Arquitectura del Sistema](arquitectura.md).
