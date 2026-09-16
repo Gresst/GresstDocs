@@ -85,6 +85,26 @@ En ambos casos la propiedad pasa al tercero y el residuo sale de mi inventario. 
 
 ---
 
+## 4. Operación de Generación (punto de vista del Generador)
+
+**Proceso independiente**, disponible en web y en app móvil. A diferencia de Recepción (sección 2) y
+Transferencia (sección 3), no hay dos variantes según si el residuo viene o no de un camión — la
+Generación **es** el punto de origen del residuo, así que siempre lo crea. Tampoco hay Solicitud
+previa que homologar: el Generador declara un residuo que ya está físicamente en su instalación, no
+está pidiendo ni recibiendo nada de un tercero.
+
+- El Generador indica dónde está el residuo (instalación propia), qué tipo de residuo es, cantidades
+  (cantidad/peso/volumen), fecha en que se generó, fotos, adjuntos y observaciones.
+- Se crea el residuo en el sistema en este momento y se acredita en el inventario de esa instalación.
+- **Firma:** ninguna — a diferencia de Recepción/Transferencia no hay una contraparte (tercero) que
+  entregue o reciba; el propio Generador es quien declara.
+
+El caso más cercano hoy es 2.2 (Recepción crea el residuo porque no existe aún), pero 2.2 está escrito
+desde la óptica del **operador de planta que recibe** de un tercero — aquí es el **Generador
+declarando su propio residuo**, sin que medie entrega de nadie más.
+
+---
+
 ## Resumen comparativo
 
 | Paso | Operación | Actor | ¿Quién lo registra? | ¿Cambia dominio? | ¿Se crea el residuo? |
@@ -98,3 +118,4 @@ En ambos casos la propiedad pasa al tercero y el residuo sale de mi inventario. 
 | 2.2 Recepción — tercero lo trae directo | Recepción | Operador de planta | Operador de planta (firma el tercero que entrega) | Sí (a mi favor) | Sí, al recibir |
 | 3.1 Transferencia — viene de mi camión | Transferencia | Operador / quien formaliza la transferencia | Independiente del cierre logístico de 1.2.b | Sí (a favor del tercero) | No |
 | 3.2 Transferencia — no viene de mi camión | Transferencia | Operador / responsable del depósito | Quien ejecuta la entrega directa | Sí (a favor del tercero) | No |
+| 4. Generación | Generación | Generador | El propio Generador (sin firma de contraparte) | No aplica (nace mío) | Sí, al generar |
