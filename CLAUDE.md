@@ -11,6 +11,8 @@ Product documentation site (Docsify). **Not** the place for API contracts, Clean
 
 Do **not** duplicate `API/docs/AUTHENTICATION.md`, GraphQL catalogs, or WebApp design-system/IA here. Link those files.
 
+When adding a page: if it is **how a person uses the product** or a **business case**, it belongs here. If it is an endpoint, EF mapper, or React folder convention, put it in the code repo and link from [ownership.md](docs/ownership.md).
+
 ## Local preview
 
 ```bash
