@@ -19,7 +19,7 @@ Hoy conviven el stack **legacy** (Gestor, Generador) y el stack **nuevo** (API +
 |------------|-----|
 | [WebApp](guia_webapp.md) | Cliente web nuevo (operación, catálogos, certificados) |
 | [Portal de Gestores](guia_portal_gestores.md) | Gestor legacy — `gestor.gresst.com` |
-| Portal de Generadores | Legacy — `generador.gresst.com` (sin guía de usuario aquí todavía) |
+| [Portal de Generadores](guia_generador.md) | Legacy — `generador.gresst.com` |
 | [App móvil](guia_app.md) | Conductores y personal de campo |
 
 ---
@@ -28,6 +28,7 @@ Hoy conviven el stack **legacy** (Gestor, Generador) y el stack **nuevo** (API +
 - [Qué documenta cada repo](ownership.md)
 - [Arquitectura del Sistema](arquitectura.md)
 - [Guía Portal de Gestores (Legacy)](guia_portal_gestores.md)
+- [Guía Portal de Generadores (Legacy)](guia_generador.md)
 - [Guía de usuario](guia_usuarios.md)
 - [Guía de Usuario — WebApp](guia_webapp.md)
 - [Guía de Usuario — App Móvil](guia_app.md)

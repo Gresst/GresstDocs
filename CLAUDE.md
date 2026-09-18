@@ -5,7 +5,7 @@ Product documentation site (Docsify). **Not** the place for API contracts, Clean
 ## What this repo owns
 
 - Business cases and glossary (`docs/casos_entrada_salida_residuos.md` is canonical for entrada/salida, including 1.2.a).
-- User guides (Gestor legacy, WebApp, App).
+- User guides (Gestor legacy, Generador legacy, WebApp, App).
 - High-level system map for humans (`docs/arquitectura.md`) — point to `API/docs/` and client `docs/` for implementation detail.
 - Ownership map: `docs/ownership.md`.
 

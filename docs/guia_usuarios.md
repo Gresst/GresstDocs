@@ -7,7 +7,7 @@ Elige la superficie que usas. No hay una sola URL ni un solo menú para toda la 
 | **WebApp** | Cliente web nuevo (reemplazo gradual de Gestor) | [Guía de Usuario — WebApp](guia_webapp.md) |
 | **Gestor (Legacy)** | `https://gestor.gresst.com` | [Guía del Portal de Gestores](guia_portal_gestores.md) |
 | **App móvil** | Conductores y campo (iOS/Android) | [Guía de Usuario — App Móvil](guia_app.md) |
-| **Generador (Legacy)** | `https://generador.gresst.com` | Sin guía de usuario en este repo todavía |
+| **Generador (Legacy)** | `https://generador.gresst.com` | [Guía del Portal de Generadores](guia_generador.md) |
 
 Reglas de negocio de carga, descarga y dominio: [Casos de entrada y salida de residuos](casos_entrada_salida_residuos.md).
 

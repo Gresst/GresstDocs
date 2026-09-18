@@ -2,6 +2,7 @@
 * [Qué documenta cada repo](ownership.md)
 * [Arquitectura del Sistema](arquitectura.md)
 * [Guía Portal de Gestores (Legacy)](guia_portal_gestores.md)
+* [Guía Portal de Generadores (Legacy)](guia_generador.md)
 * [Guía de Usuario](guia_usuarios.md)
 * [Guía de Usuario — WebApp](guia_webapp.md)
 * [Guía de Usuario — App Móvil](guia_app.md)

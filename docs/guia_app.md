@@ -2,8 +2,6 @@
 
 > Esta guía describe la app móvil de Gresst para conductores y personal de campo (iOS/Android).
 
-<!-- TODO: agregar captura de pantalla real del login de la App -->
-
 ## Acceso al sistema
 
 La pantalla de inicio de sesión pide **correo** y **contraseña**. Si olvidaste tu clave, el enlace **"¿Olvidaste tu contraseña?"** te guía por 3 pasos: ingresar tu correo → ingresar el código que te llega por email → definir una nueva clave.
@@ -22,8 +20,6 @@ Desde **Jornada** navegas hacia el detalle de tu trabajo:
 ```
 Jornada → Operación → Paradas → Residuos de la parada → Confirmar/Rechazar residuo
 ```
-
-<!-- TODO: agregar captura de pantalla real de la pantalla Jornada -->
 
 ---
 
@@ -62,8 +58,6 @@ Cada línea de residuo se puede confirmar rápido (cantidades + botones Cancelar
 - **Confirmar** o **Rechazar** el residuo.
 
 También puedes agregar un **residuo no planeado** con el botón "+". Al terminar con todos los residuos de la parada, el botón del pie de pantalla cambia entre **"Rechazar parada"** y **"Finalizar parada"** (este último abre la pantalla de aprobación: firmante, identificación, rol, firma y, opcionalmente, métricas del vehículo).
-
-<!-- TODO: agregar captura de pantalla real de la pantalla de residuos de una parada -->
 
 ---
 
