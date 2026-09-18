@@ -16,6 +16,7 @@ El sistema está en **migración activa** (patrón *strangler fig*): un monolito
 | `API/` | Backend nuevo, fuente de verdad del stack objetivo | .NET, Clean Architecture |
 | `App/` | Cliente móvil (personal de campo / conductores) | Expo + React Native + TypeScript |
 | `WebApp/` | Cliente web nuevo (reemplaza gradualmente a Gestor/Generador) | React 18 + Vite 6 + TypeScript |
+| `GresstDocs/` | Documentación de producto (este sitio) | Docsify |
 | `DB/` | Scripts SQL Server compartidos (funciones, procedimientos, tipos) | T-SQL |
 
 Cada repo tiene su propio `CLAUDE.md` con el detalle completo; este documento resume cómo encajan entre sí.

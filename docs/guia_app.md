@@ -93,7 +93,13 @@ Si te quedas sin señal, verás un aviso **"Sin conexión a internet"** en la pa
 - **Tareas:** lista de tareas asignadas, con detalle y opción de actualizar.
 - **Buscar:** búsqueda de certificados por texto.
 - **Perfil:** tu nombre, correo y rol (solo lectura).
-- El menú del encabezado también da acceso directo a recepción/transferencia/disposición/tratamiento en planta, sincronización manual, cambio de idioma y cierre de sesión.
+- El menú del encabezado también da acceso a **En instalación** (recepción, transferencia, disposición, tratamiento en planta — no es el menú del WebApp), catálogos, sincronización manual, idioma y cierre de sesión.
+
+---
+
+## Descarga en depósito propio (1.2.a)
+
+Si la parada es un **punto del gestor** (depósito propio), **no capturas la descarga** en la App: esa parada no aparece para unload. El cierre lo hace planta con **Recepción** en WebApp. Detalle: [Casos de entrada y salida](casos_entrada_salida_residuos.md) §1.2.a.
 
 ---
 

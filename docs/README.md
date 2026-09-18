@@ -13,28 +13,14 @@ Gresst es una **plataforma integral** para la gestión y logística de residuos 
 
 ## Componentes de la Plataforma
 
-La plataforma Gresst está compuesta por tres aplicaciones principales:
+Hoy conviven el stack **legacy** (Gestor, Generador) y el stack **nuevo** (API + WebApp + App). El WebApp reemplaza de a poco al Gestor; la App de campo habla solo con la API nueva.
 
-### 🏢 **Portal de Gestores**
-Sitio web/módulo especializado para empresas gestoras de residuos que permite:
-- Gestión de solicitudes de recolección
-- Administración de vehículos y rutas
-- Seguimiento de operaciones en tiempo real
-- Generación de certificados y reportes
-
-### 🏭 **Portal de Generadores**
-Sitio web/módulo para empresas generadoras de residuos que permite:
-- Solicitud de recolección de residuos
-- Consulta de historial y certificados
-- Gestión de puntos de generación
-- Cumplimiento normativo
-
-### 📱 **App Móvil**
-Aplicación para dispositivos móviles (iOS/Android) para:
-- Conductores y personal de campo
-- Registro de recolecciones en tiempo real
-- Captura de evidencias fotográficas
-- Optimización de rutas
+| Superficie | Rol |
+|------------|-----|
+| [WebApp](guia_webapp.md) | Cliente web nuevo (operación, catálogos, certificados) |
+| [Portal de Gestores](guia_portal_gestores.md) | Gestor legacy — `gestor.gresst.com` |
+| Portal de Generadores | Legacy — `generador.gresst.com` (sin guía de usuario aquí todavía) |
+| [App móvil](guia_app.md) | Conductores y personal de campo |
 
 ---
 
