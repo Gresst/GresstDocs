@@ -2,7 +2,7 @@
 
 Esta guía está dirigida a desarrolladores, personal técnico y administradores del sistema Gresst.
 
-Para el panorama completo de componentes y cómo encajan entre sí, consulta primero la [Arquitectura del Sistema](arquitectura.md). La plataforma consta de **cinco repositorios**: `API` (backend nuevo), `App` (móvil), `WebApp` (web nuevo), `Legacy` (Gestor + Generador, en migración) y `DB` (scripts SQL Server compartidos).
+Para el panorama completo de componentes y cómo encajan entre sí, consulta primero la [Arquitectura del Sistema](arquitectura.md). Repos: `API`, `App`, `WebApp`, `Legacy`, `GresstDocs` (producto) y `DB` (scripts SQL Server).
 
 ---
 
