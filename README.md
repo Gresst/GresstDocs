@@ -1,6 +1,10 @@
 # GresstDocs
 
-Documentación del Software de Logística de Residuos construida con [Docsify](https://docsify.js.org/).
+Documentación de **producto** del software de logística de residuos (Docsify): casos de negocio, guías de usuario y mapa de sistema para humanos.
+
+Contratos (GraphQL, auth, homologación) viven en `API/docs/`. Arquitectura de cada cliente vive en `WebApp/docs/` y `App/docs/`. Mapa: [docs/ownership.md](docs/ownership.md).
+
+Construida con [Docsify](https://docsify.js.org/).
 
 ## 🌐 Publicación en GitHub Pages
 
@@ -35,6 +39,7 @@ Luego abre `http://localhost:3000` en tu navegador.
 
 ```
 GresstDocs/
+├── CLAUDE.md                 # Guía para agentes (producto, no contratos)
 ├── index.html                # Configuración de Docsify (raíz)
 ├── .nojekyll                 # Para GitHub Pages (raíz)
 ├── .gitignore
@@ -42,9 +47,12 @@ GresstDocs/
 └── docs/                     # Archivos de documentación
     ├── README.md             # Página de inicio
     ├── _sidebar.md           # Menú lateral
-    ├── guia_usuarios.md      # Guía de usuarios
-    ├── guia_tecnica.md       # Guía técnica
-    └── procesos_operativos.md # Procesos operativos
+    ├── ownership.md          # Qué vive aquí vs cada repo de código
+    ├── arquitectura.md
+    ├── casos_entrada_salida_residuos.md
+    ├── guia_usuarios.md
+    ├── guia_tecnica.md
+    └── procesos_operativos.md
 ```
 
 ## 📝 Agregar Nueva Documentación

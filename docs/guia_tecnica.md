@@ -73,7 +73,7 @@ node scripts/bump-app-version.js   # sube versión antes de un release
 # build y submit gestionados vía EAS (perfiles development/preview/production)
 ```
 
-Variables `EXPO_PUBLIC_API_URL` y `EXPO_PUBLIC_GOOGLE_MAPS_API_KEY` se gestionan como secrets en EAS. Al cambiar contratos consumidos por la App, revisar la política de versión mínima (`API/.cursor/rules/app-version-policy.mdc`).
+Variables `EXPO_PUBLIC_API_URL` y `EXPO_PUBLIC_GOOGLE_MAPS_API_KEY` se gestionan como secrets en EAS. Al cambiar contratos consumidos por la App, revisar la política de versión mínima (`API/docs/APP-VERSION-POLICY.md`).
 
 ### WebApp
 
@@ -131,9 +131,11 @@ Contratos REST usan `/api/v1/*` en kebab-case; GraphQL usa `/graphql` con enums 
 
 | Doc | Dónde |
 |---|---|
+| Qué vive en cada repo | [ownership.md](ownership.md) |
 | Arquitectura Feature-Driven de WebApp | `WebApp/docs/ARCHITECTURE.md` |
-| Integración con la API (WebApp) | `WebApp/docs/API-INTEGRATION.md` |
-| Autenticación multi-sesión (WebApp) | `WebApp/docs/AUTHENTICATION.md` |
+| HTTP client (WebApp) | `WebApp/.claude/rules/http-client.md` |
+| Auth — contrato | `API/docs/AUTHENTICATION.md` |
+| Auth — checklist WebApp | `WebApp/docs/AUTHENTICATION.md` |
 | Setup completo, i18n, mapas/rutas, EAS build (App) | `App/README.md` |
 | Arquitectura, dominio, GraphQL, homologación legacy (API) | `API/docs/` |
 | Casos canónicos de entrada/salida de residuos | [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md) |

@@ -39,13 +39,16 @@ Aplicación para dispositivos móviles (iOS/Android) para:
 ---
 
 ## Estructura de la documentación
+- [Qué documenta cada repo](ownership.md)
 - [Arquitectura del Sistema](arquitectura.md)
-- [Guía Portal de Gestores](guia_portal_gestores.md)
+- [Guía Portal de Gestores (Legacy)](guia_portal_gestores.md)
 - [Guía de usuario](guia_usuarios.md)
+- [Guía de Usuario — WebApp](guia_webapp.md)
+- [Guía de Usuario — App Móvil](guia_app.md)
 - [Guía técnica](guia_tecnica.md)
 - [Procesos operativos](procesos_operativos.md)
 - [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md)
 
 ---
 **Versión:** 1.0  
-**Última actualización:** Octubre 2025
+**Última actualización:** septiembre 2026

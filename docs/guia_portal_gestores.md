@@ -1,8 +1,10 @@
-# Guía del Portal de Gestores
+# Guía del Portal de Gestores (Legacy)
 
-## Introducción
+> **Este no es el WebApp.** Documenta el portal de producción **Gestor** (`https://gestor.gresst.com`), en migración (strangler). Cuentas ya migradas: [Guía de Usuario — WebApp](guia_webapp.md).
+>
+> Una versión anterior de esta guía citaba `https://gestores.gresst.com`; el host de producción documentado en Legacy es `gestor.gresst.com`.
 
-El Portal de Gestores es la interfaz principal para empresas que administran la recolección y tratamiento de residuos. Esta guía te ayudará a navegar y utilizar todas las funcionalidades disponibles.
+El Portal de Gestores es la interfaz WebForms (DevExpress) con la que las empresas gestoras administran recolección y tratamiento **mientras** esa pantalla no esté en WebApp.
 
 ---
 
@@ -10,7 +12,7 @@ El Portal de Gestores es la interfaz principal para empresas que administran la 
 
 ### URL de Acceso
 ```
-https://gestores.gresst.com
+https://gestor.gresst.com
 ```
 
 ### Pantalla de Login
@@ -30,7 +32,7 @@ https://gestores.gresst.com
 
 #### Paso 1: Acceso a la plataforma
 1. Abrir el navegador web
-2. Navegar a `https://gestores.gresst.com`
+2. Navegar a `https://gestor.gresst.com`
 3. Verificar que la URL muestre el candado de seguridad (HTTPS)
 
 #### Paso 2: Ingreso de credenciales
@@ -831,7 +833,7 @@ Cada transporte muestra información detallada:
 - **Chat en Vivo:** Asistencia inmediata
 
 ### Contacto:
-- **Email:** soporte@gestores.gresst.com
+- **Email:** soporte@gestor.gresst.com
 - **Teléfono:** +1 (555) 123-4567
 - **Horario:** Lunes a Viernes, 8:00 AM - 6:00 PM
 - **Chat:** Disponible en la interfaz del portal

@@ -1,16 +1,14 @@
 # Guía de Usuario
 
-Esta guía describe cómo utilizar el software de logística de residuos.
+Elige la superficie que usas. No hay una sola URL ni un solo menú para toda la plataforma.
 
-## Ingreso al sistema
-1. Accede desde tu navegador a la URL del sistema.
-2. Ingresa tus credenciales de usuario.
+| Superficie | Cuándo | Guía |
+|------------|--------|------|
+| **WebApp** | Cliente web nuevo (reemplazo gradual de Gestor) | [Guía de Usuario — WebApp](guia_webapp.md) |
+| **Gestor (Legacy)** | `https://gestor.gresst.com` | [Guía del Portal de Gestores](guia_portal_gestores.md) |
+| **App móvil** | Conductores y campo (iOS/Android) | [Guía de Usuario — App Móvil](guia_app.md) |
+| **Generador (Legacy)** | `https://generador.gresst.com` | Sin guía de usuario en este repo todavía |
 
-## Módulos principales
-- **Recepción y recolección de residuos**
-- **Transporte y seguimiento**
-- **Reportes de trazabilidad**
-- **Gestión de clientes y generadores**
+Reglas de negocio de carga, descarga y dominio: [Casos de entrada y salida de residuos](casos_entrada_salida_residuos.md).
 
-## Soporte
-En caso de incidentes, reporta al correo interno del equipo de soporte.
+Soporte de producto: canal interno del equipo. Incidentes del stack legacy (Gestor, Generador, Móvil): Jira en `araneasoftware.atlassian.net`. Trabajo de producto en el stack nuevo: `gresst.atlassian.net`.
