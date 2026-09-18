@@ -1,7 +1,7 @@
 # Documentación Gresst
 
 Bienvenido a la documentación del sistema de gestión y logística de residuos **Gresst**.  
-Aquí encontrarás información sobre su uso, arquitectura, despliegue y mantenimiento.
+Aquí encontrarás cómo usar Gresst, los portales y los casos de negocio. El manual de desarrollo está en el repositorio de la API (`docs/SOLUTION.md`).
 
 ---
 
@@ -25,16 +25,16 @@ Hoy conviven el stack **legacy** (Gestor, Generador) y el stack **nuevo** (API +
 ---
 
 ## Estructura de la documentación
-- [Qué documenta cada repo](ownership.md)
 - [Arquitectura del Sistema](arquitectura.md)
 - [Guía Portal de Gestores (Legacy)](guia_portal_gestores.md)
 - [Guía Portal de Generadores (Legacy)](guia_generador.md)
 - [Guía de usuario](guia_usuarios.md)
 - [Guía de Usuario — WebApp](guia_webapp.md)
 - [Guía de Usuario — App Móvil](guia_app.md)
-- [Guía técnica](guia_tecnica.md)
 - [Procesos operativos](procesos_operativos.md)
 - [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md)
+- [Qué cubre este sitio](ownership.md)
+- [Documentación de ingeniería](guia_tecnica.md)
 
 ---
 **Versión:** 1.0  

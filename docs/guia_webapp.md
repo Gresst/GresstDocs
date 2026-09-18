@@ -108,5 +108,3 @@ Red operativa, residuos, servicios y terceros: selector de propietario si aplica
 ## App de campo
 
 Conductores: [Guía de Usuario — App Móvil](guia_app.md). La descarga en un depósito **propio** del gestor no la cierra el conductor; la cierra **Recepción** en planta ([caso 1.2.a](casos_entrada_salida_residuos.md)).
-
-Instalación y entornos: [Guía técnica](guia_tecnica.md).

@@ -24,6 +24,6 @@ Confirmado en el portal Generador:
 
 - No hay cliente GraphQL ni login `client: "web"` de la API nueva.
 - La lógica no se comparte con `Servicios` de Gestor: Generador tiene managers propios.
-- Cómo encaja en el strangler: [Arquitectura del Sistema](arquitectura.md) § Legacy/Generador.
+- Cómo encaja en la migración: [Arquitectura del Sistema](arquitectura.md).
 
 Casos de dominio (carga, descarga, cambio de dueño): [Casos de entrada y salida](casos_entrada_salida_residuos.md).

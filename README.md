@@ -2,7 +2,7 @@
 
 Documentación de **producto** del software de logística de residuos (Docsify): casos de negocio, guías de usuario y mapa de sistema para humanos.
 
-Contratos (GraphQL, auth, homologación) viven en `API/docs/`. Arquitectura de cada cliente vive en `WebApp/docs/` y `App/docs/`. Mapa: [docs/ownership.md](docs/ownership.md).
+Contratos y onboarding de ingeniería: `API/docs/SOLUTION.md`. Este sitio es producto: [docs/ownership.md](docs/ownership.md).
 
 Construida con [Docsify](https://docsify.js.org/).
 
@@ -48,10 +48,14 @@ GresstDocs/
     ├── README.md             # Página de inicio
     ├── _sidebar.md           # Menú lateral
     ├── ownership.md          # Qué vive aquí vs cada repo de código
-    ├── arquitectura.md
+    ├── arquitectura.md          # Producto (superficies), no stack
     ├── casos_entrada_salida_residuos.md
     ├── guia_usuarios.md
-    ├── guia_tecnica.md
+    ├── guia_webapp.md
+    ├── guia_app.md
+    ├── guia_portal_gestores.md
+    ├── guia_generador.md
+    ├── guia_tecnica.md          # Puntero a API/docs/SOLUTION.md
     └── procesos_operativos.md
 ```
 

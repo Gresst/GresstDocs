@@ -1,17 +1,17 @@
 # CLAUDE.md — GresstDocs
 
-Product documentation site (Docsify). **Not** the place for API contracts, Clean Architecture, or client ADRs.
+Product documentation site (Docsify). **Not** engineering onboarding.
 
 ## What this repo owns
 
-- Business cases and glossary (`docs/casos_entrada_salida_residuos.md` is canonical for entrada/salida, including 1.2.a).
-- User guides (Gestor legacy, Generador legacy, WebApp, App).
-- High-level system map for humans (`docs/arquitectura.md`) — point to `API/docs/` and client `docs/` for implementation detail.
-- Ownership map: `docs/ownership.md`.
+- Business cases (`docs/casos_entrada_salida_residuos.md`, including 1.2.a).
+- User guides (Gestor, Generador, WebApp, App).
+- Product architecture (`docs/arquitectura.md`).
+- Support / dual Jira (`docs/procesos_operativos.md`).
 
-Do **not** duplicate `API/docs/AUTHENTICATION.md`, GraphQL catalogs, or WebApp design-system/IA here. Link those files.
+Engineering (clone, deploy, contracts): sibling **`../API/docs/SOLUTION.md`**. `docs/guia_tecnica.md` is only a pointer there.
 
-When adding a page: if it is **how a person uses the product** or a **business case**, it belongs here. If it is an endpoint, EF mapper, or React folder convention, put it in the code repo and link from [ownership.md](docs/ownership.md).
+Do **not** paste GraphQL catalogs, EF mappers, npm scripts, or ADRs here.
 
 ## Local preview
 
