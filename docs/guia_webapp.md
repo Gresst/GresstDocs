@@ -53,7 +53,7 @@ Misma idea en **Logística → Transporte** y **Entrada → Recepción**:
 5. El trabajo se cierra **por parada** (transporte) o **por cliente en un punto** (recepción): todos los residuos de ese grupo quedan con la misma fecha; no hay cierre a medias.
 6. En una fecha futura el registro se ve, pero al recibir/cargar el sistema avisa que se guardará **con la fecha de hoy**.
 
-Detalle de acciones y permisos (producto técnico): `WebApp/docs/OPERATIONS-CAPTURE-MODEL.md`.
+Detalle de captura (ingeniería, rama `staging`): [Operations capture model](https://github.com/Gresst/gresstwebapp/blob/staging/docs/OPERATIONS-CAPTURE-MODEL.md).
 
 ### Transporte (árbol)
 
@@ -94,6 +94,24 @@ Red operativa, residuos, servicios y terceros: selector de propietario si aplica
 **Residuos vs materiales:** un tipo puede ser residuo o material aprovechable; en inventario y en catálogo van en vistas paralelas. Convertir uno en el otro es una acción explícita del menú de la fila, no un interruptor silencioso.
 
 **Instalaciones (ejemplo de ficha):** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
+
+---
+
+## Inventario
+
+Dos entradas de menú sobre el mismo tipo de dato: **Residuos** (`/inventory`) y **Materiales** (`/inventory/materials`). El permiso es el de inventario; no hay un interruptor silencioso entre ambas listas. Para pasar un tipo de un lado al otro usas el menú de la fila (**Convertir a material / residuo**) y confirmas.
+
+## Configuración de la cuenta (menú de usuario)
+
+No está en el menú lateral. Pestañas: **Cuenta** (datos, propietario, licencias) · **Usuarios** · **Roles** (permisos del rol, no una pestaña suelta “Permisos”) · **Parámetros** · **Módulos** (qué modos de solicitud tiene el tenant) · **Integraciones** (correo, SIESA). Solo algunos perfiles pueden editar.
+
+## Analítica
+
+**Tableros** e indicadores. **Reportes** (por ejemplo insumos entregados, KPIs de solicitud): listados y filtros de la cuenta. Lo que ves depende de permisos; no sustituyen Consultas del Gestor uno a uno.
+
+## Hojas en ceros
+
+Si abres Retorno, Donación, Acopio, etc. y la tabla está vacía con KPIs en cero, esa hoja **aún no tiene backend migrado**. Es la misma cáscara de operación, no un mensaje “próximamente”. No inventes datos ni un flujo de cuatro estados del Gestor ahí.
 
 ---
 

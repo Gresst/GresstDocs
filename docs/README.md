@@ -1,7 +1,7 @@
 # Documentación Gresst
 
 Bienvenido a la documentación del sistema de gestión y logística de residuos **Gresst**.  
-Aquí encontrarás cómo usar Gresst, los portales y los casos de negocio. El manual de desarrollo está en el repositorio de la API (`docs/SOLUTION.md`).
+Aquí encontrarás cómo usar Gresst, los portales y los casos de negocio. El mapa de ingeniería está en la API: [SOLUTION.md](https://github.com/Gresst/GresstAPI/blob/main/docs/SOLUTION.md).
 
 ---
 

@@ -87,7 +87,22 @@ Si te quedas sin señal, verás un aviso **"Sin conexión a internet"** en la pa
 - **Tareas:** lista de tareas asignadas, con detalle y opción de actualizar.
 - **Buscar:** búsqueda de certificados por texto.
 - **Perfil:** tu nombre, correo y rol (solo lectura).
-- El menú del encabezado también da acceso a **En instalación** (recepción, transferencia, disposición, tratamiento en planta — no es el menú del WebApp), catálogos, sincronización manual, idioma y cierre de sesión.
+- El mismo menú: sincronización manual, idioma, cierre de sesión y **En instalación**.
+
+---
+
+## En instalación (planta, no el menú del WebApp)
+
+Ese nombre **solo existe en la App** (`En instalación` / `At facility`). En WebApp las mismas operaciones están bajo Entrada, Transformación o Salida.
+
+Desde el menú del encabezado abres recepción, transferencia, disposición, tratamiento (y clasificación si tu cuenta la tiene). No es una ruta con paradas:
+
+1. Ves las **órdenes** de ese proceso (planta + fecha).
+2. Si hace falta, **planeas** líneas sueltas a una planta y un día.
+3. **Capturas** cantidades (y composición en tratamiento/clasificación) en el teléfono, también **sin red**.
+4. **Cierras** la orden de una vez (todas las líneas capturadas); el legado no cierra residuo a residuo como el transporte.
+
+La descarga en un depósito propio **no** se hace aquí ni en Jornada: la cierra **Recepción** de planta en WebApp ([§1.2.a](casos_entrada_salida_residuos.md)).
 
 ---
 

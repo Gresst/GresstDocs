@@ -2,7 +2,9 @@
 
 Documentación de **producto** del software de logística de residuos (Docsify): casos de negocio, guías de usuario y mapa de sistema para humanos.
 
-Contratos y onboarding de ingeniería: `API/docs/SOLUTION.md`. Este sitio es producto: [docs/ownership.md](docs/ownership.md).
+Contratos y onboarding de ingeniería: [API/docs/SOLUTION.md](https://github.com/Gresst/GresstAPI/blob/main/docs/SOLUTION.md). Este sitio es producto: [docs/ownership.md](docs/ownership.md).
+
+El remoto canónico del sitio es [Gresst/GresstDocs](https://github.com/Gresst/GresstDocs). Un `origin` antiguo `EdissonFonseca/GresstDocs` sigue redirigiendo; no hace falta cambiar `git config` para leer la docs.
 
 Construida con [Docsify](https://docsify.js.org/).
 
