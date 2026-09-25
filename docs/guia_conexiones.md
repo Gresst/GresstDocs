@@ -98,6 +98,20 @@ Con clientes **sin cuenta** (o no conectados) nada cambia: la solicitud queda ac
 
 ---
 
+## Entregas entre empresas conectadas
+
+Cuando le **transfieres** residuos a una empresa conectada contigo:
+
+- **Quien envía:** la Transferencia saca el residuo de tu inventario y le envía una **entrega**. En tu lista de Transferencias verás su estado: *Enviada al receptor*, *Sin respuesta del receptor*, *Recibida*, *Rechazada* o *Cerrada sin confirmar*.
+- **Quien recibe:** le llega un correo y la ve en **Entrada → Recepción**, pestaña **Abiertas**, en *Entregas por recibir* (el menú muestra cuántas hay).
+  - **Recibir:** eliges tu punto de recepción y, por cada residuo, **tu propio tipo de residuo** y lo que realmente llegó (viene prellenado con lo declarado). Se crea un residuo nuevo en tu inventario; lo que declaró el emisor no cambia y las dos cifras quedan guardadas.
+  - **Rechazar:** con un motivo. Nada entra a tu inventario y el emisor registra la devolución.
+- El receptor tiene **5 días hábiles** para responder.
+
+Si la empresa no tiene cuenta o no están conectados, la Transferencia funciona como siempre.
+
+---
+
 ## Desconectarse
 
 Desde **Terceros → ⋮ → Desconectar** (cualquiera de las dos empresas). Dejan de intercambiar documentos nuevos; lo que ya compartieron sigue visible para ambos.
