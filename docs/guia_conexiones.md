@@ -112,6 +112,10 @@ Cuando le **transfieres** residuos a una empresa conectada contigo:
 
 Si la empresa no tiene cuenta o no están conectados, la Transferencia funciona como siempre.
 
+### Ver el recorrido de un residuo
+
+En **Control → Reportes → Trazabilidad**, al elegir un residuo que pasó por empresas conectadas aparece **Recorrido entre empresas**: *de dónde vino* y *a dónde fue*, con la empresa, el tipo de residuo, las fechas, las operaciones, la planta y las cantidades de cada paso. Nunca se muestran precios ni notas internas. Si tu residuo se consolidó con el de otros clientes, ves el resultado y lo que pasó después, pero no los residuos de los otros clientes.
+
 ---
 
 ## Desconectarse
