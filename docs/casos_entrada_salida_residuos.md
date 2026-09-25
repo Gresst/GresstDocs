@@ -83,6 +83,13 @@ Puede tratarse de residuos planeados o no planeados en ambos casos.
 
 En ambos casos la propiedad pasa al tercero y el residuo sale de mi inventario. No se crea un residuo nuevo — es el mismo residuo cambiando de dueño.
 
+### 3.3 El tercero trabaja conectado conmigo en Gresst
+
+- Si el tercero tiene cuenta y estamos **conectados** ([Trabajar conectados](guia_conexiones.md)), la Transferencia **solo saca el residuo de mi inventario** y le envía una **entrega**.
+- Nada entra a su inventario hasta que **él** registre la Recepción: ahí crea **su propio residuo**, con su tipo de residuo y las cantidades que recibió. Las cantidades que yo declaré y las que él recibió quedan guardadas las dos.
+- Tiene 5 días hábiles para registrarla o rechazarla. Si la rechaza, yo registro la devolución física con mi propia Recepción.
+- Si el tercero no tiene cuenta o no estamos conectados, aplica lo anterior: el mismo residuo cambia de dueño.
+
 ---
 
 ## 4. Operación de Generación (punto de vista del Generador)
