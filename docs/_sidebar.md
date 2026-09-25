@@ -4,6 +4,7 @@
 * [Guía Portal de Generadores (Legacy)](guia_generador.md)
 * [Guía de Usuario](guia_usuarios.md)
 * [Guía de Usuario — WebApp](guia_webapp.md)
+* [Trabajar conectados (clientes y gestores)](guia_conexiones.md)
 * [Guía de Usuario — App Móvil](guia_app.md)
 * [Procesos Operativos](procesos_operativos.md)
 * [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md)

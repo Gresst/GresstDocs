@@ -1,5 +1,7 @@
 # Guía de Usuario — Portal de Generadores (Legacy)
 
+> **¿Tu gestor ya trabaja en el WebApp?** Entonces ya no necesitas este portal: pide servicios, aprueba solicitudes y consulta certificados en el WebApp, vista **Tercerización**. Ver [Trabajar conectados](guia_conexiones.md).
+
 > **Este no es el WebApp.** El portal de **Generadores** está en producción en `https://generador.gresst.com` (.NET Framework, WebForms). No usa la API nueva: lee y escribe SQL Server por su cuenta. Si tu empresa gestora ya opera en WebApp, usa la [Guía de Usuario — WebApp](guia_webapp.md). Gestores en el portal clásico: [Guía del Portal de Gestores](guia_portal_gestores.md).
 
 Esta página es un mapa de menú, no un recorre-pantallas. El detalle de pantallas DevExpress sigue en el producto.

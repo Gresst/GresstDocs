@@ -36,7 +36,8 @@ Los divisores entre grupos no llevan título visible; agrupan opciones.
 | Catálogos | **Red operativa** | Empleados · Instalaciones · Vehículos |
 | Catálogos | **Residuos** | Residuos · Materiales · Embalajes · Insumos |
 | Catálogos | **Servicios** | Servicios · Tratamientos |
-| Catálogos | **Terceros** | Listado y ficha del tercero (instalaciones anidadas) |
+| Catálogos | **Terceros** | Listado con el estado de conexión (columna **Gresst**) y ficha del tercero (instalaciones anidadas). Ver [Trabajar conectados](guia_conexiones.md) |
+| Tercerización | **Solicitudes a proveedores** · **Lo que mis proveedores tienen de mí** · **Certificados recibidos** | Lo que tus proveedores conectados tienen de ti; pedir servicios y aprobar lo que registran a tu nombre. Ver [Trabajar conectados](guia_conexiones.md) |
 
 Hoy tienen operación real detrás, entre otras: **Recepción**, **Transporte**, **Recolección**, **Tratamiento**, **Transferencia**, **Disposición**. El resto de hojas de Operaciones puede verse como pantalla completa en ceros (no un simple “próximamente”).
 
