@@ -107,6 +107,8 @@ Cuando le **transfieres** residuos a una empresa conectada contigo:
   - **Recibir:** eliges tu punto de recepción y, por cada residuo, **tu propio tipo de residuo** y lo que realmente llegó (viene prellenado con lo declarado). Se crea un residuo nuevo en tu inventario; lo que declaró el emisor no cambia y las dos cifras quedan guardadas.
   - **Rechazar:** con un motivo. Nada entra a tu inventario y el emisor registra la devolución.
 - El receptor tiene **5 días hábiles** para responder.
+- **Si no responde a tiempo**, quien envía puede usar **⋮ → Cerrar sin confirmación** en la Transferencia. Queda marcada así para los dos; si el receptor la registra después, igual se enlaza.
+- **Si la rechaza**, quien envía usa **⋮ → Registrar devolución**: los residuos vuelven a su inventario, en el depósito de donde salieron, con las cantidades declaradas.
 
 Si la empresa no tiene cuenta o no están conectados, la Transferencia funciona como siempre.
 
