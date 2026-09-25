@@ -106,6 +106,7 @@ Cuando le **transfieres** residuos a una empresa conectada contigo:
 - **Quien recibe:** le llega un correo y la ve en **Entrada → Recepción**, pestaña **Abiertas**, en *Entregas por recibir* (el menú muestra cuántas hay).
   - **Recibir:** eliges tu punto de recepción y, por cada residuo, **tu propio tipo de residuo** y lo que realmente llegó (viene prellenado con lo declarado). Se crea un residuo nuevo en tu inventario; lo que declaró el emisor no cambia y las dos cifras quedan guardadas.
   - **Rechazar:** con un motivo. Nada entra a tu inventario y el emisor registra la devolución.
+- **Transportador conectado (opcional):** al hacer la Transferencia, quien envía puede elegir un **Transportador** entre sus empresas conectadas. El transportador recibe un correo y ve la entrega en **Logística → Transporte**, pestaña **Abiertas**, en *Entregas a transportar*: registra la **recogida** y luego la **entrega** (fecha, vehículo y conductor). Su inventario no cambia. El receptor ve en su bandeja quién transporta y cuándo se recogió y entregó.
 - El receptor tiene **5 días hábiles** para responder.
 - **Si no responde a tiempo**, quien envía puede usar **⋮ → Cerrar sin confirmación** en la Transferencia. Queda marcada así para los dos; si el receptor la registra después, igual se enlaza.
 - **Si la rechaza**, quien envía usa **⋮ → Registrar devolución**: los residuos vuelven a su inventario, en el depósito de donde salieron, con las cantidades declaradas.
