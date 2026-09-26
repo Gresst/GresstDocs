@@ -6,7 +6,7 @@
 - Al cerrar la operación —o cada parada, en una ruta— el sistema registra los **cambios** que esa operación produjo en cada residuo: dónde está, de quién es, qué es, cuánto hay.
 - Los cambios **nunca los captura el usuario**, **no se editan y no se borran**: se acumulan en el historial del residuo y son la base de la [trazabilidad](trazabilidad.md). Si una cifra quedó mal, se corrige con un **Ajuste**, que queda registrado como un cambio más.
 
-Cada cuenta habilita las operaciones que realmente presta (Configuración → Operaciones); el menú solo muestra las habilitadas.
+Cada cuenta habilita las operaciones que realmente presta (Configuración → Operaciones); el menú solo muestra las habilitadas. Cada operación trabaja en instalaciones con la [capacidad](catalogos.md#capacidades) que necesita.
 
 ---
 
@@ -83,4 +83,4 @@ Cada cambio responde a una sola pregunta sobre el residuo:
 
 Cada cambio guarda también el **estado físico** antes y después (sólido, líquido, gas, lodo, pasta), así que el estado actual de un residuo es el del último cambio.
 
-Quién registra y firma cada paso de entrada y salida: [Casos de entrada y salida](casos_entrada_salida_residuos.md).
+Quién registra y firma cada operación, qué instalación necesita y qué documento sale: [Casos por operación](casos_entrada_salida_residuos.md).

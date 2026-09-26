@@ -2,7 +2,7 @@
 
 El **WebApp** es donde se coordina, se opera la planta, se administra la cuenta y se contratan servicios a otras cuentas. Los conductores trabajan en la [App móvil](guia_app.md).
 
-Reglas de negocio (quién firma, cuándo cambia el dueño del residuo): [Casos de entrada y salida](casos_entrada_salida_residuos.md).
+Reglas de negocio de cada operación (quién firma, cuándo cambia el dueño del residuo): [Casos por operación](casos_entrada_salida_residuos.md).
 
 ## Acceso
 
@@ -62,7 +62,7 @@ En cada residuo de la lista, el menú **⋮** tiene la acción principal (**Tran
 
 ### Solicitudes
 
-**Solicitudes de transporte** y **Solicitudes de recepción** son las solicitudes que te piden tus clientes, con pestañas **Abiertas / Cerradas**. El formulario cubre tipo, quiénes participan (quién genera, quién transporta y quién recibe), periodo, recurrencia opcional e ítems de residuo (material, tratamiento, cantidades, embalaje, precios, notas).
+**Solicitudes de transporte** y **Solicitudes de recepción** son las solicitudes que te piden tus clientes, con pestañas **Abiertas / Cerradas**. El formulario cubre tipo, quiénes participan (quién genera, quién transporta y quién recibe), periodo, recurrencia opcional e ítems de residuo (material, tratamiento, cantidades, embalaje, precios, notas). Ver [Solicitudes](solicitudes.md).
 
 Cuando registras una solicitud a nombre de un cliente **conectado**, queda esperando su aprobación: ver [Trabajar conectados](guia_conexiones.md#registrar-una-solicitud-a-nombre-de-un-cliente-conectado).
 
@@ -71,7 +71,7 @@ Cuando registras una solicitud a nombre de un cliente **conectado**, queda esper
 ## Control
 
 - **Inventario:** **Residuos** y **Materiales** (aprovechables) son dos listas sobre el mismo inventario. Para pasar un tipo de un lado al otro usa el menú de la fila (**Convertir a material / residuo**).
-- **Certificados:** una pestaña por tipo de operación; dentro, **Pendientes** y **Emitidos**. Desde Emitidos puedes **Publicar** un certificado para que tu cliente conectado lo vea en su cuenta.
+- **Certificados:** una pestaña por tipo de operación; dentro, **Pendientes** y **Emitidos**. Desde Emitidos puedes **Publicar** un certificado para que tu cliente conectado lo vea en su cuenta. Ver [Certificados y documentos](certificados.md).
 - **Enviar:** envío a sistemas externos (por ejemplo SIESA), con **Pendientes / Enviados**. Las credenciales se configuran en **Administración → Integraciones**.
 - **Tableros** y **Reportes**. En **Reportes → Trazabilidad** ves la historia de cada residuo y, si pasó por cuentas conectadas, su **recorrido entre empresas** ([Trazabilidad](trazabilidad.md)).
 

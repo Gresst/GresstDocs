@@ -132,4 +132,4 @@ Desde **Terceros → ⋮ → Desconectar** (cualquiera de las dos cuentas). Deja
 
 **Una solicitud desapareció de "Por aprobar".** Si pasaron los 3 días hábiles, se canceló. Pídele al proveedor que la registre de nuevo.
 
-Casos de entrada y salida de residuos: [Casos de entrada y salida](casos_entrada_salida_residuos.md).
+Reglas de cada operación: [Casos por operación](casos_entrada_salida_residuos.md).

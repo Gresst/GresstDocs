@@ -37,4 +37,4 @@ Detalle: [Trabajar conectados](guia_conexiones.md).
 
 Cada paso es una [operación](operaciones.md); el sistema registra lo que le pasó a cada residuo y con eso arma su [trazabilidad](trazabilidad.md). Los residuos se clasifican con los códigos internacionales ([Residuos y clasificación](residuos.md)).
 
-Quién registra y firma cada paso: [Casos de entrada y salida](casos_entrada_salida_residuos.md).
+Quién registra y firma cada paso: [Casos por operación](casos_entrada_salida_residuos.md). Cómo se piden los servicios: [Solicitudes](solicitudes.md). Qué documentos se emiten: [Certificados y documentos](certificados.md).

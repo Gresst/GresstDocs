@@ -108,7 +108,7 @@ La descarga en un depósito propio **no** se hace aquí ni en Jornada: la cierra
 
 ## Descarga en depósito propio (1.2.a)
 
-Si la parada es un **depósito de tu propia cuenta**, **no capturas la descarga** en la App: esa parada no aparece para unload. El cierre lo hace planta con **Recepción** en WebApp. Detalle: [Casos de entrada y salida](casos_entrada_salida_residuos.md) §1.2.a.
+Si la parada es un **depósito de tu propia cuenta**, **no capturas la descarga** en la App: esa parada no aparece para unload. El cierre lo hace planta con **Recepción** en WebApp. Detalle: [Casos por operación](casos_entrada_salida_residuos.md) §1.2.a.
 
 ---
 
