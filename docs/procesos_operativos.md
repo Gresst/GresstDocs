@@ -1,22 +1,16 @@
-# Procesos operativos
+# Soporte
 
-## Soporte
+## Reportar un problema o pedir un cambio
 
-Hay **dos Jira** con la misma clave `GRE`; el sitio define el tablero:
+Las incidencias y solicitudes de producto se registran en Jira: `gresst.atlassian.net`, proyecto **GRE**, con el componente de la superficie afectada (**WebApp**, **App**, **API** o **GresstDocs**).
 
-| Qué | Dónde |
-|-----|--------|
-| Incidentes de **Gestor, Generador y Móvil** | `araneasoftware.atlassian.net` — Gresst Incidencias |
-| Trabajo de producto (**API, WebApp, App, GresstDocs**) | `gresst.atlassian.net` — Gresst Solution |
+Incluye la cuenta, el usuario, la pantalla, qué esperabas y qué pasó, y una captura si la tienes.
 
-No uses solo la clave `GRE` para saber de qué tablero se trata.
+## Versiones
 
-## Liberación (vista de producto)
+| Superficie | Cómo le llegan los cambios al usuario |
+|------------|---------------------------------------|
+| **WebApp** | Se publica primero en el entorno de pruebas (staging) y luego en producción. Basta con recargar la página. |
+| **App** | Por las tiendas (iOS / Android). Si la versión instalada es muy antigua, la App pide actualizarla antes de continuar. |
 
-| Superficie | Qué ve el usuario |
-|------------|-------------------|
-| **WebApp** | Entorno de pruebas (staging) y luego producción |
-| **App** | Actualización por tiendas; a veces la API exige una versión mínima |
-| **Gestor / Generador** | `gestor.gresst.com` / `generador.gresst.com` |
-
-Cómo se construye y despliega cada repo lo documenta ingeniería en `API/docs/SOLUTION.md`.
+Cómo se construye y despliega cada repositorio lo documenta ingeniería: [Documentación de ingeniería](guia_tecnica.md).

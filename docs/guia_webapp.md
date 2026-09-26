@@ -1,129 +1,110 @@
-# Guía de Usuario — WebApp
+# Guía WebApp
 
-El cliente web nuevo de Gresst (**WebApp**) reemplaza de a poco al portal **Gestor**. Si tu cuenta todavía entra por `https://gestor.gresst.com`, usa la [Guía del Portal de Gestores (Legacy)](guia_portal_gestores.md).
+El **WebApp** es donde se coordina, se opera la planta, se administra la cuenta y se contratan servicios a otras cuentas. Los conductores trabajan en la [App móvil](guia_app.md).
 
-Esta guía describe lo que ves en WebApp **hoy**: menú por proceso (Entrada, Logística, …) y, en Transporte y Recepción, captura con pestañas **Abiertas / Cerradas**. No es el flujo antiguo de *Listado → Planear → Ejecutar* del Gestor.
-
-Casos de negocio (quién firma, dominio, descarga en depósito propio): [Casos de entrada y salida](casos_entrada_salida_residuos.md).
+Reglas de negocio (quién firma, cuándo cambia el dueño del residuo): [Casos de entrada y salida](casos_entrada_salida_residuos.md).
 
 ## Acceso
 
-La pantalla de inicio pide **usuario o correo** y **claveave**. Hay **¿Olvidó su clave?** y **Regístrese ahora** si tu empresa aún no tiene cuenta.
+La pantalla de inicio pide **usuario o correo** y **clave**. Hay **¿Olvidó su clave?** y **Regístrese ahora** si tu empresa aún no tiene cuenta.
 
-Lo que ves en el menú depende de los **permisos** de tu usuario. Algunas pestañas de proceso (por ejemplo Retorno o Donación) muestran el mismo tipo de pantalla pero vacía hasta que ese proceso esté migrado.
-
-Desde el menú de usuario (no el lateral) abres **Configuración de la cuenta**: Cuenta, Usuarios, Roles, Parámetros, Módulos, Integraciones.
+Lo que ves depende de las **operaciones habilitadas** en tu cuenta y de los **permisos** de tu rol.
 
 ---
 
-## Menú lateral (objetivo actual)
+## Vistas
 
-Los divisores entre grupos no llevan título visible; agrupan opciones.
+Arriba eliges la **vista** con la que trabajas. Cada una tiene su propio menú lateral; la búsqueda (**Ctrl/⌘ + K**) encuentra opciones de todas las vistas.
 
-| Área | Opciones | Qué verás al entrar |
-|------|----------|---------------------|
-| Inicio | Inicio | Home |
-| Operaciones | **Solicitudes** | Subproceso Transporte / Recepción (si el tenant tiene ambos). Luego **Abiertas** / **Cerradas** |
-| Operaciones | **Entrada** | Generación · **Recepción**. Recepción usa **Abiertas / Cerradas** |
-| Operaciones | **Logística** | Recolección · **Transporte** · Retorno. Transporte (y Recolección cuando aplica) usan **Abiertas / Cerradas** |
-| Operaciones | **Transformación** | Procesamiento · Tratamiento · Segregación · Consolidación · Refinación · Digestión |
-| Operaciones | **Custodia** | Acopio · Ajuste |
-| Operaciones | **Salida / Destino final** | Transferencia · Donación · Aprovechamiento · Disposición · Confinamiento. Transferencia / Disposición / Confinamiento: **Abiertas / Cerradas** |
-| Inventario | **Residuos** · **Materiales** | Inventario de residuos vs materiales aprovechables |
-| Documentos | **Certificados** · **Documentos** | Certificados por tipo de operación (Pendientes / Emitidos). Documentos: manifiestos |
-| Integraciones | **Enviar** | Pendientes / Enviados (p. ej. SIESA) |
-| Analítica | **Tableros** · **Reportes** | Indicadores y reportes |
-| Catálogos | **Red operativa** | Empleados · Instalaciones · Vehículos |
-| Catálogos | **Residuos** | Residuos · Materiales · Embalajes · Insumos |
-| Catálogos | **Servicios** | Servicios · Tratamientos |
-| Catálogos | **Terceros** | Listado con el estado de conexión (columna **Gresst**) y ficha del tercero (instalaciones anidadas). Ver [Trabajar conectados](guia_conexiones.md) |
-| Tercerización | **Solicitudes a proveedores** · **Lo que mis proveedores tienen de mí** · **Certificados recibidos** | Lo que tus proveedores conectados tienen de ti; pedir servicios y aprobar lo que registran a tu nombre. Ver [Trabajar conectados](guia_conexiones.md) |
+| Vista | Para qué | Menú |
+|-------|----------|------|
+| **Administración** | Solo el propietario de la cuenta | Cuenta · Propietario · Usuarios · Roles · Parámetros · Módulos · Integraciones |
+| **Configuración** | Catálogos de la cuenta | Empleados · Instalaciones · Vehículos · Residuos · Materiales · Embalajes · Insumos · Operaciones · Tratamientos · Licencias · Terceros |
+| **Operaciones** | El trabajo del día | Solicitudes de transporte y de recepción · Generación · Recepción · Recolección · Transporte · Tratamiento · Transferencia · Disposición · … |
+| **Control** | Seguimiento de lo operado | Inventario (Residuos · Materiales) · Certificados · Enviar (integraciones) · Tableros · Reportes |
+| **Tercerización** | Lo que pasa con tus residuos fuera de tu cuenta | Solicitudes a proveedores · Lo que mis proveedores tienen de mí · Inventario · Certificados · Reportes |
 
-Hoy tienen operación real detrás, entre otras: **Recepción**, **Transporte**, **Recolección**, **Tratamiento**, **Transferencia**, **Disposición**. El resto de hojas de Operaciones puede verse como pantalla completa en ceros (no un simple “próximamente”).
+La vista **Tercerización** aparece si tu cuenta tiene habilitada la Transferencia. Si solo tienes acceso a una vista, el selector no se muestra.
 
 ---
 
-## Cómo se trabaja Transporte y Recepción
+## Operaciones
 
-Misma idea en **Logística → Transporte** y **Entrada → Recepción**:
+### Transporte y Recepción
 
-1. **Abiertas** — todavía se puede modificar. **Cerradas** — finalizadas, solo lectura.
-2. Una ruta (transporte) o un día de recepción **no se parte** entre las dos pestañas. Si una parada o un cliente ya cerró pero la operación sigue abierta, la fila permanece en **Abiertas** (con badge de finalizada en ese nodo).
-3. La **fecha** de la fila es la fecha operacional: cuándo se cargó/recibió de verdad; si aún no, la programada; si nunca se programó, la solicitada.
-4. Puedes **planear** (asignar cuándo y con qué vehículo/punto) cuando tu rol lo permite. La planeación **no es un paso obligatorio** para todas las cuentas: si el tenant no exige plan, puedes **registrar carga o recepción** y el sistema arma solicitud, orden e inicio por debajo.
-5. El trabajo se cierra **por parada** (transporte) o **por cliente en un punto** (recepción): todos los residuos de ese grupo quedan con la misma fecha; no hay cierre a medias.
-6. En una fecha futura el registro se ve, pero al recibir/cargar el sistema avisa que se guardará **con la fecha de hoy**.
+Se trabajan igual en **Transporte** y **Recepción**:
 
-Detalle de captura (ingeniería, rama `staging`): [Operations capture model](https://github.com/Gresst/gresstwebapp/blob/staging/docs/OPERATIONS-CAPTURE-MODEL.md).
+1. **Abiertas**: todavía se puede modificar. **Cerradas**: finalizadas, solo lectura.
+2. Una ruta (transporte) o un día de recepción **no se parte** entre las dos pestañas. Si una parada o un cliente ya cerró pero la operación sigue abierta, la fila permanece en **Abiertas**.
+3. La **fecha** de la fila es la fecha operacional: cuándo se cargó o recibió de verdad; si aún no, la programada; si nunca se programó, la solicitada.
+4. **Planear** (cuándo, con qué vehículo o en qué punto) no es obligatorio para todas las cuentas: puedes **registrar la carga o la recepción** directamente y el sistema arma solicitud, orden e inicio por debajo.
+5. El trabajo se cierra **por parada** (transporte) o **por cliente en un punto** (recepción): todos los residuos de ese grupo quedan con la misma fecha.
+6. En una fecha futura el registro se ve, pero al recibir o cargar el sistema avisa que se guardará **con la fecha de hoy**.
 
-### Transporte (árbol)
+**Transporte (árbol):** ruta → paradas → residuos. Acciones del menú de fila: iniciar, reprogramar, recoger o rechazar, agregar residuo o parada, finalizar la ruta. Hay vista de **mapa** con placa, paradas y captura en panel.
 
-Ruta → paradas → residuos. En Abiertas pueden aparecer solicitudes **aún no armadas como ruta** (según permiso). Acciones típicas del menú de fila: iniciar, reprogramar, recoger o rechazar, agregar residuo o parada, finalizar la ruta. Hay vista de **mapa** de la operación (placa, paradas, captura en panel).
+**Recepción (maestro–detalle):** cliente + fecha + punto de recepción; en el detalle, los residuos.
 
-### Recepción (maestro–detalle)
+Además, si trabajas con cuentas conectadas:
 
-Maestro: cliente + fecha + punto de recepción. Detalle: residuos. La “orden del día” no se opera a mano: se abre y cierra al trabajar los clientes.
+- **Recepción → Abiertas → Entregas por recibir:** residuos que otra cuenta te transfirió. Los recibes con tu propio tipo de residuo o los rechazas.
+- **Transporte → Abiertas → Entregas a transportar:** entregas en las que otra cuenta te eligió como transportador. Registras la recogida y la entrega.
 
----
+El menú muestra cuántas hay pendientes. Detalle: [Trabajar conectados](guia_conexiones.md#entregas-entre-cuentas-conectadas).
 
-## Solicitudes
+### Otras operaciones
 
-Pide recolección o recepción (y tipos que el tenant tenga activos). El listado usa **Abiertas / Cerradas** (ciclo de la solicitud), no las pestañas Activas/Históricas del Gestor.
-
-El formulario cubre tipo, quiénes participan (generador, transportador, receptor), periodo, recurrencia opcional, soportes de ruta cuando hay varios actores, e ítems de residuo (material, tratamiento, cantidades, embalaje, precios, notas).
-
----
-
-## Otras operaciones de planta
-
-**Tratamiento**, **Transferencia** y **Disposición** (y hojas similares) viven bajo Transformación o Salida, no bajo un menú llamado “En instalación”.
-
-| Proceso | Para qué sirve |
-|---------|----------------|
-| **Recepción** | Registrar lo que llega a la instalación (tercero o vehículo propio). |
+| Operación | Para qué sirve |
+|-----------|----------------|
+| **Generación** | Declarar un residuo que ya existe en tu instalación. |
+| **Recolección** | Recoger residuos de tus clientes. |
 | **Tratamiento** | Transformar residuos en planta. |
-| **Disposición** | Confirmar cantidades a disponer y descontar inventario. |
-| **Transferencia** | Entregar a un tercero: cambia de dueño y sale de tu inventario. |
-| **Generación** | Declarar residuo que ya existe en sitio (sin solicitud previa). |
+| **Transferencia** | Entregar residuos a un tercero: salen de tu inventario. Si el tercero está conectado, le llega como entrega. |
+| **Disposición** | Confirmar cantidades dispuestas y descontar inventario. |
+
+En cada residuo de la lista, el menú **⋮** tiene la acción principal (**Transferir**, **Disponer**, …): pide lo necesario (destino, fecha, cantidades) y la registra de una vez, sin pasos previos.
+
+Las operaciones que tu cuenta tiene habilitadas pero aún no tienen captura en el WebApp (Retorno, Donación, Acopio, …) se ven con la pantalla completa en ceros.
+
+### Solicitudes
+
+**Solicitudes de transporte** y **Solicitudes de recepción** son las solicitudes que te piden tus clientes, con pestañas **Abiertas / Cerradas**. El formulario cubre tipo, quiénes participan (quién genera, quién transporta y quién recibe), periodo, recurrencia opcional e ítems de residuo (material, tratamiento, cantidades, embalaje, precios, notas).
+
+Cuando registras una solicitud a nombre de un cliente **conectado**, queda esperando su aprobación: ver [Trabajar conectados](guia_conexiones.md#registrar-una-solicitud-a-nombre-de-un-cliente-conectado).
 
 ---
 
-## Catálogos
+## Control
 
-Red operativa, residuos, servicios y terceros: selector de propietario si aplica, búsqueda, grilla y alta/edición.
-
-**Residuos vs materiales:** un tipo puede ser residuo o material aprovechable; en inventario y en catálogo van en vistas paralelas. Convertir uno en el otro es una acción explícita del menú de la fila, no un interruptor silencioso.
-
-**Instalaciones (ejemplo de ficha):** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
-
----
-
-## Inventario
-
-Dos entradas de menú sobre el mismo tipo de dato: **Residuos** (`/inventory`) y **Materiales** (`/inventory/materials`). El permiso es el de inventario; no hay un interruptor silencioso entre ambas listas. Para pasar un tipo de un lado al otro usas el menú de la fila (**Convertir a material / residuo**) y confirmas.
-
-## Configuración de la cuenta (menú de usuario)
-
-No está en el menú lateral. Pestañas: **Cuenta** (datos, propietario, licencias) · **Usuarios** · **Roles** (permisos del rol, no una pestaña suelta “Permisos”) · **Parámetros** · **Módulos** (qué modos de solicitud tiene el tenant) · **Integraciones** (correo, SIESA). Solo algunos perfiles pueden editar.
-
-## Analítica
-
-**Tableros** e indicadores. **Reportes** (por ejemplo insumos entregados, KPIs de solicitud): listados y filtros de la cuenta. Lo que ves depende de permisos; no sustituyen Consultas del Gestor uno a uno.
-
-## Hojas en ceros
-
-Si abres Retorno, Donación, Acopio, etc. y la tabla está vacía con KPIs en cero, esa hoja **aún no tiene backend migrado**. Es la misma cáscara de operación, no un mensaje “próximamente”. No inventes datos ni un flujo de cuatro estados del Gestor ahí.
+- **Inventario:** **Residuos** y **Materiales** (aprovechables) son dos listas sobre el mismo inventario. Para pasar un tipo de un lado al otro usa el menú de la fila (**Convertir a material / residuo**).
+- **Certificados:** una pestaña por tipo de operación; dentro, **Pendientes** y **Emitidos**. Desde Emitidos puedes **Publicar** un certificado para que tu cliente conectado lo vea en su cuenta.
+- **Enviar:** envío a sistemas externos (por ejemplo SIESA), con **Pendientes / Enviados**. Las credenciales se configuran en **Administración → Integraciones**.
+- **Tableros** y **Reportes**. En **Reportes → Trazabilidad**, un residuo que pasó por cuentas conectadas muestra su **recorrido entre empresas**.
 
 ---
 
-## Certificados y envíos
+## Configuración
 
-**Certificados:** una pestaña por tipo de operación; dentro, **Pendientes** y **Emitidos**. Solo algunos tipos (recepción, transporte, disposición, tratamiento, transferencia, procesamiento) tienen datos reales del legacy; el resto usa la misma pantalla en ceros.
+Catálogos con búsqueda, grilla y alta/edición.
 
-**Enviar (SIESA u otras):** Pendientes / Enviados. Las credenciales se editan en **Cuenta → Integraciones**, no en esta pantalla.
+- **Residuos vs materiales:** un tipo es residuo o material aprovechable. Convertir uno en el otro es una acción explícita del menú de la fila.
+- **Instalaciones:** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
+- **Terceros:** una ficha por empresa, sea cliente, proveedor o ambos. La columna **Gresst** muestra si está conectada contigo. En la ficha de un tercero conectado, el nombre y la identificación vienen de su cuenta. Ver [Trabajar conectados](guia_conexiones.md).
 
 ---
 
-## App de campo
+## Tercerización
 
-Conductores: [Guía de Usuario — App Móvil](guia_app.md). La descarga en un depósito **propio** del gestor no la cierra el conductor; la cierra **Recepción** en planta ([caso 1.2.a](casos_entrada_salida_residuos.md)).
+Todo lo que contratas a tus proveedores:
+
+- **Solicitudes a proveedores:** pedir un servicio y **aprobar o rechazar** lo que tu proveedor registra a tu nombre.
+- **Lo que mis proveedores tienen de mí:** en modo lectura, las sedes, residuos, materiales, vehículos y contactos que tu proveedor tiene registrados de tu empresa.
+- **Certificados:** los que tus proveedores te publicaron, con filtro por tipo.
+
+Detalle: [Trabajar conectados](guia_conexiones.md#si-contratas-servicios).
+
+---
+
+## Administración
+
+Solo para el propietario de la cuenta: **Cuenta** (datos y licencias), **Propietario**, **Usuarios**, **Roles** (permisos de cada rol), **Parámetros**, **Módulos** (qué modos de solicitud tiene la cuenta) e **Integraciones** (correo, SIESA).

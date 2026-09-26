@@ -1,4 +1,4 @@
-# Guía de Usuario — App Móvil
+# Guía App móvil
 
 > Esta guía describe la app móvil de Gresst para conductores y personal de campo (iOS/Android).
 
@@ -91,16 +91,16 @@ Si te quedas sin señal, verás un aviso **"Sin conexión a internet"** en la pa
 
 ---
 
-## En instalación (planta, no el menú del WebApp)
+## En instalación (planta)
 
-Ese nombre **solo existe en la App** (`En instalación` / `At facility`). En WebApp las mismas operaciones están bajo Entrada, Transformación o Salida.
+Ese nombre **solo existe en la App** (`En instalación` / `At facility`). En el WebApp las mismas operaciones están en la vista **Operaciones**.
 
 Desde el menú del encabezado abres recepción, transferencia, disposición, tratamiento (y clasificación si tu cuenta la tiene). No es una ruta con paradas:
 
 1. Ves las **órdenes** de ese proceso (planta + fecha).
 2. Si hace falta, **planeas** líneas sueltas a una planta y un día.
 3. **Capturas** cantidades (y composición en tratamiento/clasificación) en el teléfono, también **sin red**.
-4. **Cierras** la orden de una vez (todas las líneas capturadas); el legado no cierra residuo a residuo como el transporte.
+4. **Cierras** la orden de una vez (todas las líneas capturadas); no se cierra residuo a residuo como el transporte.
 
 La descarga en un depósito propio **no** se hace aquí ni en Jornada: la cierra **Recepción** de planta en WebApp ([§1.2.a](casos_entrada_salida_residuos.md)).
 
@@ -108,8 +108,8 @@ La descarga en un depósito propio **no** se hace aquí ni en Jornada: la cierra
 
 ## Descarga en depósito propio (1.2.a)
 
-Si la parada es un **punto del gestor** (depósito propio), **no capturas la descarga** en la App: esa parada no aparece para unload. El cierre lo hace planta con **Recepción** en WebApp. Detalle: [Casos de entrada y salida](casos_entrada_salida_residuos.md) §1.2.a.
+Si la parada es un **depósito de tu propia cuenta**, **no capturas la descarga** en la App: esa parada no aparece para unload. El cierre lo hace planta con **Recepción** en WebApp. Detalle: [Casos de entrada y salida](casos_entrada_salida_residuos.md) §1.2.a.
 
 ---
 
-¿Necesitas la guía del cliente web para coordinadores/administrativos? Consulta la [Guía de Usuario — WebApp](guia_webapp.md).
+Coordinación, planta y administración trabajan en el WebApp: [Guía WebApp](guia_webapp.md).

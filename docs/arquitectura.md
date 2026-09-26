@@ -1,36 +1,36 @@
-# Arquitectura del Sistema
+# Cómo funciona Gresst
 
-Gresst conecta **generadores** (empresas que producen residuos) y **gestores** (quienes recolectan, tratan y disponen), más operadores logísticos. Cubre generación, inventario, transporte, planta y disposición.
+## Cuentas
 
-La plataforma está **en migración**: el portal clásico sigue en producción mientras el cliente web nuevo y la app de campo lo van sustituyendo.
+Cada empresa tiene su **cuenta**: sus usuarios, instalaciones, vehículos, catálogo de residuos, inventario y certificados. Ninguna otra cuenta ve ni cambia esos datos.
 
-## Superficies que usa la gente
+No hay "tipos de cuenta". Lo que una cuenta puede hacer depende de las **operaciones que tiene habilitadas** (recepción, transporte, tratamiento, transferencia, disposición, …). Una misma cuenta puede generar residuos, recogerlos, tratarlos y entregarlos a otra.
 
-| Superficie | URL / canal | Guía |
-|------------|-------------|------|
-| **WebApp** | Cliente web nuevo (gestoras, según cuenta migrada) | [Guía WebApp](guia_webapp.md) |
-| **Portal de Gestores** | `https://gestor.gresst.com` | [Guía Gestor](guia_portal_gestores.md) |
-| **Portal de Generadores** | `https://generador.gresst.com` | [Guía Generador](guia_generador.md) |
-| **App móvil** | iOS/Android, conductores y campo | [Guía App](guia_app.md) |
+## Terceros
 
-WebApp y App **no** usan el API del portal clásico: hablan con el backend nuevo. Generador sigue en su propio portal (SQL directo). Gestor y WebApp pueden compartir sesión mientras se migran pantallas.
+En **Terceros** cada cuenta registra a las empresas con las que trabaja: clientes y proveedores, en una sola ficha por empresa. Con un tercero se programan recolecciones, se reciben o entregan residuos y se emiten certificados.
 
-## Flujo habitual
+## Conexiones
 
-1. El **generador** pide recolección (portal Generador o, más adelante, WebApp).
-2. El **gestor** asigna ruta o recepción (Gestor o WebApp).
-3. El **conductor** ejecuta en la **App** (con trabajo offline si no hay red).
-4. Planta registra **recepción** y procesos en instalación (WebApp; en App, menú En instalación).
-5. Se emiten **certificados** y se consultan desde el portal que use esa cuenta.
+Si el tercero también tiene cuenta en Gresst, las dos cuentas pueden **conectarse**. La conexión no mezcla datos: cada una conserva los suyos. Lo que se comparte son los documentos entre las dos:
 
-Reglas de negocio (quién firma, dominio, descarga en depósito propio): [Casos de entrada y salida](casos_entrada_salida_residuos.md).
+| Documento | Lo envía | Lo recibe |
+|-----------|----------|-----------|
+| **Solicitud de servicio** | El cliente, o el proveedor a nombre del cliente (con aprobación del cliente) | La otra cuenta |
+| **Entrega de residuos** | Quien transfiere el residuo | Quien lo recibe (y, si lo hay, el transportador) |
+| **Certificado** | Quien presta el servicio | El cliente |
 
-## Menús legacy (producción)
+Si el tercero no tiene cuenta, o no están conectados, la cuenta que sí la tiene registra todo por su lado.
 
-**Gestor:** Operación (Entrada, Recolección, Recepción, Clasificación, Tratamiento, Transferencia, Disposición, Salida); Administración; Consultas; Configuración.
+Detalle: [Trabajar conectados](guia_conexiones.md).
 
-**Generador:** Procesos (Almacenamiento, Tratamiento, Solicitud/Salida, Entrega); Banco de residuos; Consultas; Reportes; Configuración.
+## Recorrido habitual de un residuo
 
-El menú del **WebApp** es otro (Entrada, Logística, Transformación, …): [guía WebApp](guia_webapp.md).
+1. El cliente **pide** el servicio (WebApp, vista Tercerización) o el proveedor lo registra a su nombre.
+2. El proveedor **programa** la recolección o la recepción (WebApp, vista Operaciones).
+3. El conductor **recoge** en la **App**, también sin señal.
+4. La planta **recibe**, **trata**, **transfiere** o **dispone** (WebApp).
+5. El proveedor **emite el certificado** y el cliente lo ve en su cuenta.
+6. Si el residuo pasa a otra cuenta conectada, cada una ve el **recorrido** de su residuo entre empresas.
 
-Soporte: [Procesos operativos](procesos_operativos.md).
+Quién registra y firma cada paso: [Casos de entrada y salida](casos_entrada_salida_residuos.md).

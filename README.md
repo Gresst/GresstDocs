@@ -4,7 +4,7 @@ Documentación de **producto** del software de logística de residuos (Docsify):
 
 Contratos y onboarding de ingeniería: [API/docs/SOLUTION.md](https://github.com/Gresst/GresstAPI/blob/main/docs/SOLUTION.md). Este sitio es producto: [docs/ownership.md](docs/ownership.md).
 
-El remoto canónico del sitio es [Gresst/GresstDocs](https://github.com/Gresst/GresstDocs). Un `origin` antiguo `EdissonFonseca/GresstDocs` sigue redirigiendo; no hace falta cambiar `git config` para leer la docs.
+Publicado en **https://docs.gresst.com** (GitHub Pages de [Gresst/GresstDocs](https://github.com/Gresst/GresstDocs), rama `main`, carpeta raíz; dominio verificado en la organización).
 
 Construida con [Docsify](https://docsify.js.org/).
 
@@ -50,15 +50,13 @@ GresstDocs/
     ├── README.md             # Página de inicio
     ├── _sidebar.md           # Menú lateral
     ├── ownership.md          # Qué vive aquí vs cada repo de código
-    ├── arquitectura.md          # Producto (superficies), no stack
-    ├── casos_entrada_salida_residuos.md
-    ├── guia_usuarios.md
+    ├── arquitectura.md          # Cómo funciona Gresst (cuentas, terceros, conexiones)
     ├── guia_webapp.md
     ├── guia_app.md
-    ├── guia_portal_gestores.md
-    ├── guia_generador.md
-    ├── guia_tecnica.md          # Puntero a API/docs/SOLUTION.md
-    └── procesos_operativos.md
+    ├── guia_conexiones.md       # Trabajar conectados entre cuentas
+    ├── casos_entrada_salida_residuos.md
+    ├── procesos_operativos.md   # Soporte
+    └── guia_tecnica.md          # Puntero a API/docs/SOLUTION.md
 ```
 
 ## 📝 Agregar Nueva Documentación

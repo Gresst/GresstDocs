@@ -5,9 +5,9 @@ Product documentation site (Docsify). **Not** engineering onboarding.
 ## What this repo owns
 
 - Business cases (`docs/casos_entrada_salida_residuos.md`, including 1.2.a).
-- User guides (Gestor, Generador, WebApp, App).
-- Product architecture (`docs/arquitectura.md`).
-- Support / dual Jira (`docs/procesos_operativos.md`).
+- User guides for **WebApp** and **App** only, plus connected accounts (`docs/guia_conexiones.md`). No Legacy portals (Gestor/Generador): they are being retired; say *cuenta*, *cliente*, *proveedor*, never *tenant*, *gestor* or *generador* as account kinds.
+- How Gresst works for users (`docs/arquitectura.md`: accounts, parties, connections).
+- Support (`docs/procesos_operativos.md`).
 
 Engineering (clone, deploy, contracts): sibling **`../API/docs/SOLUTION.md`**. `docs/guia_tecnica.md` is only a pointer there.
 

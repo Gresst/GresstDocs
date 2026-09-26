@@ -1,41 +1,26 @@
 # Documentación Gresst
 
-Bienvenido a la documentación del sistema de gestión y logística de residuos **Gresst**.  
-Aquí encontrarás cómo usar Gresst, los portales y los casos de negocio. El mapa de ingeniería está en la API: [SOLUTION.md](https://github.com/Gresst/GresstAPI/blob/main/docs/SOLUTION.md).
+Gresst es una plataforma para gestionar y trazar residuos: lo que se genera, se recoge, se transporta, se recibe, se trata y se dispone, con sus certificados.
+
+Cada empresa trabaja en su propia **cuenta**. Las cuentas que trabajan juntas —quien contrata un servicio y quien lo presta— se **conectan** y se envían solicitudes, entregas y certificados sin volver a digitar nada.
 
 ---
 
-## ¿Qué es Gresst?
+## Dónde se trabaja
 
-Gresst es una **plataforma integral** para la gestión y logística de residuos que conecta a generadores de residuos con gestores especializados, facilitando el cumplimiento normativo y la trazabilidad completa del proceso.
-
----
-
-## Componentes de la Plataforma
-
-Hoy conviven el stack **legacy** (Gestor, Generador) y el stack **nuevo** (API + WebApp + App). El WebApp reemplaza de a poco al Gestor; la App de campo habla solo con la API nueva.
-
-| Superficie | Rol |
-|------------|-----|
-| [WebApp](guia_webapp.md) | Cliente web nuevo (operación, catálogos, certificados) |
-| [Portal de Gestores](guia_portal_gestores.md) | Gestor legacy — `gestor.gresst.com` |
-| [Portal de Generadores](guia_generador.md) | Legacy — `generador.gresst.com` |
-| [App móvil](guia_app.md) | Conductores y personal de campo |
+| Superficie | Para quién | Guía |
+|------------|------------|------|
+| **WebApp** | Coordinación, planta, administración y clientes que contratan servicios | [Guía WebApp](guia_webapp.md) |
+| **App móvil** | Conductores y personal de campo (iOS / Android) | [Guía App](guia_app.md) |
 
 ---
 
-## Estructura de la documentación
-- [Arquitectura del Sistema](arquitectura.md)
-- [Guía Portal de Gestores (Legacy)](guia_portal_gestores.md)
-- [Guía Portal de Generadores (Legacy)](guia_generador.md)
-- [Guía de usuario](guia_usuarios.md)
-- [Guía de Usuario — WebApp](guia_webapp.md)
-- [Guía de Usuario — App Móvil](guia_app.md)
-- [Procesos operativos](procesos_operativos.md)
-- [Casos de Entrada y Salida de Residuos](casos_entrada_salida_residuos.md)
-- [Qué cubre este sitio](ownership.md)
-- [Documentación de ingeniería](guia_tecnica.md)
+## Por dónde empezar
+
+- [Cómo funciona Gresst](arquitectura.md): cuentas, terceros, conexiones y el recorrido de un residuo.
+- [Trabajar conectados](guia_conexiones.md): pedir servicios, aprobar, entregar y recibir entre cuentas.
+- [Casos de entrada y salida de residuos](casos_entrada_salida_residuos.md): quién registra cada paso, quién firma y cuándo cambia el dueño del residuo.
+- [Soporte](procesos_operativos.md).
 
 ---
-**Versión:** 1.0  
 **Última actualización:** septiembre 2026

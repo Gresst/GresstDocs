@@ -30,7 +30,7 @@ Lo que hace el transportador en este paso depende por completo del destino:
 
 #### 1.2.a Descarga en depósito propio
 
-- El destino es un **punto del gestor** (dueño del depósito = persona de la cuenta, vía `Persona_Localizacion_Deposito` PR). No se usa `Deposito.Recepcion` / `Entrega` ni el permiso `UNLOAD` para decidir esto.
+- El destino es un **depósito de mi propia cuenta** (su dueño es mi empresa). Lo que decide es el dueño del depósito, no sus capacidades de recibir o entregar ni los permisos del conductor.
 - **El conductor no captura descarga** en esa parada: no aparece en la lista de paradas de la app y no se habilitan confirm/rechazo de unload.
 - El cierre de negocio lo hace el operador de planta con **Recepción** (sección 2), como proceso independiente.
 
@@ -38,6 +38,7 @@ Lo que hace el transportador en este paso depende por completo del destino:
 
 - El transportador entrega el residuo y registra el cierre de esa parada (ver 1.3): captura cantidades, evidencia fotográfica y la firma de quien recibe en el sitio.
 - Ese cierre también es logístico, del lado del transporte. El cambio formal de dominio lo formaliza la Operación de Transferencia (sección 3), de forma independiente — igual que Recepción.
+- Si el tercero está **conectado** conmigo, además recibe la entrega en su cuenta y la registra con su propia Recepción (ver 3.3).
 
 ### 1.3 Cierre de cada parada y de la ruta
 
@@ -87,27 +88,27 @@ En ambos casos la propiedad pasa al tercero y el residuo sale de mi inventario. 
 
 - Si el tercero tiene cuenta y estamos **conectados** ([Trabajar conectados](guia_conexiones.md)), la Transferencia **solo saca el residuo de mi inventario** y le envía una **entrega**.
 - Nada entra a su inventario hasta que **él** registre la Recepción: ahí crea **su propio residuo**, con su tipo de residuo y las cantidades que recibió. Las cantidades que yo declaré y las que él recibió quedan guardadas las dos.
-- Tiene 5 días hábiles para registrarla o rechazarla. Si la rechaza, yo registro la devolución física con mi propia Recepción.
+- Tiene 5 días hábiles para registrarla o rechazarla. Si la rechaza, yo registro la devolución y los residuos vuelven a mi inventario. Si no responde, puedo cerrarla sin confirmación.
 - Si el tercero no tiene cuenta o no estamos conectados, aplica lo anterior: el mismo residuo cambia de dueño.
 
 ---
 
-## 4. Operación de Generación (punto de vista del Generador)
+## 4. Operación de Generación (punto de vista de quien genera)
 
 **Proceso independiente**, disponible en web y en app móvil. A diferencia de Recepción (sección 2) y
 Transferencia (sección 3), no hay dos variantes según si el residuo viene o no de un camión — la
 Generación **es** el punto de origen del residuo, así que siempre lo crea. Tampoco hay Solicitud
-previa que homologar: el Generador declara un residuo que ya está físicamente en su instalación, no
-está pidiendo ni recibiendo nada de un tercero.
+previa: la cuenta declara un residuo que ya está físicamente en su instalación, no está pidiendo ni
+recibiendo nada de un tercero.
 
-- El Generador indica dónde está el residuo (instalación propia), qué tipo de residuo es, cantidades
+- Se indica dónde está el residuo (instalación propia), qué tipo de residuo es, cantidades
   (cantidad/peso/volumen), fecha en que se generó, fotos, adjuntos y observaciones.
 - Se crea el residuo en el sistema en este momento y se acredita en el inventario de esa instalación.
 - **Firma:** ninguna — a diferencia de Recepción/Transferencia no hay una contraparte (tercero) que
-  entregue o reciba; el propio Generador es quien declara.
+  entregue o reciba; la propia cuenta es quien declara.
 
-El caso más cercano hoy es 2.2 (Recepción crea el residuo porque no existe aún), pero 2.2 está escrito
-desde la óptica del **operador de planta que recibe** de un tercero — aquí es el **Generador
+El caso más cercano es 2.2 (Recepción crea el residuo porque no existe aún), pero 2.2 está escrito
+desde la óptica del **operador de planta que recibe** de un tercero — aquí es **quien genera
 declarando su propio residuo**, sin que medie entrega de nadie más.
 
 ---
@@ -125,4 +126,4 @@ declarando su propio residuo**, sin que medie entrega de nadie más.
 | 2.2 Recepción — tercero lo trae directo | Recepción | Operador de planta | Operador de planta (firma el tercero que entrega) | Sí (a mi favor) | Sí, al recibir |
 | 3.1 Transferencia — viene de mi camión | Transferencia | Operador / quien formaliza la transferencia | Independiente del cierre logístico de 1.2.b | Sí (a favor del tercero) | No |
 | 3.2 Transferencia — no viene de mi camión | Transferencia | Operador / responsable del depósito | Quien ejecuta la entrega directa | Sí (a favor del tercero) | No |
-| 4. Generación | Generación | Generador | El propio Generador (sin firma de contraparte) | No aplica (nace mío) | Sí, al generar |
+| 4. Generación | Generación | Quien genera | La propia cuenta (sin firma de contraparte) | No aplica (nace mío) | Sí, al generar |
