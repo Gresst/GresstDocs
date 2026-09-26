@@ -4,7 +4,7 @@
 
 Cada empresa tiene su **cuenta**: sus usuarios, instalaciones, vehículos, catálogo de residuos, inventario y certificados. Ninguna otra cuenta ve ni cambia esos datos.
 
-No hay "tipos de cuenta". Lo que una cuenta puede hacer depende de las **operaciones que tiene habilitadas** (recepción, transporte, tratamiento, transferencia, disposición, …). Una misma cuenta puede generar residuos, recogerlos, tratarlos y entregarlos a otra.
+Lo que una cuenta puede hacer depende de las **operaciones que tiene habilitadas** (recepción, transporte, tratamiento, transferencia, disposición, …). Una misma cuenta puede generar residuos, recogerlos, tratarlos y entregarlos a otra.
 
 ## Terceros
 

@@ -12,7 +12,6 @@ Si una de las dos empresas no tiene cuenta, o no están conectadas, todo sigue f
 - Cada cuenta **conserva sus propios datos**. Conectarse no mezcla catálogos ni inventarios: lo que se comparte son las **solicitudes**, las **entregas** y los **certificados** entre las dos.
 - Al conectarse, cada una ve **en modo lectura** el historial que la otra ya tiene sobre su empresa (solicitudes y certificados anteriores).
 - Una misma empresa puede ser tu cliente y tu proveedor a la vez: la conexión es una sola.
-- Si ya trabajaban juntas antes de conectarse en el WebApp, la conexión puede aparecer creada. En el detalle del tercero verás "Relación traída del sistema anterior".
 
 ---
 
