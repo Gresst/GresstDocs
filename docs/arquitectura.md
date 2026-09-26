@@ -10,6 +10,8 @@ No hay "tipos de cuenta". Lo que una cuenta puede hacer depende de las **operaci
 
 En **Terceros** cada cuenta registra a las empresas con las que trabaja: clientes y proveedores, en una sola ficha por empresa. Con un tercero se programan recolecciones, se reciben o entregan residuos y se emiten certificados.
 
+Detrás de las fichas de todas las cuentas, cada empresa tiene una sola **entidad legal** (país + tipo y número de documento). Ver [Empresas e identidad](identidad.md).
+
 ## Conexiones
 
 Si el tercero también tiene cuenta en Gresst, las dos cuentas pueden **conectarse**. La conexión no mezcla datos: cada una conserva los suyos. Lo que se comparte son los documentos entre las dos:
@@ -32,5 +34,7 @@ Detalle: [Trabajar conectados](guia_conexiones.md).
 4. La planta **recibe**, **trata**, **transfiere** o **dispone** (WebApp).
 5. El proveedor **emite el certificado** y el cliente lo ve en su cuenta.
 6. Si el residuo pasa a otra cuenta conectada, cada una ve el **recorrido** de su residuo entre empresas.
+
+Cada paso es una [operación](operaciones.md); el sistema registra lo que le pasó a cada residuo y con eso arma su [trazabilidad](trazabilidad.md). Los residuos se clasifican con los códigos internacionales ([Residuos y clasificación](residuos.md)).
 
 Quién registra y firma cada paso: [Casos de entrada y salida](casos_entrada_salida_residuos.md).

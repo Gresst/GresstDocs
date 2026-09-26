@@ -54,17 +54,11 @@ El menú muestra cuántas hay pendientes. Detalle: [Trabajar conectados](guia_co
 
 ### Otras operaciones
 
-| Operación | Para qué sirve |
-|-----------|----------------|
-| **Generación** | Declarar un residuo que ya existe en tu instalación. |
-| **Recolección** | Recoger residuos de tus clientes. |
-| **Tratamiento** | Transformar residuos en planta. |
-| **Transferencia** | Entregar residuos a un tercero: salen de tu inventario. Si el tercero está conectado, le llega como entrega. |
-| **Disposición** | Confirmar cantidades dispuestas y descontar inventario. |
+Generación, Procesamiento, Tratamiento, Segregación, Consolidación, Refinación, Digestión, Acopio, Ajuste, Transferencia, Donación, Aprovechamiento, Disposición y Confinamiento tienen cada una su pantalla. Qué hace cada operación y qué le pasa al residuo: [Operaciones y cambios del residuo](operaciones.md).
 
 En cada residuo de la lista, el menú **⋮** tiene la acción principal (**Transferir**, **Disponer**, …): pide lo necesario (destino, fecha, cantidades) y la registra de una vez, sin pasos previos.
 
-Las operaciones que tu cuenta tiene habilitadas pero aún no tienen captura en el WebApp (Retorno, Donación, Acopio, …) se ven con la pantalla completa en ceros.
+**Retorno** todavía no tiene captura: si tu cuenta lo tiene habilitado, verás la pantalla vacía.
 
 ### Solicitudes
 
@@ -79,7 +73,7 @@ Cuando registras una solicitud a nombre de un cliente **conectado**, queda esper
 - **Inventario:** **Residuos** y **Materiales** (aprovechables) son dos listas sobre el mismo inventario. Para pasar un tipo de un lado al otro usa el menú de la fila (**Convertir a material / residuo**).
 - **Certificados:** una pestaña por tipo de operación; dentro, **Pendientes** y **Emitidos**. Desde Emitidos puedes **Publicar** un certificado para que tu cliente conectado lo vea en su cuenta.
 - **Enviar:** envío a sistemas externos (por ejemplo SIESA), con **Pendientes / Enviados**. Las credenciales se configuran en **Administración → Integraciones**.
-- **Tableros** y **Reportes**. En **Reportes → Trazabilidad**, un residuo que pasó por cuentas conectadas muestra su **recorrido entre empresas**.
+- **Tableros** y **Reportes**. En **Reportes → Trazabilidad** ves la historia de cada residuo y, si pasó por cuentas conectadas, su **recorrido entre empresas** ([Trazabilidad](trazabilidad.md)).
 
 ---
 
@@ -87,9 +81,9 @@ Cuando registras una solicitud a nombre de un cliente **conectado**, queda esper
 
 Catálogos con búsqueda, grilla y alta/edición.
 
-- **Residuos vs materiales:** un tipo es residuo o material aprovechable. Convertir uno en el otro es una acción explícita del menú de la fila.
+- **Residuos:** cada tipo es residuo o material aprovechable, con sus códigos LER, Y, A/B, UN, D/R y características; Gresst calcula si es peligroso, aprovechable o mercancía peligrosa. Ver [Residuos y clasificación](residuos.md).
 - **Instalaciones:** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
-- **Terceros:** una ficha por empresa, sea cliente, proveedor o ambos. La columna **Gresst** muestra si está conectada contigo. En la ficha de un tercero conectado, el nombre y la identificación vienen de su cuenta. Ver [Trabajar conectados](guia_conexiones.md).
+- **Terceros:** una ficha por empresa, sea cliente, proveedor o ambos. La columna **Gresst** muestra si está conectada contigo. En la ficha de un tercero conectado, el nombre y la identificación vienen de su cuenta. Ver [Empresas e identidad](identidad.md) y [Trabajar conectados](guia_conexiones.md).
 
 ---
 

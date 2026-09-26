@@ -51,6 +51,10 @@ GresstDocs/
     ├── _sidebar.md           # Menú lateral
     ├── ownership.md          # Qué vive aquí vs cada repo de código
     ├── arquitectura.md          # Cómo funciona Gresst (cuentas, terceros, conexiones)
+    ├── identidad.md             # Ficha vs entidad legal, verificación de cuentas
+    ├── operaciones.md           # Las 18 operaciones y los cambios del residuo
+    ├── residuos.md              # Clasificación LER / Y / A-B / UN / D-R y marcas
+    ├── trazabilidad.md          # Historial y recorrido entre cuentas
     ├── guia_webapp.md
     ├── guia_app.md
     ├── guia_conexiones.md       # Trabajar conectados entre cuentas
