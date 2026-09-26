@@ -32,6 +32,8 @@ En **Control → Reportes → Trazabilidad**, un residuo que pasó por cuentas c
 
 Cada paso muestra la empresa, el tipo de residuo y sus códigos, las fechas, la operación, la planta y ciudad, y las cantidades.
 
+El recorrido puede pasar otra vez por la misma cuenta (tú → tu proveedor → tú): cada visita es un paso distinto. Una devolución reingresa el mismo residuo de quien envió, sin una correspondencia nueva. Una entrega en el sentido contrario es otro paso, del residuo de la otra cuenta.
+
 ### Qué no se muestra
 
 - **Precios, facturación ni notas internas** de ninguna cuenta.

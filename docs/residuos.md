@@ -2,8 +2,9 @@
 
 ## Tipo de residuo y residuo
 
-- El **tipo de residuo** es la entrada del catálogo (Configuración → **Residuos**): "Aceite usado", "Luminarias", "Lodos de PTAR"… Cada cuenta tiene su propio catálogo.
+- El **tipo de residuo** es la entrada del catálogo (Configuración → **Residuos**): "Aceite usado", "Luminarias", "Lodos de PTAR"… Cada cuenta tiene su propio catálogo y lo arma con el uso: al elegir un tipo ves los tuyos y, debajo, los de cada proveedor conectado. Detalle en [Instalaciones, vehículos y catálogos](catalogos.md#residuos-y-materiales).
 - El **residuo** es una cantidad concreta de un tipo, en un lugar y con un dueño: lo que se recoge, se recibe, se trata y se certifica. Cada residuo tiene su propio historial ([Trazabilidad](trazabilidad.md)).
+- Un tipo nuevo es **privado** hasta que se usa en una solicitud. Al crearlo hay que indicar al menos si es peligroso; el código LER es lo recomendado, porque sin él no hay sugerencias ni control de peligrosidad. Gresst propone códigos de los catálogos de tus proveedores cuando el nombre coincide; copiar un código no crea la correspondencia con ese proveedor.
 
 ### Qué tiene un tipo de residuo
 
@@ -11,6 +12,7 @@
 |------|----------------|
 | **Nombre** y estado activo | Identificarlo en todas las pantallas |
 | **Residuo o material** | Ver abajo |
+| **Lleva inventario** | Lo decide la cuenta en cada tipo. Si sí, cada cantidad se registra con Generación y una solicitud reserva parte de ese residuo. Si no, la solicitud solo lleva una cantidad estimada |
 | **Medida principal** | Unidades, kg o m³: la cifra que manda para ese tipo |
 | **Peso y volumen de referencia** | Convertir un conteo en peso o volumen estimado |
 | **Precios** | De compra y de servicio, por tercero y por instalación, con vigencia ([Catálogos](catalogos.md#residuos-y-precios-por-instalación)) |
@@ -264,7 +266,7 @@ Con los códigos asignados, Gresst marca cada tipo de residuo sin que nadie lo t
 
 ### Entre cuentas conectadas
 
-Cuando otra cuenta te entrega residuos, tú los recibes con **tu propio tipo de residuo**. Gresst te sugiere el tipo que comparte los mismos códigos (LER, Y, A/B, UN) y recuerda la elección para la próxima vez. Si el residuo llega marcado como peligroso y eliges un tipo que no lo es, Gresst lo bloquea: solo se permite con una justificación explícita, que queda registrada. Ver [Trabajar conectados](guia_conexiones.md#entregas-entre-cuentas-conectadas).
+Cuando otra cuenta te entrega residuos, o te pide un servicio con un tipo suyo, tú los recibes con **tu propio tipo**. Esa correspondencia la confirmas tú. Gresst sugiere el tipo que comparte los mismos códigos (LER, Y, A/B, UN) y recuerda la elección: queda confirmada hasta que quien envía cambie los códigos; entonces vuelve a pedir confirmación. Si el residuo llega marcado como peligroso y eliges un tipo que no lo es, solo se permite con una justificación explícita, que queda registrada. Ver [Correspondencia](catalogos.md#correspondencia-con-otra-cuenta) y [Trabajar conectados](guia_conexiones.md#entregas-entre-cuentas-conectadas).
 
 ---
 

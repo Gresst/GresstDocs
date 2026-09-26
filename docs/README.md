@@ -21,14 +21,14 @@ Cada empresa trabaja en su propia **cuenta**. Las cuentas que trabajan juntas �
 
 - [Cómo funciona Gresst](arquitectura.md): cuentas, terceros, conexiones y el recorrido de un residuo.
 - [Empresas e identidad](identidad.md): la ficha de cada cuenta, la entidad legal única y la verificación de cuentas.
-- [Instalaciones, vehículos y catálogos](catalogos.md): capacidades de las instalaciones, vehículos, empleados, embalajes, insumos, tratamientos y licencias.
+- [Instalaciones, vehículos y catálogos](catalogos.md): capacidades de las instalaciones, vehículos, el catálogo de cada cuenta, correspondencias, empleados, embalajes, insumos, tratamientos y licencias.
 - [Residuos y clasificación](residuos.md): tipos de residuo, LER, códigos Y, listas A/B, número UN, RAEE, CRETI, SGA, D/R y las marcas que calcula Gresst.
 
 **Operación**
 
 - [Operaciones y cambios del residuo](operaciones.md): las 18 operaciones y lo que cada una le hace al residuo.
 - [Casos por operación](casos_entrada_salida_residuos.md): quién registra, quién firma, cuándo cambia el dueño y qué documento sale, operación por operación.
-- [Solicitudes](solicitudes.md): tipos, participantes, programación y estado de cada residuo.
+- [Solicitudes](solicitudes.md): tipos, el residuo de cada ítem, cantidades, participantes, programación y estado de cada residuo.
 - [Certificados y documentos](certificados.md): tipos, modalidades de emisión, publicación y verificación.
 - [Trazabilidad](trazabilidad.md): la historia de cada residuo, también entre cuentas conectadas.
 

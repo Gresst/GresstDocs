@@ -139,7 +139,8 @@ La regla clave es si el residuo ya existe o hay que crearlo:
 - La entrega aparece en **Recepción → Abiertas → Entregas por recibir**.
 - Al recibirla se elige el punto de recepción y, por cada residuo, **el tipo de residuo propio** y lo que realmente llegó. Se crea un residuo nuevo; las cifras declaradas y las recibidas quedan guardadas.
 - Si el residuo llega marcado como **peligroso** y se elige un tipo que no lo es, se exige una justificación.
-- Se puede **rechazar** con un motivo. Hay 5 días hábiles para responder. Detalle: [Trabajar conectados](guia_conexiones.md#entregas-entre-cuentas-conectadas).
+- Si la entrega cumple una solicitud, el tipo propio ya viene de la correspondencia de esa solicitud, y el residuo que sale de quien envía es el que generó.
+- Se puede **rechazar** un residuo de la entrega y recibir el resto. Una diferencia de cantidad dentro de un residuo es medición, no rechazo. Hay 5 días hábiles para responder. Detalle: [Trabajar conectados](guia_conexiones.md#entregas-entre-cuentas-conectadas).
 
 Puede tratarse de residuos programados o no programados en todos los casos.
 
@@ -151,6 +152,8 @@ Puede tratarse de residuos programados o no programados en todos los casos.
 - **Instalación:** propia, con capacidad de **acopio**.
 - **Dueño:** la propia cuenta.
 - **Firma:** ninguna; no hay contraparte que entregue o reciba.
+- Ese residuo se puede pedir después en una solicitud a un proveedor: la solicitud **reserva** una cantidad y el inventario no baja hasta la entrega. Cómo se elige el tipo: [Catálogos](catalogos.md#cómo-crece-el-catálogo).
+- Una generación hecha por error se anula solo mientras el residuo no esté en una solicitud abierta y no se haya entregado. Después de entregarlo, la corrección es la devolución o el ajuste de la entrega.
 
 El caso más cercano es 2.2 (Recepción crea el residuo porque no existe), pero 2.2 es la planta **recibiendo** de un tercero; aquí es **quien genera declarando su propio residuo**.
 
@@ -260,7 +263,8 @@ En ambos casos el residuo sale del inventario y pasa al tercero. No se crea un r
 - La Transferencia **solo saca el residuo del inventario** y le envía una **entrega**.
 - Nada entra a su inventario hasta que **esa cuenta** registre la Recepción: ahí crea **su propio residuo**, con su tipo y las cantidades recibidas. Las cantidades declaradas y las recibidas quedan guardadas.
 - Se puede elegir un **transportador conectado**, que registra la recogida y la entrega sin que cambie su inventario.
-- Tiene 5 días hábiles para recibirla o rechazarla. Si la rechaza, quien envió registra la devolución y los residuos vuelven a su inventario. Si no responde, se puede **cerrar sin confirmación**.
+- Tiene 5 días hábiles para recibirla o rechazarla. Si la rechaza, quien envió registra la devolución y los residuos vuelven a su inventario: es el **mismo** residuo, sin una correspondencia nueva. Se puede rechazar un residuo y recibir los demás. Si no responde, se puede **cerrar sin confirmación**.
+- Al entregar, el inventario de quien envía baja por la cantidad que declara. Si en la solicitud había reservado más, el resto queda disponible. Las cifras de la recepción no le cambian el inventario: la diferencia queda registrada y, si marcó su cifra como estimada, se le ofrece ajustarla. Detalle: [Solicitudes](solicitudes.md#cantidades).
 - Si el tercero no tiene cuenta o no están conectados, aplica 3.1 / 3.2.
 
 ### 15. Donación

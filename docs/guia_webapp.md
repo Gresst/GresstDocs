@@ -62,7 +62,7 @@ En cada residuo de la lista, el menú **⋮** tiene la acción principal (**Tran
 
 ### Solicitudes
 
-**Solicitudes de transporte** y **Solicitudes de recepción** son las solicitudes que te piden tus clientes, con pestañas **Abiertas / Cerradas**. El formulario cubre tipo, quiénes participan (quién genera, quién transporta y quién recibe), periodo, recurrencia opcional e ítems de residuo (material, tratamiento, cantidades, embalaje, precios, notas). Ver [Solicitudes](solicitudes.md).
+**Solicitudes de transporte** y **Solicitudes de recepción** son las solicitudes que te piden tus clientes, con pestañas **Abiertas / Cerradas**. El formulario cubre tipo, quiénes participan (quién genera, quién transporta y quién recibe), periodo, recurrencia opcional e ítems de residuo (material, tratamiento, cantidades, embalaje, precios, notas). Si el cliente conectado pidió con un tipo suyo, confirmas a cuál de los tuyos corresponde. Ver [Solicitudes](solicitudes.md).
 
 Cuando registras una solicitud a nombre de un cliente **conectado**, queda esperando su aprobación: ver [Trabajar conectados](guia_conexiones.md#registrar-una-solicitud-a-nombre-de-un-cliente-conectado).
 
@@ -81,8 +81,9 @@ Cuando registras una solicitud a nombre de un cliente **conectado**, queda esper
 
 Catálogos con búsqueda, grilla y alta/edición.
 
-- **Residuos:** cada tipo es residuo o material aprovechable, con sus códigos LER, Y, A/B, UN, D/R y características; Gresst calcula si es peligroso, aprovechable o mercancía peligrosa. Ver [Residuos y clasificación](residuos.md).
+- **Residuos:** cada tipo es residuo o material aprovechable, con sus códigos LER, Y, A/B, UN, D/R y características; Gresst calcula si es peligroso, aprovechable o mercancía peligrosa. Cada cuenta arma el suyo con el uso. Ver [Residuos y clasificación](residuos.md) y [Catálogos](catalogos.md#cómo-crece-el-catálogo).
 - **Instalaciones:** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
+- **Vehículos:** la placa identifica al vehículo. Los datos técnicos los administra la cuenta propietaria verificada; cada cuenta administra su uso y su depósito. Ver [Vehículos](catalogos.md#vehículos).
 - **Terceros:** una ficha por empresa, sea cliente, proveedor o ambos. La columna **Gresst** muestra si está conectada contigo. En la ficha de un tercero conectado, el nombre y la identificación vienen de su cuenta. Ver [Empresas e identidad](identidad.md) y [Trabajar conectados](guia_conexiones.md).
 
 ---
@@ -91,8 +92,8 @@ Catálogos con búsqueda, grilla y alta/edición.
 
 Todo lo que contratas a tus proveedores:
 
-- **Solicitudes a proveedores:** pedir un servicio y **aprobar o rechazar** lo que tu proveedor registra a tu nombre.
-- **Lo que mis proveedores tienen de mí:** en modo lectura, las sedes, residuos, materiales, vehículos y contactos que tu proveedor tiene registrados de tu empresa.
+- **Solicitudes a proveedores:** pedir un servicio con tus tipos y tus sedes, y **aprobar o rechazar** lo que tu proveedor registra a tu nombre.
+- **Lo que mis proveedores tienen de mí:** en modo lectura, las sedes, residuos, materiales, vehículos y contactos que tu proveedor tiene registrados de tu empresa. Es lo que puedes adoptar como propio.
 - **Certificados:** los que tus proveedores te publicaron, con filtro por tipo.
 
 Detalle: [Trabajar conectados](guia_conexiones.md#si-contratas-servicios).
