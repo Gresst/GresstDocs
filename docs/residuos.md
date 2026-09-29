@@ -268,6 +268,10 @@ Con los códigos asignados, Gresst marca cada tipo de residuo sin que nadie lo t
 
 Cuando otra cuenta te entrega residuos, o te pide un servicio con un tipo suyo, tú los recibes con **tu propio tipo**. Esa correspondencia la confirmas tú. Gresst sugiere el tipo que comparte los mismos códigos (LER, Y, A/B, UN) y recuerda la elección: queda confirmada hasta que quien envía cambie los códigos; entonces vuelve a pedir confirmación. Si el residuo llega marcado como peligroso y eliges un tipo que no lo es, solo se permite con una justificación explícita, que queda registrada. Ver [Correspondencia](catalogos.md#correspondencia-con-otra-cuenta) y [Trabajar conectados](guia_conexiones.md#entregas-entre-cuentas-conectadas).
 
+### Con una subcuenta
+
+Una [subcuenta](guia_subcuentas.md) usa los tipos de residuo de su proveedor, así que las dos cuentas ven el mismo tipo, con la misma clasificación, y no hay correspondencia que confirmar. Si el proveedor cambia los códigos de identificación de un tipo o si es peligroso, Gresst avisa por correo a cada subcuenta que lo usa. El proveedor no puede desactivar un tipo que una subcuenta tiene en inventario o en solicitudes abiertas.
+
 ---
 
 ## Unidades

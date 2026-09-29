@@ -103,5 +103,6 @@ Cada ítem de la solicitud muestra en qué punto va su residuo:
 
 - Las que el cliente envía llegan al proveedor como **borrador**.
 - Las que el proveedor registra a nombre de un cliente conectado esperan **3 días hábiles** su aprobación.
+- Entre una [subcuenta](guia_subcuentas.md) y su proveedor no se escogen correspondencias: los ítems llevan el mismo tipo de residuo para las dos cuentas.
 
 Detalle: [Trabajar conectados](guia_conexiones.md).

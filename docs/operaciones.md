@@ -51,7 +51,7 @@ Se agrupan por fase. En el WebApp todas están en la vista **Operaciones**, en e
 
 | Operación | Qué es | Cambios que produce | Dónde se captura |
 |-----------|--------|---------------------|------------------|
-| **Transferencia** | Entregar residuos a un tercero, que pasa a ser su dueño. Si el tercero es una [cuenta conectada](guia_conexiones.md), le llega como entrega y él registra su propia Recepción. | Cambia de ubicación y de dueño. | WebApp · App |
+| **Transferencia** | Entregar residuos a un tercero, que pasa a ser su dueño. Si el tercero es una [cuenta conectada](guia_conexiones.md), le llega como entrega y él registra su propia Recepción. Entre una [subcuenta](guia_subcuentas.md) y su proveedor, la entrega se recibe con el mismo tipo de residuo. | Cambia de ubicación y de dueño. | WebApp · App |
 | **Donación** | Entregar sin valor comercial a una organización (ropa a una fundación, equipos a un colegio). | Sale como donación y cambia de dueño. | WebApp |
 | **Aprovechamiento** | El residuo sale como producto con valor comercial (pellet de PET, compost, aceite re-refinado). | Sale como aprovechado. | WebApp |
 | **Disposición** | Eliminación definitiva en un sitio autorizado. | Deja de existir operativamente. | WebApp · App |

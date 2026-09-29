@@ -85,6 +85,8 @@ Catálogos con búsqueda, grilla y alta/edición.
 - **Instalaciones:** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
 - **Vehículos:** la placa identifica al vehículo. Los datos técnicos los administra la cuenta propietaria verificada; cada cuenta administra su uso y su depósito. Ver [Vehículos](catalogos.md#vehículos).
 - **Terceros:** una ficha por empresa, sea cliente, proveedor o ambos. La columna **Gresst** muestra si está conectada contigo. En la ficha de un tercero conectado, el nombre y la identificación vienen de su cuenta. Ver [Empresas e identidad](identidad.md) y [Trabajar conectados](guia_conexiones.md).
+  - **Nueva subcuenta** (solo Administrador) crea la cuenta de un cliente que tú administras. En la lista, la columna **Gresst** dice **Subcuenta** y el menú **⋮** no ofrece invitarla. Su ficha es de solo lectura; en **Resumen**, la tarjeta **Subcuenta** tiene **⋮ → Desactivar** y **⋮ → Hacer independiente**. Ver [Subcuentas](guia_subcuentas.md).
+- **Si tu cuenta es una subcuenta:** **Residuos** y **Tratamientos** son los de tu proveedor, en solo lectura, con el aviso *Tu catálogo lo administra [proveedor]*. La opción **Homologaciones** no aparece. Ver [Subcuentas](guia_subcuentas.md#si-eres-la-subcuenta).
 
 ---
 

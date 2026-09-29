@@ -82,6 +82,8 @@ El catálogo de tipos de residuo, con su clasificación internacional, caracter�
 
 Cada cuenta usa el suyo. El catálogo crece al usarlo, sin un paso de configuración previo.
 
+Una [subcuenta](guia_subcuentas.md) es la excepción: usa los tipos de residuo y los tratamientos de su proveedor, en solo lectura, y no crea los suyos. Lo que sigue aplica a las demás cuentas.
+
 Al elegir un tipo —en una solicitud o en una generación— el selector muestra **Mis materiales** y, debajo, **Del catálogo de [proveedor]** (lo que ese proveedor configuró para ti). Elegir uno del proveedor crea en silencio tu propia copia (nombre, códigos y medida principal), con la correspondencia ya confirmada. En Generación también puedes *Buscar en los catálogos de mis proveedores* y *Crear nuevo*.
 
 Si ya tienes un tipo con los mismos códigos (por ejemplo el mismo LER), Gresst pregunta *¿Es tu "Aceite usado"?*: sí registra la correspondencia sobre el que ya tienes, en lugar de copiarlo. Los duplicados se pueden fusionar después.
@@ -90,7 +92,7 @@ La copia es tuya: puedes renombrarla, agregarle códigos o decidir si lleva inve
 
 Fusionar duplicados no reescribe los residuos: siguen con su historia y, a partir de la fusión, se leen como el tipo que queda. El fusionado sale del catálogo y sus correspondencias pasan al que queda; si dos chocan con el mismo proveedor, quedan por confirmar. No se fusiona un tipo peligroso con uno que no lo es, ni dos tipos con distinta medida principal.
 
-No se desactiva un tipo que tenga residuos en inventario o ítems en solicitudes abiertas. Al desactivarlo, sus correspondencias se desactivan con él y quedan como historia; los documentos del proveedor conservan el nombre que tenían.
+No se desactiva un tipo que tenga residuos en inventario o ítems en solicitudes abiertas, tampoco en una subcuenta tuya que lo use. Al desactivarlo, sus correspondencias se desactivan con él y quedan como historia; los documentos del proveedor conservan el nombre que tenían.
 
 ### Correspondencia con otra cuenta
 
@@ -128,6 +130,8 @@ Los tratamientos que ofrece la cuenta (por ejemplo "Incineración", "Compostaje"
 
 En cada tipo de residuo se indica qué tratamientos admite y en qué se transforma con cada uno (ver [Transformaciones](residuos.md#transformaciones)).
 
+Una [subcuenta](guia_subcuentas.md) ve los tratamientos de su proveedor y no los cambia.
+
 ## Licencias
 
 Las **licencias ambientales** de la cuenta: número, descripción, texto, vigencia (inicio y fin), instalación y tratamiento que autorizan. Las licencias vigentes se pueden incluir en los certificados, y el tablero avisa cuando una está por vencer.
@@ -140,3 +144,4 @@ Las empresas y personas con las que trabaja la cuenta: clientes, proveedores y t
 
 - Identidad y verificación: [Empresas e identidad](identidad.md).
 - Conexiones: [Trabajar conectados](guia_conexiones.md).
+- Subcuentas (clientes cuya cuenta administras tú): [Subcuentas](guia_subcuentas.md).
