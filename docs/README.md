@@ -2,7 +2,7 @@
 
 Gresst es una plataforma para gestionar y trazar residuos: lo que se genera, se recoge, se transporta, se recibe, se trata y se dispone, con sus certificados.
 
-Cada empresa trabaja en su propia **cuenta**. Las cuentas que trabajan juntas —quien contrata un servicio y quien lo presta— se **conectan** y se envían solicitudes, entregas y certificados sin volver a digitar nada.
+Cada empresa trabaja en su propia **cuenta**. Las cuentas que trabajan juntas —quien contrata un servicio y quien lo presta— se **conectan** y se envían solicitudes, entregas y certificados sin volver a digitar nada. Un proveedor también puede crear y administrar la cuenta de un cliente como **subcuenta**, que usa su catálogo.
 
 ---
 
@@ -19,7 +19,7 @@ Cada empresa trabaja en su propia **cuenta**. Las cuentas que trabajan juntas �
 
 **Conceptos**
 
-- [Cómo funciona Gresst](arquitectura.md): cuentas, terceros, conexiones y el recorrido de un residuo.
+- [Cómo funciona Gresst](arquitectura.md): cuentas, terceros, conexiones, subcuentas y el recorrido de un residuo.
 - [Empresas e identidad](identidad.md): la ficha de cada cuenta, la entidad legal única y la verificación de cuentas.
 - [Instalaciones, vehículos y catálogos](catalogos.md): capacidades de las instalaciones, vehículos, el catálogo de cada cuenta, correspondencias, empleados, embalajes, insumos, tratamientos y licencias.
 - [Residuos y clasificación](residuos.md): tipos de residuo, LER, códigos Y, listas A/B, número UN, RAEE, CRETI, SGA, D/R y las marcas que calcula Gresst.
@@ -34,7 +34,7 @@ Cada empresa trabaja en su propia **cuenta**. Las cuentas que trabajan juntas �
 
 **Guías**
 
-- [WebApp](guia_webapp.md) · [App móvil](guia_app.md) · [Trabajar conectados](guia_conexiones.md)
+- [WebApp](guia_webapp.md) · [App móvil](guia_app.md) · [Trabajar conectados](guia_conexiones.md) · [Subcuentas](guia_subcuentas.md)
 - [Soporte](procesos_operativos.md)
 
 ---

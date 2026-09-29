@@ -6,6 +6,16 @@ Las incidencias y solicitudes de producto se registran en Jira: `gresst.atlassia
 
 Incluye la cuenta, el usuario, la pantalla, qué esperabas y qué pasó, y una captura si la tienes.
 
+## Preguntas frecuentes
+
+**La invitación a una subcuenta no llegó.** Si el correo no salió al crearla, el proveedor recibió el enlace de invitación: el propietario debe pedírselo. Ver [Subcuentas](guia_subcuentas.md#crear-una-subcuenta).
+
+**No puedo crear un tipo de residuo.** Tu cuenta es una subcuenta: los tipos de residuo y los tratamientos los administra tu proveedor y se ven en solo lectura. Pídele que cree el que necesitas.
+
+**¿Por qué no me dejan invitar ni conectar a esta cuenta?** Es una subcuenta tuya, o tú eres su subcuenta: ya están relacionadas y no necesitan conexión. Ver [Subcuentas](guia_subcuentas.md).
+
+Más preguntas: [Trabajar conectados](guia_conexiones.md#preguntas-frecuentes) y [Subcuentas](guia_subcuentas.md#preguntas-frecuentes).
+
 ## Versiones
 
 | Superficie | Cómo le llegan los cambios al usuario |
