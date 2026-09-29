@@ -25,11 +25,13 @@ Si una de las dos empresas no tiene cuenta, o no están conectadas, todo sigue f
 | **Invitación enviada** | Invitaste a esa empresa y aún no responde. |
 | **Por responder** | Esa empresa te invitó; acepta o rechaza desde el menú **⋮** de la fila. |
 | **No conectado** | Sin conexión. Puedes **Invitar a Gresst** desde el menú **⋮**. |
+| **Subcuenta** | Es una [subcuenta](guia_subcuentas.md) tuya: no necesita conexión. |
 
 - Al **crear un tercero**, Gresst pregunta una sola vez si quieres invitarlo. **No se envía nada** si respondes *No, gracias*.
 - Después puedes invitarlo desde **⋮ → Invitar a Gresst** o desde la tarjeta *Conexión Gresst* de su ficha.
 - Si tiene cuenta, recibe la invitación en su WebApp; si no, un correo para crear su cuenta.
 - Para invitar, el tercero necesita su **identificación** (NIT o documento).
+- Una **subcuenta** y su proveedor no se conectan: ya están relacionados, así que no se les ofrece invitar. Ver [Subcuentas](guia_subcuentas.md).
 - Si te invita una empresa que todavía no tienes como tercero, la invitación aparece **encima de la lista** con **Aceptar** y **Rechazar**. Al aceptar, se agrega a tus terceros.
 
 **La ficha de un tercero conectado:** el **nombre y la identificación** no se editan; vienen de su cuenta ("Conectado en Gresst como …").
