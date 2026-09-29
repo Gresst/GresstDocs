@@ -82,7 +82,7 @@ El catálogo de tipos de residuo, con su clasificación internacional, caracter�
 
 Cada cuenta usa el suyo. El catálogo crece al usarlo, sin un paso de configuración previo.
 
-Una [subcuenta](guia_subcuentas.md) es la excepción: usa los tipos de residuo y los tratamientos de su proveedor, en solo lectura, y no crea los suyos. Lo que sigue aplica a las demás cuentas.
+Una [subcuenta](guia_subcuentas.md) es la excepción: usa los tipos de residuo y los tratamientos del proveedor que la administra, en solo lectura, y no crea los suyos. Con ese proveedor no hay correspondencias; con otros proveedores conectados, sí, como cualquier cliente.
 
 Al elegir un tipo —en una solicitud o en una generación— el selector muestra **Mis materiales** y, debajo, **Del catálogo de [proveedor]** (lo que ese proveedor configuró para ti). Elegir uno del proveedor crea en silencio tu propia copia (nombre, códigos y medida principal), con la correspondencia ya confirmada. En Generación también puedes *Buscar en los catálogos de mis proveedores* y *Crear nuevo*.
 

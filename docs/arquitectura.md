@@ -34,10 +34,10 @@ Hay dos formas de relacionar cuentas: **cuentas independientes que se conectan**
 
 | | Cuentas conectadas | Subcuenta y su proveedor |
 |---|---|---|
-| Cómo se relacionan | Por una **conexión**: una invita y la otra acepta | Por un **vínculo** que nace cuando el proveedor crea la subcuenta |
+| Cómo se relacionan | Por una **conexión**: una invita y la otra acepta | Por un **vínculo** que nace cuando el proveedor crea la subcuenta o convierte a un tercero suyo en subcuenta |
 | Tipos de residuo y tratamientos | Cada cuenta tiene los suyos | Los del proveedor, en solo lectura para la subcuenta |
 | Correspondencias | Sí: las confirma quien recibe | No: el residuo se llama igual para las dos |
-| Proveedores | Una conexión con cada proveedor | Uno solo |
+| Proveedores | Una conexión con cada proveedor | La administra uno solo; otros pueden conectarse con ella y trabaja con uno a la vez |
 | ¿Puede dejar de serlo? | Sí: cualquiera de las dos se desconecta | Sí, si el proveedor la hace independiente; queda conectada con él |
 
 Detalle: [Subcuentas](guia_subcuentas.md).

@@ -12,7 +12,9 @@ Incluye la cuenta, el usuario, la pantalla, qué esperabas y qué pasó, y una c
 
 **No puedo crear un tipo de residuo.** Tu cuenta es una subcuenta: los tipos de residuo y los tratamientos los administra tu proveedor y se ven en solo lectura. Pídele que cree el que necesitas.
 
-**¿Por qué no me dejan invitar ni conectar a esta cuenta?** Es una subcuenta tuya, o tú eres su subcuenta: ya están relacionadas y no necesitan conexión. Ver [Subcuentas](guia_subcuentas.md).
+**¿Por qué no me dejan invitar ni conectar a esta cuenta?** Es una subcuenta tuya, o tú eres su subcuenta: ya están relacionadas y no necesitan conexión. Otros proveedores sí pueden invitar a una subcuenta. Ver [Subcuentas](guia_subcuentas.md).
+
+**No veo las solicitudes o los certificados de uno de mis proveedores.** Tu subcuenta trabaja con un proveedor a la vez. Cámbialo en el menú de usuario. Ver [Trabajar con varios proveedores](guia_subcuentas.md#trabajar-con-varios-proveedores).
 
 Más preguntas: [Trabajar conectados](guia_conexiones.md#preguntas-frecuentes) y [Subcuentas](guia_subcuentas.md#preguntas-frecuentes).
 
