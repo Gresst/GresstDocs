@@ -21,6 +21,10 @@ python3 -m http.server 3000   # from this repo root, then open http://localhost:
 
 Add a page: create `docs/<name>.md` and link it from `docs/_sidebar.md`.
 
+## Screenshots
+
+Save them in `docs/img/` (lowercase, hyphens, PNG/WebP, under ~300 KB) and embed with a path relative to `docs/`: `![Alt text](img/webapp-nueva-operacion.png)`. Click-to-zoom is already enabled in `index.html`. Use test-account data only, and only in WebApp/App guides (not in *Casos por operación*).
+
 ## Jira
 
 Component **GresstDocs** on `gresst.atlassian.net` / project **GRE**.
