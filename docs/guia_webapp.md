@@ -105,3 +105,16 @@ Detalle: [Trabajar conectados](guia_conexiones.md#si-contratas-servicios).
 ## Administración
 
 Solo para el propietario de la cuenta: **Cuenta** (datos y licencias), **Propietario**, **Usuarios**, **Roles** (permisos de cada rol), **Parámetros**, **Módulos** (qué modos de solicitud tiene la cuenta) e **Integraciones** (correo, SIESA).
+
+### Usuarios inactivos y correos
+
+Al desactivar a un usuario pierde el acceso, pero **su correo sigue reservado**: nadie más puede registrarse con esa dirección. Para reutilizarla:
+
+1. En **Usuarios**, localiza al usuario **inactivo** (si está activo, desactívalo primero).
+2. **⋮ → Liberar correo**, escribe el **motivo** (obligatorio, hasta 500 caracteres) y confirma.
+
+Solo cambia su acceso: el nombre, la contraseña, los roles y el historial se conservan. Para que vuelva a entrar, edita al usuario y escribe un correo real. Si repites la acción sobre un correo ya liberado, no pasa nada.
+
+- No puedes liberar el correo del **propietario**: transfiere antes la propiedad de la cuenta.
+- Solo aplica a usuarios de tu cuenta.
+- Si un correo está en un usuario inactivo o en una cuenta inactiva y su dueño lo **confirma** al registrarse (enlace mágico, Google o Microsoft), Gresst se lo asigna sin que nadie lo libere. Sin esa confirmación, el registro dice que el correo ya está en uso.

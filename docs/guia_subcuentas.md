@@ -47,10 +47,10 @@ Si el cliente ya está en tus **Terceros**, no hace falta crearlo de nuevo: en s
 En la tarjeta **Subcuenta**, **Desactivar** y confirma.
 
 - Sus usuarios pierden el acceso.
-- Sus correos quedan libres para registrarse de nuevo en Gresst.
+- Sus correos **siguen reservados**; el nombre y la identificación también se conservan. Para reutilizar un correo, su dueño puede confirmarlo al registrarse, o puedes pedir a [soporte](procesos_operativos.md) que lo libere.
 - Su historial se conserva y la tarjeta la muestra como **Inactiva**.
 
-Para reactivarla, contacta a [soporte](procesos_operativos.md).
+Para reactivarla, contacta a [soporte](procesos_operativos.md). Si la cuenta no volverá a usarse, soporte puede **anonimizarla**: es definitivo y no se puede reactivar (ver [Soporte](procesos_operativos.md#anonimizar-una-cuenta-o-un-usuario)).
 
 ### Hacerla independiente
 

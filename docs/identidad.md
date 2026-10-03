@@ -21,6 +21,7 @@ Cada cuenta representa a una empresa, su **organización**, que también es una 
 - Si Gresst crea la cuenta, la identidad se comprueba contra el registro oficial del país y la cuenta nace **verificada**.
 - Si la empresa se registra por su cuenta, o cambia después su documento, la cuenta queda **pendiente de verificación** hasta que Gresst la valida. Mientras tanto no puede iniciar sesión.
 - Solo puede haber **una cuenta verificada por entidad legal**. Gresst puede autorizar excepciones, por ejemplo filiales de un mismo grupo.
+- Si una cuenta inactiva no volverá a usarse, Gresst puede **anonimizarla**: se borran sus datos de identidad y el documento queda libre para registrarlo de nuevo. Ver [Soporte](procesos_operativos.md#anonimizar-una-cuenta-o-un-usuario).
 
 ## Para qué sirve
 

@@ -18,6 +18,21 @@ Incluye la cuenta, el usuario, la pantalla, qué esperabas y qué pasó, y una c
 
 Más preguntas: [Trabajar conectados](guia_conexiones.md#preguntas-frecuentes) y [Subcuentas](guia_subcuentas.md#preguntas-frecuentes).
 
+**Mi correo dice que ya está en uso.** Pertenece a un usuario activo, o a uno inactivo. Si es tuyo, confirma que eres su dueño al registrarte (enlace mágico, Google o Microsoft) y Gresst te lo asigna. Si es de un usuario inactivo de tu cuenta, el administrador puede [liberarlo](guia_webapp.md#usuarios-inactivos-y-correos).
+
+**El documento de una empresa ya está registrado y esa cuenta no se usa.** Si la cuenta está inactiva y no volverá a usarse, pide su anonimización: el documento queda libre para registrarse de nuevo.
+
+## Anonimizar una cuenta o un usuario
+
+Solo lo hace soporte, sobre cuentas o usuarios **inactivos**, y pide un **motivo** que queda registrado con la fecha y quien lo hizo. Es **definitivo**: no se puede reactivar.
+
+- **Usuario:** pierde nombre, correo, contacto, contraseña, roles e invitación, y pasa a llamarse *Usuario anonimizado*.
+- **Cuenta:** pierde nombre, contacto, firma e identificación (tipo, número y dígito de verificación) —también los de sus usuarios— y pasa a llamarse *Cuenta anonimizada*. Esa identificación queda libre para registrarla de nuevo.
+- **Propietario:** se anonimiza junto con su cuenta, no por separado.
+- Las operaciones y los certificados **se conservan**.
+
+Si solo necesitas reutilizar un correo, no hace falta anonimizar: basta con [liberarlo](guia_webapp.md#usuarios-inactivos-y-correos).
+
 ## Versiones
 
 | Superficie | Cómo le llegan los cambios al usuario |
