@@ -1,0 +1,7 @@
+{
+  "name": "gresstdocs-scripts",
+  "private": true,
+  "type": "module",
+  "scripts": { "capture": "node capture-screens.mjs" },
+  "devDependencies": { "playwright": "1.55.2" }
+}

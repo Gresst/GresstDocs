@@ -15,3 +15,6 @@ Thumbs.db
 
 # Claude Code (local)
 .claude/settings.local.json
+
+# Capture script deps
+scripts/node_modules/

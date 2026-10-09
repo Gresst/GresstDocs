@@ -10,6 +10,8 @@ La pantalla de inicio pide **usuario o correo** y **clave**. Hay **¿Olvidó su 
 
 Lo que ves depende de las **operaciones habilitadas** en tu cuenta y de los **permisos** de tu rol.
 
+![Pantalla de ingreso a Gresst](img/webapp-login.png)
+
 ---
 
 ## Vistas
@@ -25,6 +27,8 @@ Arriba eliges la **vista** con la que trabajas. Cada una tiene su propio menú l
 | **Tercerización** | Lo que pasa con tus residuos fuera de tu cuenta | Solicitudes a proveedores · Lo que mis proveedores tienen de mí · Inventario · Certificados · Reportes |
 
 La vista **Tercerización** aparece si tu cuenta tiene habilitada la Transferencia. Si solo tienes acceso a una vista, el selector no se muestra.
+
+![Inicio con las cinco vistas arriba y los accesos rápidos](img/webapp-inicio.png)
 
 ---
 
@@ -43,7 +47,11 @@ Se trabajan igual en **Transporte** y **Recepción**:
 
 **Transporte (árbol):** ruta → paradas → residuos. Acciones del menú de fila: iniciar, reprogramar, recoger o rechazar, agregar residuo o parada, finalizar la ruta. Hay vista de **mapa** con placa, paradas y captura en panel.
 
+![Transporte: pestañas Abiertas y Cerradas, filtros y rutas con sus paradas](img/webapp-recoleccion.png)
+
 **Recepción (maestro–detalle):** cliente + fecha + punto de recepción; en el detalle, los residuos.
+
+![Recepción: recepciones abiertas por cliente, fecha y punto de recepción](img/webapp-recepcion.png)
 
 Además, si trabajas con cuentas conectadas:
 
@@ -66,6 +74,8 @@ En cada residuo de la lista, el menú **⋮** tiene la acción principal (**Tran
 
 Cuando registras una solicitud a nombre de un cliente **conectado**, queda esperando su aprobación: ver [Trabajar conectados](guia_conexiones.md#registrar-una-solicitud-a-nombre-de-un-cliente-conectado).
 
+![Solicitudes de transporte abiertas, con origen, proveedor, intermedio y destino](img/webapp-solicitudes.png)
+
 ---
 
 ## Control
@@ -81,10 +91,19 @@ Cuando registras una solicitud a nombre de un cliente **conectado**, queda esper
 
 Catálogos con búsqueda, grilla y alta/edición.
 
+![Catálogo de Residuos con su clasificación, características y tratamientos](img/webapp-residuos.png)
+
 - **Residuos:** cada tipo es residuo o material aprovechable, con sus códigos LER, Y, A/B, UN, D/R y características; Gresst calcula si es peligroso, aprovechable o mercancía peligrosa. Cada cuenta arma el suyo con el uso. Ver [Residuos y clasificación](residuos.md) y [Catálogos](catalogos.md#cómo-crece-el-catálogo).
+- **Tratamientos:** los tratamientos que ofrece tu cuenta, agrupados por operación (aprovechamiento, disposición, confinamiento, procesamiento).
+
+  ![Catálogo de Tratamientos agrupado por operación](img/webapp-tratamiento.png)
 - **Instalaciones:** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
 - **Vehículos:** la placa identifica al vehículo. Los datos técnicos los administra la cuenta propietaria verificada; cada cuenta administra su uso y su depósito. Ver [Vehículos](catalogos.md#vehículos).
+
+  ![Catálogo de Vehículos por tipo, con placa, modelo y capacidad](img/webapp-configuracion-vehiculo.png)
 - **Terceros:** una ficha por empresa, sea cliente, proveedor o ambos. La columna **Gresst** muestra si está conectada contigo. En la ficha de un tercero conectado, el nombre y la identificación vienen de su cuenta. Ver [Empresas e identidad](identidad.md) y [Trabajar conectados](guia_conexiones.md).
+
+  ![Listado de terceros con identificación, tipo, dirección, contacto y relación](img/webapp-configuracion-persona.png)
   - **Nueva subcuenta** (solo Administrador) crea la cuenta de un cliente que tú administras; **⋮ → Convertir en subcuenta** hace lo mismo con un tercero que ya tienes. En la lista, la columna **Gresst** dice **Subcuenta** y el menú **⋮** ofrece **Hacer independiente** en lugar de invitarla. Su ficha es de solo lectura; en **Resumen**, la tarjeta **Subcuenta** tiene los botones **Hacer independiente** y **Desactivar**. Ver [Subcuentas](guia_subcuentas.md).
 - **Si tu cuenta es una subcuenta:** el menú se reduce a lo que usa una subcuenta, y **Residuos** es el catálogo de tu proveedor, en solo lectura, con el aviso *Tu catálogo lo administra [proveedor]*. Si trabajas con varios proveedores, al entrar eliges uno y lo cambias desde el menú de usuario; debajo del encabezado ves *Conectado a [proveedor]*. Ver [Subcuentas](guia_subcuentas.md#si-eres-la-subcuenta).
 
@@ -105,6 +124,8 @@ Detalle: [Trabajar conectados](guia_conexiones.md#si-contratas-servicios).
 ## Administración
 
 Solo para el propietario de la cuenta: **Cuenta** (datos y licencias), **Propietario**, **Usuarios**, **Roles** (permisos de cada rol), **Parámetros**, **Módulos** (qué modos de solicitud tiene la cuenta) e **Integraciones** (correo, SIESA).
+
+![Usuarios de la cuenta, activos e inactivos](img/webapp-usuarios.png)
 
 ### Usuarios inactivos y correos
 
