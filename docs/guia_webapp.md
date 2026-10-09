@@ -49,9 +49,21 @@ Se trabajan igual en **Transporte** y **Recepción**:
 
 ![Transporte: pestañas Abiertas y Cerradas, filtros y rutas con sus paradas](img/webapp-recoleccion.png)
 
+Al expandir una ruta ves sus paradas, y al expandir cada parada, sus residuos:
+
+![Ruta de transporte expandida con sus paradas y el estado de cada una](img/webapp-transporte-ruta.png)
+
+El menú **⋮** de la ruta ofrece **Editar datos de inicio**, **Agregar residuo** y **Ver mapa**:
+
+![Menú de acciones de una ruta de transporte](img/webapp-transporte-menu-fila.png)
+
 **Recepción (maestro–detalle):** cliente + fecha + punto de recepción; en el detalle, los residuos.
 
 ![Recepción: recepciones abiertas por cliente, fecha y punto de recepción](img/webapp-recepcion.png)
+
+**Agregar residuo** abre el panel de recepción directa: punto de recepción, cliente, transportador, vehículo, fecha, tipo de residuo y cantidades.
+
+![Panel Registrar recepción directa](img/webapp-recepcion-agregar-residuo.png)
 
 Además, si trabajas con cuentas conectadas:
 
@@ -75,6 +87,10 @@ En cada residuo de la lista, el menú **⋮** tiene la acción principal (**Tran
 Cuando registras una solicitud a nombre de un cliente **conectado**, queda esperando su aprobación: ver [Trabajar conectados](guia_conexiones.md#registrar-una-solicitud-a-nombre-de-un-cliente-conectado).
 
 ![Solicitudes de transporte abiertas, con origen, proveedor, intermedio y destino](img/webapp-solicitudes.png)
+
+**+ Nueva solicitud** abre el formulario: quién solicita, quién transporta y quién recibe, la fecha y los ítems de residuo. Puedes **Guardar borrador** o **Confirmar**.
+
+![Formulario de nueva solicitud de transporte](img/webapp-solicitud-nueva.png)
 
 ---
 
@@ -126,6 +142,10 @@ Detalle: [Trabajar conectados](guia_conexiones.md#si-contratas-servicios).
 Solo para el propietario de la cuenta: **Cuenta** (datos y licencias), **Propietario**, **Usuarios**, **Roles** (permisos de cada rol), **Parámetros**, **Módulos** (qué modos de solicitud tiene la cuenta) e **Integraciones** (correo, SIESA).
 
 ![Usuarios de la cuenta, activos e inactivos](img/webapp-usuarios.png)
+
+En **Roles** eliges un rol a la izquierda y ves su descripción, sus **Permisos** y los **Usuarios** que lo tienen. Puedes crear un rol nuevo o duplicar uno existente.
+
+![Roles de la cuenta con el número de permisos y usuarios de cada uno](img/webapp-roles.png)
 
 ### Usuarios inactivos y correos
 
