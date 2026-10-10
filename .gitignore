@@ -18,3 +18,4 @@ Thumbs.db
 
 # Capture script deps
 scripts/node_modules/
+.captures-draft/

@@ -101,6 +101,8 @@ Cuando registras una solicitud a nombre de un cliente **conectado**, queda esper
 - **Enviar:** envío a sistemas externos (por ejemplo SIESA), con **Pendientes / Enviados**. Las credenciales se configuran en **Administración → Integraciones**.
 - **Tableros** y **Reportes**. En **Reportes → Trazabilidad** ves la historia de cada residuo y, si pasó por cuentas conectadas, su **recorrido entre empresas** ([Trazabilidad](trazabilidad.md)).
 
+  ![Tablero operativo y ambiental con solicitudes activas, toneladas gestionadas y tasa de aprovechamiento](img/webapp-tableros.png)
+
 ---
 
 ## Configuración

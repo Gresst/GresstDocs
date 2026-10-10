@@ -31,6 +31,8 @@ Si el cliente ya está en tus **Terceros**, no hace falta crearlo de nuevo: en s
 
 ### Cómo la ves
 
+![Terceros con el conteo de subcuentas y la insignia Subcuenta en la lista](img/webapp-terceros.png)
+
 - En **Terceros** aparece como tu cliente; la columna **Gresst** dice **Subcuenta**. No se ofrece **Invitar a Gresst**: ya están relacionadas.
 - Su ficha es **de solo lectura**: la identidad y las sedes son de la subcuenta. En **Resumen**, la tarjeta **Subcuenta** muestra si está activa y que usa tu catálogo, con los botones **Hacer independiente** y **Desactivar**. En la pestaña **Homologaciones** solo verás que no las necesita: usa tu catálogo.
 - Sus sedes te sirven como **punto de recolección**, sin correspondencias.
