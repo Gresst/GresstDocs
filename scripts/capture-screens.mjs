@@ -34,9 +34,16 @@ const SCREENS = [
   { name: 'transporte-menu-fila', path: '/recoleccion', steps: async (page) => { await page.mouse.click(304, 444); await page.waitForTimeout(500); } },
   { name: 'recepcion-agregar-residuo', path: '/recepcion', steps: async (page) => { await page.getByRole('button', { name: /Agregar residuo/ }).first().click(); await page.waitForTimeout(800); } },
   // Batch 3
-  { name: 'instalaciones', path: '/facility-list' },
+  { name: 'transporte-mapa', path: '/recoleccion', pii: true, wait: 'load', steps: async (page) => {
+      await page.locator('.ag-row').first().waitFor({ timeout: 20000 });
+      await page.locator('.ag-row').first().getByRole('button', { name: /acciones|menú|⋮/i }).first().click();
+      await page.getByRole('menuitem', { name: /Ver mapa/ }).click();
+      await page.locator('.gm-style').first().waitFor({ timeout: 25000 });
+      await page.waitForTimeout(4000); // tiles
+    } },
+  { name: 'instalaciones', path: '/facility-list', pii: true, blur: ['Dirección', 'Teléfono', 'Correo'] },
   { name: 'roles', path: '/account-settings/roles' },
-  { name: 'trazabilidad', path: '/consulta-trazabilidad' },
+  { name: 'trazabilidad', path: '/consulta-trazabilidad', pii: true, wait: 'load', steps: async (page) => { await page.waitForTimeout(6000); } },
   { name: 'tableros', path: '/consulta-dashboard' },
   { name: 'terceros', path: '/third-parties', pii: true },
   { name: 'terceros-menu-fila', path: '/third-parties', pii: true, steps: async (page) => { await page.locator('.ag-row').first().getByRole('button', { name: /acciones|menú|⋮/i }).first().click(); await page.waitForTimeout(500); } },

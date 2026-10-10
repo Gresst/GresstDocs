@@ -18,6 +18,11 @@ REGIONS = {
     "webapp-usuarios.png": [(280, 235, 570, 655),    # Nombre
                             (580, 235, 875, 655),    # Apellido
                             (885, 235, 1235, 655)],  # Correo
+    "webapp-instalaciones.png": [(617, 335, 757, 460),    # Dirección
+                                 (767, 335, 867, 460),    # Teléfono
+                                 (877, 335, 1027, 460)],  # Correo
+    "webapp-trazabilidad.png": [(770, 205, 915, 325),     # Responsables
+                                (1360, 205, 1440, 325)],  # Usuario
     # Whole list blurred; the "Subcuenta" badge is pasted back unblurred (see KEEP).
     "webapp-terceros.png": [(220, 325, 511, 880)],
 }

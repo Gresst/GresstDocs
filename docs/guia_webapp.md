@@ -101,6 +101,8 @@ Cuando registras una solicitud a nombre de un cliente **conectado**, queda esper
 - **Enviar:** envío a sistemas externos (por ejemplo SIESA), con **Pendientes / Enviados**. Las credenciales se configuran en **Administración → Integraciones**.
 - **Tableros** y **Reportes**. En **Reportes → Trazabilidad** ves la historia de cada residuo y, si pasó por cuentas conectadas, su **recorrido entre empresas** ([Trazabilidad](trazabilidad.md)).
 
+  ![Trazabilidad de un residuo: acción, documento, persona, fecha y cantidades de cada evento](img/webapp-trazabilidad.png)
+
   ![Tablero operativo y ambiental con solicitudes activas, toneladas gestionadas y tasa de aprovechamiento](img/webapp-tableros.png)
 
 ---
@@ -116,6 +118,8 @@ Catálogos con búsqueda, grilla y alta/edición.
 
   ![Catálogo de Tratamientos agrupado por operación](img/webapp-tratamiento.png)
 - **Instalaciones:** nombre, instalación padre, dirección, contactos, capacidades (recolectar, almacenar, disponer, entregar, recibir, tratar) y activo.
+
+  ![Catálogo de Instalaciones con sus capacidades y pestañas Activos y Eliminados](img/webapp-instalaciones.png)
 - **Vehículos:** la placa identifica al vehículo. Los datos técnicos los administra la cuenta propietaria verificada; cada cuenta administra su uso y su depósito. Ver [Vehículos](catalogos.md#vehículos).
 
   ![Catálogo de Vehículos por tipo, con placa, modelo y capacidad](img/webapp-configuracion-vehiculo.png)
