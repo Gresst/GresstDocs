@@ -23,7 +23,7 @@ La identificación de la subcuenta queda **verificada** porque la crea su provee
 
 ### Convertir un tercero en subcuenta
 
-Si el cliente ya está en tus **Terceros**, no hace falta crearlo de nuevo: en su fila, **⋮ → Convertir en subcuenta**. Solo pide el **propietario** de la cuenta (nombre, apellido y correo); la invitación funciona igual que al crear.
+Si el cliente ya está en tus **Terceros**, no hace falta crearlo de nuevo: abre su ficha y, en **Resumen**, en la tarjeta **Relación**, pulsa **Convertir en subcuenta**. Solo pide el **propietario** de la cuenta (nombre, apellido y correo); la invitación funciona igual que al crear.
 
 - Sus sedes, vehículos e historial se conservan y pasan a ser de la subcuenta.
 - Desde ese momento no puedes editar su nombre ni su identificación: son de su cuenta.
@@ -33,8 +33,8 @@ Si el cliente ya está en tus **Terceros**, no hace falta crearlo de nuevo: en s
 
 ![Terceros con el conteo de subcuentas y la insignia Subcuenta en la lista](img/webapp-terceros.png)
 
-- En **Terceros** aparece como tu cliente; la columna **Gresst** dice **Subcuenta**. No se ofrece **Invitar a Gresst**: ya están relacionadas.
-- Su ficha es **de solo lectura**: la identidad y las sedes son de la subcuenta. En **Resumen**, la tarjeta **Subcuenta** muestra si está activa y que usa tu catálogo, con los botones **Hacer independiente** y **Desactivar**. En la pestaña **Homologaciones** solo verás que no las necesita: usa tu catálogo.
+- En **Terceros** aparece como tu cliente, con la insignia **Subcuenta** en su tarjeta de la lista, y el contador **Subcuentas** de la parte superior las cuenta. En su ficha no se ofrece invitarla a conectarse: ya están relacionadas.
+- Su ficha es **de solo lectura**: la identidad y las sedes son de la subcuenta. En **Resumen**, la tarjeta **Relación** indica que tú la administras y que usa tu catálogo, y la tarjeta **Subcuenta** muestra si está **Activa** o **Inactiva**, con los botones **Cuenta propia** y **Desactivar**. En la pestaña **Homologaciones** solo verás que no las necesita: usa tu catálogo.
 - Sus sedes te sirven como **punto de recolección**, sin correspondencias.
 - Ves solo lo compartido: las solicitudes y entregas dirigidas a ti y los certificados que tú emites. El resto de su inventario no.
 
@@ -54,9 +54,9 @@ En la tarjeta **Subcuenta**, **Desactivar** y confirma.
 
 Para reactivarla, contacta a [soporte](procesos_operativos.md). Si la cuenta no volverá a usarse, soporte puede **anonimizarla**: es definitivo y no se puede reactivar (ver [Soporte](procesos_operativos.md#anonimizar-una-cuenta-o-un-usuario)).
 
-### Hacerla independiente
+### Darle cuenta propia
 
-En la tarjeta **Subcuenta** (o en su fila de **Terceros**, **⋮ → Hacer independiente**), **Hacer independiente** y confirma.
+Para que la subcuenta deje de depender de ti y pase a ser una cuenta independiente: en su ficha, **Resumen**, pulsa **Cuenta propia** (está en la tarjeta **Subcuenta** y también en **Relación**) y confirma con **Sí, darle cuenta propia**.
 
 - Se copian a su catálogo los tipos de residuo que ha usado. Sus residuos y su historial siguen igual.
 - Queda **conectada** contigo, con las correspondencias ya confirmadas: sus solicitudes y entregas siguen sin que nadie tenga que confirmar nada.

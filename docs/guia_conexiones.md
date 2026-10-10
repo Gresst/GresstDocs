@@ -17,18 +17,18 @@ Si una de las dos empresas no tiene cuenta, o no están conectadas, todo sigue f
 
 ## Conectarse
 
-**Configuración → Terceros** muestra tus terceros con una columna **Gresst**:
+**Configuración → Terceros** muestra tus terceros como tarjetas. La insignia de cada tarjeta dice cómo estás relacionado con esa empresa; las acciones están en su ficha, en **Resumen**, en la tarjeta **Relación**:
 
 | Estado | Qué significa |
 |--------|---------------|
 | **Conectado** | Trabajan conectados. |
 | **Invitación enviada** | Invitaste a esa empresa y aún no responde. |
-| **Por responder** | Esa empresa te invitó; acepta o rechaza desde el menú **⋮** de la fila. |
-| **No conectado** | Sin conexión. Puedes **Invitar a Gresst** desde el menú **⋮**. |
+| **Por responder** | Esa empresa te invitó; en **Relación** pulsa **Aceptar** o **Rechazar**. |
+| *(sin insignia)* | **Sin cuenta**: no hay conexión. En **Relación** pulsa **Cuenta propia** para invitarla a trabajar contigo en Gresst. |
 | **Subcuenta** | Es una [subcuenta](guia_subcuentas.md) tuya: no necesita conexión. |
 
 - Al **crear un tercero**, Gresst pregunta una sola vez si quieres invitarlo. **No se envía nada** si respondes *No, gracias*.
-- Después puedes invitarlo desde **⋮ → Invitar a Gresst** o desde la tarjeta *Conexión Gresst* de su ficha.
+- Después puedes invitarlo desde la tarjeta **Relación** de su ficha, con **Cuenta propia**.
 - Si tiene cuenta, recibe la invitación en su WebApp; si no, un correo para crear su cuenta.
 - Para invitar, el tercero necesita su **identificación** (NIT o documento).
 - Una **subcuenta** y el proveedor que la administra no se conectan: ya están relacionados, así que no se les ofrece invitar. Otros proveedores sí pueden invitarla. Ver [Subcuentas](guia_subcuentas.md#trabajar-con-varios-proveedores).
@@ -128,7 +128,7 @@ En **Control → Reportes → Trazabilidad**, al elegir un residuo que pasó por
 
 ## Desconectarse
 
-Desde **Terceros → ⋮ → Desconectar** (cualquiera de las dos cuentas). Dejan de intercambiar documentos nuevos; lo que ya compartieron sigue visible para ambas. Las correspondencias quedan inactivas. Si las mismas cuentas vuelven a conectarse, se ofrecen otra vez para confirmar.
+Desde la ficha del tercero, en **Relación → Desconectar** (cualquiera de las dos cuentas). Dejan de intercambiar documentos nuevos; lo que ya compartieron sigue visible para ambas. Las correspondencias quedan inactivas. Si las mismas cuentas vuelven a conectarse, se ofrecen otra vez para confirmar.
 
 ---
 
