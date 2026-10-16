@@ -18,6 +18,8 @@ Incluye la cuenta, el usuario, la pantalla, qué esperabas y qué pasó, y una c
 
 Más preguntas: [Trabajar conectados](guia_conexiones.md#preguntas-frecuentes) y [Subcuentas](guia_subcuentas.md#preguntas-frecuentes).
 
+**¿Quién cambió este dato?** Abre la ficha del tercero o de la instalación y entra en **Historial**. Si es otro tipo de ficha, soporte puede consultarlo. Ver [Historial de cambios](auditoria.md).
+
 **Mi correo dice que ya está en uso.** Pertenece a un usuario activo, o a uno inactivo. Si es tuyo, confirma que eres su dueño al registrarte (enlace mágico, Google o Microsoft) y Gresst te lo asigna. Si es de un usuario inactivo de tu cuenta, el administrador puede [liberarlo](guia_webapp.md#usuarios-inactivos-y-correos).
 
 **El documento de una empresa ya está registrado y esa cuenta no se usa.** Si la cuenta está inactiva y no volverá a usarse, pide su anonimización: el documento queda libre para registrarse de nuevo.

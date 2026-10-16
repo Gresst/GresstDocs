@@ -10,6 +10,7 @@
   * [Solicitudes](solicitudes.md)
   * [Certificados y documentos](certificados.md)
   * [Trazabilidad](trazabilidad.md)
+  * [Historial de cambios](auditoria.md)
 * Guías
   * [WebApp](guia_webapp.md)
   * [App móvil](guia_app.md)

@@ -153,6 +153,10 @@ En **Roles** eliges un rol a la izquierda y ves su descripción, sus **Permisos*
 
 ![Roles de la cuenta con el número de permisos y usuarios de cada uno](img/webapp-roles.png)
 
+### Historial de cambios
+
+En la ficha de un tercero o de una instalación, la pestaña **Historial** muestra quién cambió cada dato, cuándo y qué valor tenía antes. Lo ven el propietario, los administradores y los roles con **Auditoría → Ver**. Ver [Historial de cambios](auditoria.md).
+
 ### Usuarios inactivos y correos
 
 Al desactivar a un usuario pierde el acceso, pero **su correo sigue reservado**: nadie más puede registrarse con esa dirección. Para reutilizarla:
