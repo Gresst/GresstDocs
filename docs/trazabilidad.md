@@ -41,3 +41,7 @@ El recorrido puede pasar otra vez por la misma cuenta (tú → tu proveedor → 
 - **Más allá de una empresa sin cuenta:** si el residuo pasó a un tercero que no está en Gresst, el recorrido termina ahí, con lo que registró la última cuenta (nombre y firma de quien recibió).
 
 Cómo conectar cuentas y entregar residuos: [Trabajar conectados](guia_conexiones.md).
+
+## Cambios en los datos maestros
+
+Esta página cuenta la historia de los **residuos**. Quién cambió una empresa, una instalación, un vehículo u otro dato de configuración está en [Auditoría de cambios](auditoria.md).
