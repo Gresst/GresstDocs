@@ -18,4 +18,3 @@
 * Ayuda
   * [Soporte](procesos_operativos.md)
   * [Qué cubre este sitio](ownership.md)
-  * [Documentación de ingeniería](guia_tecnica.md)

@@ -2,8 +2,6 @@
 
 Documentación de **producto** del software de logística de residuos (Docsify): casos de negocio, guías de usuario y cómo funciona Gresst. Qué vive aquí y qué no: [docs/ownership.md](docs/ownership.md).
 
-Contratos y onboarding de ingeniería: [API/docs/SOLUTION.md](https://github.com/Gresst/GresstAPI/blob/main/docs/SOLUTION.md).
-
 Publicado en **https://docs.gresst.com** (GitHub Pages desde `main`, carpeta raíz).
 
 ## Vista previa local

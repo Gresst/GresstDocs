@@ -39,5 +39,3 @@ Si solo necesitas reutilizar un correo, no hace falta anonimizar: basta con [lib
 |------------|---------------------------------------|
 | **WebApp** | Se publica primero en el entorno de pruebas (staging) y luego en producción. Basta con recargar la página. |
 | **App** | Por las tiendas (iOS / Android). Si la versión instalada es muy antigua, la App pide actualizarla antes de continuar. |
-
-Cómo se construye y despliega cada repositorio lo documenta ingeniería: [Documentación de ingeniería](guia_tecnica.md).

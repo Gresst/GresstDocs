@@ -9,7 +9,7 @@ Product documentation site (Docsify). **Not** engineering onboarding.
 - How Gresst works for users (`docs/arquitectura.md`: accounts, parties, connections), party identity (`identidad.md`), operations and waste changes (`operaciones.md`), waste classification (`residuos.md`), traceability (`trazabilidad.md`), catalogs and facility capabilities (`catalogos.md`), requests (`solicitudes.md`), certificates (`certificados.md`). Engineering sources: `../API/docs/DOMAIN.md`, `WASTE-CLASSIFICATION.md`, `EXCHANGES.md`, ADR-0002/0003.
 - Support (`docs/procesos_operativos.md`).
 
-Engineering (clone, deploy, contracts): sibling **`../API/docs/SOLUTION.md`**. `docs/guia_tecnica.md` is only a pointer there.
+Engineering (clone, deploy, contracts): sibling **`../API/docs/SOLUTION.md`**. This site does not link to it.
 
 Do **not** paste GraphQL catalogs, EF mappers, npm scripts, or ADRs here. Wording rules for `docs/`: `.claude/rules/lenguaje-producto.md` (loads when editing docs).
 
