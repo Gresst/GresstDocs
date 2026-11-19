@@ -12,6 +12,23 @@ Lo que ves depende de las **operaciones habilitadas** en tu cuenta y de los **pe
 
 ![Pantalla de ingreso a Gresst](img/webapp-login.png)
 
+### Qué permite cada rol
+
+En cada operación (Recepción, Transporte, Tratamiento, Disposición…) un rol puede **ver**, **planear**, **ejecutar** y **supervisar**. Las acciones que tu rol no permite no aparecen.
+
+| Rol | Ve | Planea | Ejecuta | Supervisa |
+|-----|----|--------|---------|-----------|
+| **Propietario de la cuenta** | Todo | Sí | Sí | Sí |
+| **Coordinador** | Sí | Sí | Sí | Sí |
+| **Operario o conductor** | Sí | — | Sí | — |
+| **Consulta** | Sí | — | — | — |
+
+- **Planear:** programar operaciones y rutas.
+- **Ejecutar:** capturar lo que pasa (recibir, cargar, tratar, cerrar lo que tú hiciste).
+- **Supervisar:** corregir, cancelar, reabrir lo que cerró otro o el sistema, y **Cerrar (supervisor)** con pendientes ([Cierres y vencimientos](guia_cierres.md)).
+- Sin permiso para ver una operación, sus listas aparecen vacías.
+- Todo usuario nuevo empieza como **Operario**. El propietario cambia los roles en **Administración → Roles** (abajo).
+
 ---
 
 ## Vistas

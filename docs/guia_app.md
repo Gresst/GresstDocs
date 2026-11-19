@@ -15,6 +15,8 @@ Al abrir la app con sesión iniciada, verás dos pestañas en la parte inferior:
 - **Jornada** — tus operaciones del día (con selector de fecha).
 - **Inventarios** — el inventario actual de tu camión.
 
+La App muestra solo lo que tu rol permite: un **Operario o conductor** ve y ejecuta su trabajo; planear, reabrir una ruta o una recepción y cancelar aparecen solo si tu rol lo permite ([qué permite cada rol](guia_webapp.md#qué-permite-cada-rol)). Si algo que capturaste sin conexión se rechaza por permisos, queda como **no aceptado** con el motivo (ver más abajo).
+
 Desde **Jornada** navegas hacia el detalle de tu trabajo:
 
 ```
