@@ -79,6 +79,19 @@ La pestaña **Inventarios** muestra lo que llevas cargado: tipo de residuo, terc
 
 Si te quedas sin señal, verás un aviso **"Sin conexión a internet"** en la parte superior. Puedes seguir confirmando o rechazando residuos y cerrando paradas con normalidad — la app no te bloquea. Cada acción sin conexión se guarda localmente con el aviso **"Guardado sin conexión. Se sincronizará cuando vuelvas a estar en línea"**, y verás un contador de envíos pendientes en el encabezado (puedes tocarlo para reintentar el envío manualmente). Al recuperar señal, la app sincroniza automáticamente lo pendiente.
 
+### Capturas no aceptadas
+
+A veces Gresst no acepta algo que registraste, por ejemplo porque otra persona cerró la parada mientras estabas sin señal. No se pierde nada:
+
+- El residuo queda marcado **No aceptada**, con el motivo. Vuelve a contar como pendiente y sale del inventario del camión hasta que lo resuelvas.
+- Las tarjetas de la parada y de la operación indican cuántas capturas no se aceptaron.
+- Al terminar de sincronizar aparece un aviso arriba, **"N capturas no aceptadas · Ver"**.
+- En el menú de tu cuenta, **Capturas no aceptadas** muestra cada una con su motivo y lo que capturaste. Puedes **Reenviarla** (por ejemplo, después de que reabran la parada) o **Descartarla**.
+
+Si el motivo dice **"Error de la App"**, no es algo que puedas corregir tú: avisa a soporte.
+
+En planta pasa lo mismo: al **Ejecutar**, la pantalla siempre termina. En recepción y disposición, si un residuo no se acepta, los demás se registran igual. En tratamiento, clasificación y entrega se envían juntos: si no se aceptan, todos quedan en **Capturas no aceptadas**.
+
 ---
 
 ## Otras pantallas útiles
