@@ -25,7 +25,9 @@ Jornada → Operación → Paradas → Residuos de la parada → Confirmar/Recha
 
 ## Iniciar una operación de transporte
 
-Antes de ver las paradas de una operación de transporte que aún no has iniciado, la app te pide completar una pantalla de inicio:
+Antes de ver las paradas de una operación de transporte que aún no has iniciado, la app te pide completar una pantalla de inicio. Si la operación estaba programada para otro día, verás **"Planeada para el X · se registra hoy"**: puedes iniciarla hoy, y hasta que la inicies no se cargan residuos. Lo mismo ves en planta al ejecutar algo planeado para otro día.
+
+La pantalla de inicio pide:
 
 - Nombre del firmante
 - Identificación
@@ -88,7 +90,7 @@ A veces Gresst no acepta algo que registraste, por ejemplo porque otra persona c
 - Al terminar de sincronizar aparece un aviso arriba, **"N capturas no aceptadas · Ver"**.
 - En el menú de tu cuenta, **Capturas no aceptadas** muestra cada una con su motivo y lo que capturaste. Puedes **Reenviarla** (por ejemplo, después de que reabran la parada) o **Descartarla**.
 
-Si el motivo dice **"Error de la App"**, no es algo que puedas corregir tú: avisa a soporte.
+Si el motivo dice **"Error de la App"**, no es algo que puedas corregir tú: avisa a soporte. Si dice que **la hora del teléfono está adelantada**, corrige la hora en los ajustes del teléfono y toca **Reenviar**.
 
 En planta pasa lo mismo: al **Ejecutar**, la pantalla siempre termina. En recepción y disposición, si un residuo no se acepta, los demás se registran igual. En tratamiento, clasificación y entrega se envían juntos: si no se aceptan, todos quedan en **Capturas no aceptadas**.
 

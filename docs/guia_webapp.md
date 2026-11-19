@@ -43,7 +43,7 @@ Se trabajan igual en **Transporte** y **Recepción**:
 3. La **fecha** de la fila es la fecha operacional: cuándo se cargó o recibió de verdad; si aún no, la programada; si nunca se programó, la solicitada.
 4. **Planear** (cuándo, con qué vehículo o en qué punto) no es obligatorio para todas las cuentas: puedes **registrar la carga o la recepción** directamente y el sistema arma solicitud, orden e inicio por debajo.
 5. El trabajo se cierra **por parada** (transporte) o **por cliente en un punto** (recepción): todos los residuos de ese grupo quedan con la misma fecha.
-6. En una fecha futura el registro se ve, pero al recibir o cargar el sistema avisa que se guardará **con la fecha de hoy**.
+6. Nada se registra hacia el futuro. Si ejecutas hoy algo planeado para otro día, la fila muestra **"Planeada para el 21 · se registra hoy"**: queda con la fecha de hoy y conserva la fecha planeada. Una ruta programada para otro día se puede **iniciar** hoy; hasta que la inicies no se cargan residuos. En planta (tratar, clasificar, disponer, donar, entregar) puedes indicar una **fecha de ejecución** anterior si lo hiciste otro día; nunca una futura.
 
 **Transporte (árbol):** ruta → paradas → residuos. Acciones del menú de fila: iniciar, reprogramar, recoger o rechazar, agregar residuo o parada, finalizar la ruta. Hay vista de **mapa** con placa, paradas y captura en panel.
 
