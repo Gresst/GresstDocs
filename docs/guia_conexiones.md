@@ -109,7 +109,7 @@ En **Control → Certificados → Emitidos**, **Publicar** deja el certificado v
 Cuando le **transfieres** residuos a una cuenta conectada contigo:
 
 - **Quien envía:** la Transferencia saca el residuo de tu inventario y le envía una **entrega**. En tu lista de Transferencias verás su estado: *Enviada al receptor*, *Sin respuesta del receptor*, *Recibida*, *Rechazada* o *Cerrada sin confirmar*.
-- **Quien recibe:** le llega un correo y la ve en **Operaciones → Recepción**, pestaña **Abiertas**, en *Entregas por recibir* (el menú muestra cuántas hay).
+- **Quien recibe:** le llega un correo y la ve en **Operaciones → Recepción**, pestaña **Abiertas**, en *Entregas por recibir* (el menú muestra cuántas hay). Junto a la entrega ve las **fotos y adjuntos** que quien envía tomó de esos residuos; no ve ningún otro archivo de sus operaciones.
   - **Recibir:** eliges tu punto de recepción y, por cada residuo, **tu propio tipo de residuo** y lo que realmente llegó (viene prellenado con lo declarado). Se crea un residuo nuevo en tu inventario; lo que declaró quien envía no cambia y las dos cifras quedan guardadas.
   - **Rechazar:** con un motivo. Nada entra a tu inventario y quien envía registra la devolución.
 - **Transportador conectado (opcional):** al hacer la Transferencia, quien envía puede elegir un **Transportador** entre sus cuentas conectadas. El transportador recibe un correo y ve la entrega en **Operaciones → Transporte**, pestaña **Abiertas**, en *Entregas a transportar*: registra la **recogida** y luego la **entrega** (fecha, vehículo y conductor). Su inventario no cambia. Quien recibe ve en su bandeja quién transporta y cuándo se recogió y entregó.
@@ -128,7 +128,7 @@ En **Control → Reportes → Trazabilidad**, al elegir un residuo que pasó por
 
 ## Desconectarse
 
-Desde la ficha del tercero, en **Relación → Desconectar** (cualquiera de las dos cuentas). Dejan de intercambiar documentos nuevos; lo que ya compartieron sigue visible para ambas. Las correspondencias quedan inactivas. Si las mismas cuentas vuelven a conectarse, se ofrecen otra vez para confirmar.
+Desde la ficha del tercero, en **Relación → Desconectar** (cualquiera de las dos cuentas). Dejan de intercambiar documentos nuevos; lo que ya compartieron sigue visible para ambas, con sus archivos (el PDF de un certificado, las fotos de una entrega). Lo que cualquiera registre después de desconectarse ya no lo ve la otra. Las correspondencias quedan inactivas. Si las mismas cuentas vuelven a conectarse, se ofrecen otra vez para confirmar.
 
 ---
 
