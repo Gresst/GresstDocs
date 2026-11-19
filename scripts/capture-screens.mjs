@@ -35,11 +35,22 @@ const SCREENS = [
   { name: 'recepcion-agregar-residuo', path: '/recepcion', steps: async (page) => { await page.getByRole('button', { name: /Agregar residuo/ }).first().click(); await page.waitForTimeout(800); } },
   // Batch 3
   { name: 'transporte-mapa', path: '/recoleccion', pii: true, wait: 'load', steps: async (page) => {
-      await page.locator('.ag-row').first().waitFor({ timeout: 20000 });
-      await page.locator('.ag-row').first().getByRole('button', { name: /acciones|menú|⋮/i }).first().click();
-      await page.getByRole('menuitem', { name: /Ver mapa/ }).click();
-      await page.locator('.gm-style').first().waitFor({ timeout: 25000 });
-      await page.waitForTimeout(4000); // tiles
+      try {
+        // Route header (⋮ of the route, not of a stop row) -> "Ver mapa" navigates to the map page.
+        const menuBtn = page.locator('.route-group button[aria-haspopup="menu"]').first();
+        await menuBtn.waitFor({ timeout: 25000 });
+        await menuBtn.click();
+        await page.getByRole('menuitem', { name: /Ver mapa/ }).click();
+        await page.waitForURL(/\/map|mapa/i, { timeout: 15000 }).catch(() => {});
+        await page.getByText('Cargando operaciones').waitFor({ state: 'detached', timeout: 25000 }).catch(() => {});
+        await page.locator('.gm-style').first().waitFor({ timeout: 25000 });
+        await page.waitForTimeout(5000); // tiles + markers
+      } catch (e) {
+        // Leave evidence of what the page looked like when the step failed.
+        await page.screenshot({ path: path.join(DRAFT, 'webapp-transporte-mapa-debug.png') }).catch(() => {});
+        console.error('url at failure:', page.url());
+        throw e;
+      }
     } },
   { name: 'instalaciones', path: '/facility-list', pii: true, blur: ['Dirección', 'Teléfono', 'Correo'] },
   { name: 'roles', path: '/account-settings/roles' },
