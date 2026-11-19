@@ -15,6 +15,7 @@
   * [App móvil](guia_app.md)
   * [Trabajar conectados](guia_conexiones.md)
   * [Subcuentas](guia_subcuentas.md)
+  * [Cierres y vencimientos](guia_cierres.md)
 * Ayuda
   * [Soporte](procesos_operativos.md)
   * [Qué cubre este sitio](ownership.md)

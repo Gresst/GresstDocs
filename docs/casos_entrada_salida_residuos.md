@@ -82,6 +82,7 @@ Lo que hace el transportador depende del destino.
 - **Finalización de parada:** cada carga y cada descarga en un tercero (1.2.b) se cierra con firma, en web o en la App. Una parada se puede **rechazar** o **reabrir**.
 - **Finalización de ruta:** al terminar todas las paradas se cierra la operación completa; firma el transportador. También se puede rechazar la ruta entera.
 - Estos cierres son logísticos. No reemplazan el cierre de negocio de Recepción o Transferencia.
+- Cada cierre guarda su motivo (*Completada*, *Vencida*, *Cerrada por supervisor*, *Cancelada*), quién lo hizo y cuándo. Una ruta con todas sus paradas cerradas se cierra sola al terminar su día; un supervisor puede cerrar con pendientes, que quedan **no ejecutados** y pasan a una solicitud de continuación. Reapertura, consolidación y capturas tardías: [Cierres y vencimientos](guia_cierres.md).
 
 ### 5. Recolección
 
