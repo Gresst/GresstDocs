@@ -42,7 +42,7 @@ Una vez firmado, pasas a la lista de paradas.
 Cada tarjeta de parada muestra el tercero/instalación, la dirección y un resumen de los residuos a recoger o entregar. Desde esta pantalla puedes:
 
 - Tocar una parada para ver sus residuos.
-- Agregar una **parada no planeada** con el botón **"+"** (eligiendo instalación de recolección y de entrega).
+- Agregar una **parada no planeada** con el botón **"+"**, eligiendo la instalación donde vas a recolectar. El punto de entrega es el de la ruta.
 - Abrir el mapa desde el encabezado.
 - Tocar **"Completar transporte"** cuando ya resolviste todas las paradas.
 
@@ -57,7 +57,7 @@ Cada línea de residuo se puede confirmar rápido (cantidades + botones Cancelar
 - **Tomar fotos** (cámara o galería, con límite de cantidad y tamaño).
 - **Confirmar** o **Rechazar** el residuo.
 
-También puedes agregar un **residuo no planeado** con el botón "+". Al terminar con todos los residuos de la parada, el botón del pie de pantalla cambia entre **"Rechazar parada"** y **"Finalizar parada"** (este último abre la pantalla de aprobación: firmante, identificación, rol, firma y, opcionalmente, métricas del vehículo).
+También puedes agregar un **residuo no planeado** con el botón "+": es un residuo que recoges en esa parada, y eliges a dónde lo llevas. En una parada donde solo entregas no se agregan residuos. Al terminar con todos los residuos de la parada, el botón del pie de pantalla cambia entre **"Rechazar parada"** y **"Finalizar parada"** (este último abre la pantalla de aprobación: firmante, identificación, rol, firma y, opcionalmente, métricas del vehículo).
 
 ---
 
