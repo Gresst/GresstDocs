@@ -65,9 +65,9 @@ Una ruta planeada para un día futuro nunca vence antes de su día, aunque se ha
 
 **Qué pasa con lo que había en la parada al vencer.** La parada se cierra como *Vencida* y por *Sistema*.
 
-- **Lo que no se recogió** se marca como no ejecutado (**No recogido**) y no mueve inventario. Según la configuración de la cuenta, pasa a una **solicitud nueva por programar**, o queda solo como no recogido. La solicitud nueva es una por cada solicitud afectada en cada cierre, con todo lo que esa solicitud dejó sin recoger en las paradas de la ruta que vencen juntas. Si la solicitud original no está activa, lo no recogido no genera otra. Detalle de cómo nace y se enlaza: [Qué pasa con lo no ejecutado](#qué-pasa-con-lo-no-ejecutado).
+- **Lo que no se recogió** se marca como no ejecutado (**No recogido**) y no mueve inventario. Una solicitud es la intención de un servicio, que se hace efectiva al recoger: por defecto, lo no recogido **no pasa a otra solicitud**; si el servicio todavía hace falta, se pide de nuevo. La cuenta puede elegir que pase a una **solicitud nueva por programar**: es una por cada solicitud afectada en cada cierre, con todo lo que esa solicitud dejó sin recoger en las paradas de la ruta que vencen juntas. Si la solicitud original no está activa, lo no recogido no genera otra. Detalle de cómo nace y se enlaza: [Qué pasa con lo no ejecutado](#qué-pasa-con-lo-no-ejecutado).
 - **Lo ya cargado y no entregado no se toca.** Sigue en el inventario del vehículo y su solicitud sigue activa; se entrega donde corresponda (en la recepción de la planta propia o reabriendo la parada, si la entrega es a un tercero).
-- **Una parada de carga con residuos recogidos** emite su manifiesto de carga al vencer, igual que cuando el conductor la cierra. Lo que pasó a una solicitud nueva no aparece en él.
+- **Una parada de carga con residuos recogidos** emite su manifiesto de carga al vencer, igual que cuando el conductor la cierra. Lo no recogido aparece con la cantidad solicitada y sin cantidad transportada; si pasó a una solicitud nueva, no aparece en él.
 - **Una parada de entrega en una instalación propia** no vence por sí sola ni se anuncia: el conductor no captura esa descarga (la hace Recepción). Se cierra, como *Completada*, junto con su ruta.
 - **Lo que alguien ya cerró** (el conductor, un supervisor o el cierre automático al resolver el último residuo) no se vuelve a tocar por plazo. Lo cancelado o rechazado es definitivo.
 
@@ -81,9 +81,9 @@ Una ruta planeada para un día futuro nunca vence antes de su día, aunque se ha
 
 Una ruta sin paradas no se cierra por tiempo, y una ruta que ya tiene alguna parada abierta no se cierra solo porque se planee otra para el mismo vehículo en un día posterior.
 
-**Plazos por defecto.** La parada vence **un día después** de terminar el día de referencia; el aviso aparece **12 horas antes**; lo no recogido pasa a una solicitud nueva; y la ruta con todas sus paradas cerradas se completa al terminar su día. Cada cuenta puede ajustarlos en **Administración → Operaciones → Transporte → Cierre de paradas y rutas** (vale también para Recolección y Retorno):
+**Plazos por defecto.** La parada vence **un día después** de terminar el día de referencia; el aviso aparece **12 horas antes**; lo no recogido queda como no recogido, sin solicitud nueva; y la ruta con todas sus paradas cerradas se completa al terminar su día. Cada cuenta puede ajustarlos en **Administración → Operaciones → Transporte → Cierre de paradas y rutas** (vale también para Recolección y Retorno):
 
-- **Cuando la parada vence:** cerrarla y dejar lo no recogido en una solicitud nueva, cerrarla y marcar lo no recogido como no ejecutado sin solicitud nueva, o que **no venza** (sigue abierta hasta que se atienda o se cierre a mano).
+- **Cuando la parada vence:** cerrarla y marcar lo no recogido como no ejecutado (por defecto), cerrarla y pasar lo no recogido a una solicitud nueva por programar, o que **no venza** (sigue abierta hasta que se atienda o se cierre a mano). La misma elección vale cuando un supervisor cierra una parada a mano: solo con la segunda opción se crea una solicitud nueva.
 - **Plazo para vencer la parada:** cuántos días después de terminar el día de la parada.
 - **Avisar antes de vencer la parada:** con cuántas horas de anticipación aparece en la bandeja de cierres.
 - **Cuando todas las paradas de la ruta se cierran:** completar la ruta al terminar el día, o no completarla sola (la completa un supervisor).
@@ -97,17 +97,18 @@ Una ruta sin paradas no se cierra por tiempo, y una ruta que ya tiene alguna par
 Un usuario con permiso para **supervisar** el módulo puede cerrar una parada, una ruta, un cliente o una recepción **aunque tenga residuos pendientes**, desde el menú ⋮ → **Cerrar (supervisor)**. El motivo es obligatorio.
 
 - Cerrar una ruta o una recepción cierra también sus paradas o clientes abiertos.
-- Los residuos pendientes quedan **no ejecutados**: se muestran como **No recogido** (transporte), **No recibido** (recepción) o **No ejecutado** (solicitud). No se reciben ni se rechazan, y no mueven inventario.
+- Los residuos pendientes quedan **no ejecutados**: se muestran como **No recogido** (transporte), **No recibido** (recepción) o **No ejecutado** (solicitud). No se reciben ni se rechazan, y no mueven inventario. No ejecutado no es lo mismo que rechazado: un rechazo lo hace quien carga o recibe, con un motivo, por ejemplo un residuo no conforme.
+- Por defecto, lo no ejecutado **se queda en su solicitud** y no pasa a otra. En una parada de transporte, si la cuenta eligió pasar lo no recogido a una solicitud nueva ([plazos](#paradas-y-rutas-de-transporte)), el cierre del supervisor también la crea. En recepción, el cierre del supervisor nunca crea una solicitud nueva.
 
 ### Qué pasa con lo no ejecutado
 
-Si la solicitud de esos residuos sigue activa, Gresst crea una **solicitud de continuación**:
+Cuando la cuenta lo configuró así y la solicitud de esos residuos sigue activa, Gresst crea una **solicitud de continuación**:
 
 - Es una solicitud nueva, con su propio número y los mismos datos de cliente, sedes, transportador y proveedor.
 - Recibe todos los residuos no ejecutados de esa solicitud en ese cierre, y queda **por programar** como cualquier solicitud.
 - La solicitud original muestra el residuo como no ejecutado, con un enlace a su continuación. La continuación muestra de qué solicitud viene.
 - Si la solicitud era a un proveedor conectado, la reserva de esos residuos pasa a la continuación.
-- Lo mismo ocurre cuando una parada vence por plazo y la cuenta lo tiene configurado así ([Paradas y rutas de transporte](#paradas-y-rutas-de-transporte)). Si la continuación **aún no se programó** y se reabre una sola parada, vuelven a ella solo las líneas de esa parada.
+- Vale igual para una parada que vence por plazo ([Paradas y rutas de transporte](#paradas-y-rutas-de-transporte)). Si la continuación **aún no se programó** y se reabre una sola parada, vuelven a ella solo las líneas de esa parada.
 - Cuando lo no recogido de una solicitud pasa a una continuación, la solicitud original puede cerrarse como *Completada*; si queda no ejecutado sin continuación, se cierra como *Vencida*.
 
 ---
