@@ -9,7 +9,14 @@ Una **solicitud** es el pedido de un servicio sobre uno o varios residuos: recog
 | **Operaciones** | Las que te piden tus clientes | Solicitudes de transporte · Solicitudes de recepción |
 | **Tercerización** | Las que tú pides a tus proveedores | Solicitudes a proveedores |
 
-Todas las listas tienen pestañas **Abiertas / Cerradas**.
+Todas las listas tienen pestañas **Abiertas / Cerradas**. Cada solicitud aparece en una sola:
+
+| Pestaña | Qué trae |
+|---------|----------|
+| **Abiertas** | Borradores, pendientes de confirmar, activas y las que esperan la aprobación del cliente |
+| **Cerradas** | Las terminadas, las vencidas, las cerradas por un supervisor, las rechazadas y las anuladas |
+
+En **Cerradas** puedes filtrar por motivo del cierre (por ejemplo, ver solo lo vencido). Cómo se leen esos motivos: [Cierres y vencimientos](guia_cierres.md#el-motivo-de-cada-cierre).
 
 ## Tipos
 
@@ -47,6 +54,41 @@ Cancelar la solicitud libera lo reservado.
 - Quien recibe puede **rechazar un ítem** con un motivo (devuelve ese residuo, por ejemplo un tambor no conforme) y recibir el resto. Una diferencia dentro del ítem es medición, no rechazo.
 
 Correspondencias, sedes y vehículos: [Instalaciones, vehículos y catálogos](catalogos.md#correspondencia-con-otra-cuenta) y [Trabajar conectados](guia_conexiones.md).
+
+## Cuándo se cierra una solicitud
+
+Una solicitud activa se cierra sola en dos casos. Cada uno queda con su motivo, con **Sistema** como autor (ver [Cierres y vencimientos](guia_cierres.md)).
+
+- **Completada.** Cuando todos sus residuos terminaron su ciclo en tu cuenta: se recogieron o recibieron y ya no queda nada en tus instalaciones (se trató, se dispuso o se entregó a un tercero), o se rechazaron o anularon. Gresst la cierra **al final del día** de la última actividad. Si el residuo sigue en la planta esperando su tratamiento, la solicitud sigue abierta.
+- **Vencida.** Cuando pasaron **30 días** desde el último día solicitado sin que se ejecutara lo pendiente. Es el plazo por defecto y la cuenta puede cambiarlo ([plazos](guia_cierres.md#plazos-de-la-solicitud)).
+
+### Lo pendiente al vencer
+
+Lo que no se ejecutó queda como **no ejecutado**: no se recibe ni se rechaza, y no mueve inventario. Por defecto **no se genera otra solicitud** con esos residuos: si el servicio todavía hace falta, se pide de nuevo o se reabre la solicitud. La cuenta puede elegir que lo pendiente pase a una solicitud nueva ([plazos](guia_cierres.md#plazos-de-la-solicitud)).
+
+### Cuándo no se cierra
+
+- Mientras alguno de sus residuos esté en una **operación abierta** (una ruta o una recepción programada o en curso): primero se cierra la operación.
+- Mientras algún residuo suyo **siga en tu planta**: espera a que termine su ciclo.
+- Las **plantillas de recurrencia** no vencen; se cierran como terminadas cuando termina su serie. Cada solicitud que genera sí vence como cualquier otra: una de hace tres meses que nadie programó aparece como vencida.
+- Los **borradores**, las pendientes de confirmar y las que esperan la aprobación del cliente no se cierran por plazo.
+
+### Por vencer
+
+Antes de vencer, la solicitud aparece en la bandeja **Por vencer** con la fecha en que vencerá (2 días antes, por defecto), y también en el correo diario de resumen. Ninguna solicitud vence sin haber pasado por ahí. Ver [Cierres y vencimientos](guia_cierres.md#por-vencer-y-vencidos).
+
+### Reabrir y cerrar a mano
+
+Un usuario con permiso para **supervisar** el módulo (Transporte, Recolección o Recepción, según el servicio) puede:
+
+- **Reabrir** una solicitud cerrada, con un **motivo**, mientras **no esté facturada**. Vuelve a estar activa y editable; lo que su cierre dejó no ejecutado vuelve a pendiente y los plazos corren desde el día de la reapertura. Si es una solicitud a un proveedor conectado, hay que contar otra vez con la reserva: si el saldo no alcanza, Gresst dice qué residuo falta. Lo anulado no se reabre.
+- **Cerrar a mano** una solicitud activa, con un **motivo**. Lo pendiente queda no ejecutado, sin solicitud nueva. Si un residuo de la solicitud sigue en tu planta, no se puede cerrar a mano: primero debe terminar su ciclo.
+
+Si una parada o una recepción de una solicitud cerrada se reabre, la solicitud se reabre con ella.
+
+### Anular
+
+Solo se anulan solicitudes **abiertas**. Una solicitud cerrada primero se reabre y luego, si hace falta, se anula. La anulación queda en el historial de cierre con quién la hizo.
 
 ## Quiénes participan
 
@@ -104,5 +146,7 @@ Cada ítem de la solicitud muestra en qué punto va su residuo:
 - Las que el cliente envía llegan al proveedor como **borrador**.
 - Las que el proveedor registra a nombre de un cliente conectado esperan **3 días hábiles** su aprobación.
 - Entre una [subcuenta](guia_subcuentas.md) y su proveedor no se escogen correspondencias: los ítems llevan el mismo tipo de residuo para las dos cuentas.
+
+Cuando una solicitud a tu proveedor se cierra, ves por qué y cuándo (ver [Trabajar conectados](guia_conexiones.md#cuando-tu-solicitud-se-cierra)). Al cerrarse, lo que quedó sin ejecutar libera su reserva en ese momento.
 
 Detalle: [Trabajar conectados](guia_conexiones.md).

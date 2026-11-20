@@ -32,7 +32,22 @@ El detalle de una ruta, de una solicitud o de una recepción (en su menú ⋮) m
 - **La ruta al cambiar de día.** Una ruta cuyas paradas ya están todas cerradas, pero que nadie finalizó, se cierra cuando termina su día. El día es el de la **zona horaria de la cuenta**: en Colombia, una ruta de hoy sigue abierta a las 8 de la noche.
 - **Las órdenes de planta de un día pasado.** Una orden de disposición, contención o valorización de un día que ya pasó se cierra cuando la misma planta ya tiene la orden de un día posterior. Planear la orden de mañana no cierra la de hoy.
 
+- **Las solicitudes.** Una solicitud se cierra como *Completada* al final del día en que todo su contenido terminó, y como *Vencida* cuando pasa su plazo sin que se ejecute lo pendiente. Las reglas están en [Solicitudes](solicitudes.md#cuándo-se-cierra-una-solicitud); los plazos, abajo.
+
 Un cierre automático **nunca inventa trabajo**: no recibe ni rechaza nada por su cuenta.
+
+### Plazos de la solicitud
+
+Por defecto, una solicitud se cierra como completada **al final del día** de su última actividad, vence a los **30 días** del último día solicitado y avisa **2 días antes**. Lo pendiente al vencer queda no ejecutado, sin generar otra solicitud.
+
+Cada cuenta puede cambiarlos para Transporte (que incluye Recolección) y para Recepción en **Administración → Módulos → Transporte / Recepción → Cierre de solicitudes**:
+
+- cuándo se cierra al completarse (en cuanto termina, al final del día o nunca),
+- cuántos días pasan hasta que vence, o que nunca venza,
+- si lo pendiente al vencer queda no ejecutado o pasa a una solicitud nueva,
+- con cuánta anticipación aparece en *Por vencer*.
+
+Cambiar un plazo no reabre ni cierra nada ya hecho. Si lo acortas, el aviso vuelve a darse antes de cerrar.
 
 ---
 
@@ -96,8 +111,8 @@ En la App, una parada cerrada muestra su motivo, y los residuos no ejecutados se
 
 Desde el acceso de notificaciones de la página de inicio, la bandeja **Cierres** muestra, por módulo:
 
-- **Por vencer:** lo que el sistema cerrará pronto, con la fecha y hora del cierre.
-- **Vencidos:** lo que el sistema cerró en los últimos 7 días.
+- **Por vencer:** lo que el sistema cerrará pronto, con la fecha y hora del cierre. Las solicitudes aparecen con la fecha en que vencerán; lo que se cerrará por estar completo no se anuncia.
+- **Vencidos:** lo que el sistema cerró en los últimos 7 días. Las solicitudes completadas no se listan.
 
-La ven los usuarios que pueden ejecutar o supervisar ese módulo. El correo diario de resumen a supervisores se envía cuando soporte activa la tarea de mantenimiento de la cuenta; sin nada que reportar, no se envía.
+La ven los usuarios que pueden ejecutar o supervisar ese módulo. El correo diario de resumen a supervisores se envía cuando soporte activa la tarea de mantenimiento de la cuenta; sin nada que reportar, no se envía. Incluye las solicitudes que vencen en las próximas 24 horas y las que se cerraron por plazo; lo reciben los supervisores del módulo y el responsable de la solicitud.
 

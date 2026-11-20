@@ -74,6 +74,19 @@ Tienes **3 días hábiles** (lunes a viernes). Si no respondes, la solicitud **s
 
 Aprobar y rechazar requiere el permiso de gestionar solicitudes a proveedores; ver la lista, el de consultarlas.
 
+### Cuando tu solicitud se cierra
+
+En **Solicitudes a proveedores** ves si una solicitud se cerró, **por qué** y la **fecha**:
+
+| Motivo | Significa |
+|--------|-----------|
+| **Completada** | El proveedor terminó el servicio |
+| **Vencida** | Pasó el plazo sin que se ejecutara lo pendiente |
+| **Cerrada por supervisor** | Un supervisor del proveedor la cerró |
+| **Cancelada** | Se anuló, se rechazó o venció la aprobación |
+
+No ves las notas del cierre ni quién del proveedor lo hizo. Al cerrarse, lo que no se ejecutó libera su reserva y vuelve a estar disponible en tu inventario. Más sobre los cierres: [Cierres y vencimientos](guia_cierres.md).
+
 ### Lo que tu proveedor tiene de ti
 
 **Tercerización → Lo que mis proveedores tienen de mí.** Eliges el proveedor y ves, en modo lectura, lo que él tiene registrado de tu empresa: **Sedes**, **Residuos**, **Materiales**, **Vehículos** y **Contactos**. Eso aparece en el selector como *Del catálogo de [proveedor]* y puedes adoptarlo como tipo o sede propios. Los puntos de recepción salen de su lista de plantas.
