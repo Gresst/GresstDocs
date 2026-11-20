@@ -24,7 +24,7 @@ En cada operación (Recepción, Transporte, Tratamiento, Disposición…) un rol
 | **Consulta** | Sí | — | — | — |
 
 - **Planear:** programar operaciones y rutas.
-- **Ejecutar:** capturar lo que pasa (recibir, cargar, tratar, cerrar lo que tú hiciste).
+- **Ejecutar:** capturar lo que pasa (recibir, cargar, tratar, cerrar lo que tú hiciste) y reabrir una ruta o una recepción que cerraste tú.
 - **Supervisar:** corregir, cancelar, reabrir lo que cerró otro o el sistema, y **Cerrar (supervisor)** con pendientes ([Cierres y vencimientos](guia_cierres.md)).
 - Sin permiso para ver una operación, sus listas aparecen vacías.
 - Todo usuario nuevo empieza como **Operario**. El propietario cambia los roles en **Administración → Roles** (abajo).
