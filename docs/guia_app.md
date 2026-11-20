@@ -50,6 +50,10 @@ Cada tarjeta de parada muestra el tercero/instalación, la dirección y un resum
 - Abrir el mapa desde el encabezado.
 - Tocar **"Completar transporte"** cuando ya resolviste todas las paradas.
 
+### Cuándo se cierra una parada por plazo
+
+Una parada que no se resuelve a tiempo la cierra el sistema al terminar el día siguiente al de la operación, y la ruta se cierra con ella. Si lo que falta por cerrar está cerca de su plazo, la tarjeta de la ruta y la parada muestran **"Se cerrará el {fecha y hora}"**: ahí tienes hasta ese momento para recoger o entregar lo pendiente. Cuando el sistema ya la cerró, el encabezado dice **"Cerrada por el sistema · Vencida el {fecha}"**, o **"Completada"** si la ruta terminó con todas sus paradas resueltas. Lo que no alcanzaste a recoger queda como **No recogido**, y lo que ya llevas a bordo no se toca. Las reglas completas, con los plazos de tu cuenta, están en [Cierres y vencimientos](guia_cierres.md#paradas-y-rutas-de-transporte).
+
 ---
 
 ## Residuos de una parada
@@ -91,6 +95,8 @@ A veces Gresst no acepta algo que registraste, por ejemplo porque otra persona c
 - Las tarjetas de la parada y de la operación indican cuántas capturas no se aceptaron.
 - Al terminar de sincronizar aparece un aviso arriba, **"N capturas no aceptadas · Ver"**.
 - En el menú de tu cuenta, **Capturas no aceptadas** muestra cada una con su motivo y lo que capturaste. Puedes **Reenviarla** (por ejemplo, después de que reabran la parada) o **Descartarla**.
+
+Si el motivo dice que **el sistema cerró la parada por plazo**, la captura llegó después del cierre: pide a un supervisor que reabra la parada y toca **Reenviar**. Si dice que **la parada ya estaba cerrada**, la cerró otra persona, y también hace falta que un supervisor la reabra antes de reenviar.
 
 Si el motivo dice **"Error de la App"**, no es algo que puedas corregir tú: avisa a soporte. Si dice que **la hora del teléfono está adelantada**, corrige la hora en los ajustes del teléfono y toca **Reenviar**.
 
