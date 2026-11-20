@@ -27,7 +27,7 @@ Jornada → Operación → Paradas → Residuos de la parada → Confirmar/Recha
 
 ## Iniciar una operación de transporte
 
-Antes de ver las paradas de una operación de transporte que aún no has iniciado, la app te pide completar una pantalla de inicio. Si la operación estaba programada para otro día, verás **"Planeada para el X · se registra hoy"**: puedes iniciarla hoy, y hasta que la inicies no se cargan residuos. Lo mismo ves en planta al ejecutar algo planeado para otro día.
+Antes de ver las paradas de una operación de transporte que aún no has iniciado, la app te pide completar una pantalla de inicio. Si la operación estaba programada para un día posterior a hoy, verás **"Planeada para el X · se registra hoy"**: puedes iniciarla hoy, y hasta que la inicies no se cargan residuos. Lo mismo ves en planta al ejecutar algo planeado para un día posterior.
 
 La pantalla de inicio pide:
 
