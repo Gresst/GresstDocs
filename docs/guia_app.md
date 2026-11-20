@@ -46,7 +46,7 @@ Una vez firmado, pasas a la lista de paradas.
 Cada tarjeta de parada muestra el tercero/instalación, la dirección y un resumen de los residuos a recoger o entregar. Desde esta pantalla puedes:
 
 - Tocar una parada para ver sus residuos.
-- Agregar una **parada no planeada** con el botón **"+"**, eligiendo la instalación donde vas a recolectar. El punto de entrega es el de la ruta.
+- Agregar una **parada no planeada** con el botón **"+"**, eligiendo la instalación donde vas a recolectar. El punto de entrega es el de la ruta. La parada aparece **al instante** al final de la lista, con o sin señal, y puedes empezar a registrar residuos en ella sin esperar. Mientras Gresst la recibe, la tarjeta dice **"Enviando…"** (o **"Pendiente de enviar"** si no hay señal). No se ofrece si tu cuenta no permite agregar paradas fuera de la ruta; una instalación sin tercero asignado aparece apagada con el motivo, y si la ruta no tiene vehículo la app te lo explica.
 - Abrir el mapa desde el encabezado.
 - Tocar **"Completar transporte"** cuando ya resolviste todas las paradas.
 
@@ -100,7 +100,9 @@ Si el motivo dice que **el sistema cerró la parada por plazo**, la captura lleg
 
 Si el motivo dice **"Error de la App"**, no es algo que puedas corregir tú: avisa a soporte. Si dice que **la hora del teléfono está adelantada**, corrige la hora en los ajustes del teléfono y toca **Reenviar**.
 
-En planta pasa lo mismo: al **Ejecutar**, la pantalla siempre termina. En recepción y disposición, si un residuo no se acepta, los demás se registran igual. En tratamiento, clasificación y entrega se envían juntos: si no se aceptan, todos quedan en **Capturas no aceptadas**.
+**Parada nueva que no se acepta.** Si Gresst no acepta una parada que agregaste (por ejemplo, porque un supervisor ya cerró la ruta), la tarjeta queda marcada **No aceptada** con el motivo, y lo que registraste en ella queda **No aceptado** con el mismo motivo. No puedes seguir registrando en esa parada: toca **Reenviar** (por ejemplo, cuando reabran la ruta) para enviarla de nuevo junto con todo lo que registraste en ella, o **Descartar** para quitarla. Descartar la parada quita también lo registrado en ella, y antes te pregunta cuántas capturas se van con ella. Si el motivo dice **la ruta ya estaba cerrada**, pide a un supervisor que la reabra y luego toca **Reenviar**.
+
+En planta pasa lo mismo: al **Ejecutar**, la pantalla se cierra al instante y vuelves a la lista. La orden aparece con **"Enviando…"** mientras Gresst la recibe y no se puede ejecutar otra vez hasta que termine. Si algo no se acepta, te llega un aviso y la orden muestra **"N no aceptadas"**: ábrela para ver el motivo de cada residuo y tocar **Reenviar** o **Descartar** (un residuo descartado vuelve a quedar pendiente y puedes capturarlo de nuevo). En recepción y disposición, si un residuo no se acepta, los demás se registran igual. En tratamiento, clasificación y entrega se envían juntos: si no se aceptan, todos quedan **No aceptados** y también aparecen en **Capturas no aceptadas**.
 
 ---
 
@@ -123,7 +125,7 @@ Desde el menú del encabezado abres recepción, transferencia, disposición, tra
 1. Ves las **órdenes** de ese proceso (planta + fecha).
 2. Si hace falta, **planeas** líneas sueltas a una planta y un día.
 3. **Capturas** cantidades (y composición en tratamiento/clasificación) en el teléfono, también **sin red**.
-4. **Cierras** la orden de una vez (todas las líneas capturadas); no se cierra residuo a residuo como el transporte.
+4. **Cierras** la orden de una vez (todas las líneas capturadas); no se cierra residuo a residuo como el transporte. Al tocar **Ejecutar** la pantalla se cierra al instante; la orden dice **"Enviando…"** hasta que Gresst la recibe (ver [Capturas no aceptadas](#capturas-no-aceptadas) si algo no se acepta).
 
 La descarga en un depósito propio **no** se hace aquí ni en Jornada: la cierra **Recepción** de planta en WebApp ([§1.2.a](casos_entrada_salida_residuos.md)).
 
