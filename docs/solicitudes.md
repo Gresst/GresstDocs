@@ -70,7 +70,7 @@ Lo que no se ejecutó queda como **no ejecutado**: no se recibe ni se rechaza, y
 
 - Mientras alguno de sus residuos esté en una **operación abierta** (una ruta o una recepción programada o en curso): primero se cierra la operación.
 - Mientras algún residuo suyo **siga en tu planta**: espera a que termine su ciclo.
-- Las **plantillas de recurrencia** no vencen; se cierran como terminadas cuando termina su serie. Cada solicitud que genera sí vence como cualquier otra: una de hace tres meses que nadie programó aparece como vencida.
+- Las **plantillas de recurrencia** no vencen; se cierran como terminadas cuando termina su serie. Cada solicitud que genera sí vence como cualquier otra: una que nadie programó vence a su plazo. Lo que ya estaba vencido cuando se activó el cierre automático no vence solo: soporte lo cierra en una limpieza inicial.
 - Los **borradores**, las pendientes de confirmar y las que esperan la aprobación del cliente no se cierran por plazo.
 
 ### Por vencer

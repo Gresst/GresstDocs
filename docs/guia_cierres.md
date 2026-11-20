@@ -52,7 +52,7 @@ Cambiar un plazo no reabre ni cierra nada ya hecho. Si lo acortas, el aviso vuel
 
 ### Paradas y rutas de transporte
 
-Una parada o una ruta que nadie cierra no se queda abierta para siempre: eso mantenía abiertas también las solicitudes que dependían de ella.
+Una parada o una ruta que nadie cierra no se queda abierta para siempre: si se quedara abierta, mantendría abiertas también las solicitudes que dependen de ella.
 
 **Cuándo vence una parada.** Cuando termina el día siguiente al **día de referencia** de su ruta. Ese día es el más reciente entre:
 
@@ -76,7 +76,7 @@ Una ruta planeada para un día futuro nunca vence antes de su día, aunque se ha
 | Situación de la ruta | Cómo se cierra |
 |----------------------|----------------|
 | Alguna de sus paradas venció | *Vencida* |
-| El conductor terminó todas sus paradas | *Completada*, al terminar su día |
+| Todas sus paradas quedaron cerradas (por el conductor, un supervisor o el sistema) | *Completada*, al terminar su día |
 | Nunca se inició y su plazo pasó | *Vencida*: cada parada queda vencida con lo pendiente como no recogido, y la ruta no se cancela |
 
 Una ruta sin paradas no se cierra por tiempo, y una ruta que ya tiene alguna parada abierta no se cierra solo porque se planee otra para el mismo vehículo en un día posterior.
@@ -84,7 +84,7 @@ Una ruta sin paradas no se cierra por tiempo, y una ruta que ya tiene alguna par
 **Plazos por defecto.** La parada vence **un día después** de terminar el día de referencia; el aviso aparece **12 horas antes**; lo no recogido queda como no recogido, sin solicitud nueva; y la ruta con todas sus paradas cerradas se completa al terminar su día. Cada cuenta puede ajustarlos en **Administración → Operaciones → Transporte → Cierre de paradas y rutas** (vale también para Recolección y Retorno):
 
 - **Cuando la parada vence:** cerrarla y marcar lo no recogido como no ejecutado (por defecto), cerrarla y pasar lo no recogido a una solicitud nueva por programar, o que **no venza** (sigue abierta hasta que se atienda o se cierre a mano). La misma elección vale cuando un supervisor cierra una parada a mano: solo con la segunda opción se crea una solicitud nueva.
-- **Plazo para vencer la parada:** cuántos días después de terminar el día de la parada.
+- **Plazo para vencer la parada:** cuántos días después de terminar el día de la ruta (su día planeado o, si se trabajó después, el día de su última actividad).
 - **Avisar antes de vencer la parada:** con cuántas horas de anticipación aparece en la bandeja de cierres.
 - **Cuando todas las paradas de la ruta se cierran:** completar la ruta al terminar el día, o no completarla sola (la completa un supervisor).
 
@@ -136,7 +136,7 @@ Un residuo queda **consolidado** cuando:
 - se **envió a SIESA**, o
 - su solicitud está **marcada facturada**.
 
-Lo consolidado se corrige con un documento de ajuste, no reabriendo. Al intentarlo, Gresst dice qué residuo lo impide y por qué. Un **manifiesto** no consolida: una parada con manifiesto emitido se puede reabrir, y el manifiesto se emite de nuevo al cerrarla.
+Para reabrir una **solicitud** solo la factura lo impide: un certificado o un envío a SIESA bloquean reabrir la parada o la recepción de ese residuo, no la solicitud. Lo consolidado se corrige con un documento de ajuste, no reabriendo. Al intentarlo, Gresst dice qué residuo lo impide y por qué. Un **manifiesto** no consolida: una parada con manifiesto emitido se puede reabrir, y el manifiesto se emite de nuevo al cerrarla.
 
 ---
 
@@ -144,7 +144,7 @@ Lo consolidado se corrige con un documento de ajuste, no reabriendo. Al intentar
 
 La App funciona sin conexión y envía lo capturado al recuperar la señal (ver [App móvil](guia_app.md)). Si mientras tanto el sistema o un supervisor cerró la parada:
 
-- **Se capturó antes del cierre:** Gresst la acepta, reabre la parada (y la ruta si hace falta) y lo registra en el historial como *captura tardía*.
+- **Se capturó antes del cierre:** Gresst la acepta, reabre la parada (y la ruta si hace falta) y lo registra en el historial como *captura tardía*. La excepción es un residuo ya consolidado o que pasó a una solicitud de continuación ya programada: esa captura no se acepta.
 - **Se capturó después del cierre:** Gresst no la acepta. La captura se queda en el teléfono como **no aceptada**, con el motivo, para que un supervisor decida.
 
 La hora que cuenta es la de la captura en el teléfono, no la de envío.
@@ -164,10 +164,10 @@ Desde el acceso de notificaciones de la página de inicio, la bandeja **Cierres*
 
 Además, mientras una ruta o una parada abierta esté dentro del tiempo de aviso, su encabezado muestra **«Se cerrará el…»** con la fecha y hora, sin depender de la bandeja ni de ningún aviso externo.
 
-La ven los usuarios que pueden ejecutar o supervisar ese módulo. El correo diario de resumen a supervisores se envía cuando soporte activa la tarea de mantenimiento de la cuenta; sin nada que reportar, no se envía. Incluye las solicitudes que vencen en las próximas 24 horas y las que se cerraron por plazo; lo reciben los supervisores del módulo y el responsable de la solicitud.
+La ven los usuarios que pueden ejecutar o supervisar ese módulo. El correo diario de resumen a supervisores se envía cuando soporte activa la tarea de mantenimiento (es la misma para todas las cuentas); sin nada que reportar, no se envía. Incluye las solicitudes que vencen en las próximas 24 horas y las que se cerraron por plazo; lo reciben los supervisores del módulo y el responsable de la solicitud.
 
 Para el transporte, el correo incluye las paradas que vencen en las próximas 24 horas y las paradas y rutas cerradas por plazo desde el resumen anterior (una parada aparece una sola vez aunque agrupe varias solicitudes). Lo reciben los supervisores del módulo de **cada ruta** (Transporte, Recolección o Retorno) y el responsable de la parada (o, si no tiene, el de la ruta). Un cierre como *Completada* no se anuncia.
 
-**Aviso en el teléfono.** Cuando la cuenta tenga activados los avisos en la App, el responsable de la parada (o, si no tiene, el de la ruta) recibe un aviso cuando su parada entra en *Por vencer* (una vez por parada) y cuando el sistema la cierra por plazo; si se cierran varias paradas de una ruta juntas, recibe un solo aviso por ruta que dice cuántas fueron. Este aviso depende de que la App lo tenga disponible: mientras no sea así, la fecha de cierre se consulta en la bandeja, en el correo y en el «Se cerrará el…» de la ruta y la parada.
+**Aviso en el teléfono.** Cuando estén activados los avisos en la App (se activan para todas las cuentas a la vez), el responsable de la parada (o, si no tiene, el de la ruta) recibe un aviso cuando su parada entra en *Por vencer* (una vez por parada y por vencimiento) y cuando el sistema la cierra por plazo; si se cierran varias paradas de una ruta juntas, recibe un solo aviso por ruta que dice cuántas fueron. Este aviso depende de que la App lo tenga disponible: mientras no sea así, la fecha de cierre se consulta en la bandeja, en el correo y en el «Se cerrará el…» de la ruta y la parada.
 
 **Quién ve qué en la bandeja de Transporte.** Quien supervisa Transporte ve las paradas y rutas de transporte, recolección y retorno. Quien solo supervisa Recolección o Retorno ve en esa pestaña las de su servicio. Para abrir una ruta desde la bandeja también necesita poder ver ese servicio.
