@@ -28,7 +28,7 @@ El detalle de una ruta, de una solicitud o de una recepción (en su menú ⋮) m
 
 ## Lo que se cierra solo
 
-- **Al resolver el último residuo.** Según cómo esté configurado cada módulo (*Configuración de cuenta → Personalizaciones*), una parada o un cliente se cierra en cuanto no le queda nada pendiente. Ese cierre es *Completada*.
+- **Al resolver el último residuo.** Según cómo esté configurado cada módulo (*Administración → Operaciones*), una parada o un cliente se cierra en cuanto no le queda nada pendiente. Ese cierre es *Completada*.
 - **La ruta al cambiar de día.** Una ruta cuyas paradas ya están todas cerradas, pero que nadie finalizó, se cierra cuando termina su día. El día es el de la **zona horaria de la cuenta**: en Colombia, una ruta de hoy sigue abierta a las 8 de la noche. Si alguna de sus paradas venció, la ruta se cierra como *Vencida*, no como *Completada*.
 - **Las paradas y rutas de transporte que nadie cerró.** Una parada que nadie atendió vence por plazo, y su ruta se cierra con ella. Es la regla de [Paradas y rutas de transporte](#paradas-y-rutas-de-transporte), abajo; vale igual para Transporte, Recolección y Retorno.
 - **Las órdenes de planta de un día pasado.** Una orden de disposición, contención o valorización de un día que ya pasó se cierra cuando la misma planta ya tiene la orden de un día posterior. Planear la orden de mañana no cierra la de hoy.
@@ -41,7 +41,7 @@ Un cierre automático **nunca inventa trabajo**: no recibe ni rechaza nada por s
 
 Por defecto, una solicitud se cierra como completada **al final del día** de su última actividad, vence a los **30 días** del último día solicitado y avisa **2 días antes**. Lo pendiente al vencer queda no ejecutado, sin generar otra solicitud.
 
-Cada cuenta puede cambiarlos para Transporte (que incluye Recolección) y para Recepción en **Administración → Módulos → Transporte / Recepción → Cierre de solicitudes**:
+Cada cuenta puede cambiarlos para Transporte (que incluye Recolección) y para Recepción en **Administración → Operaciones → Transporte / Recepción → Cierre de solicitudes**:
 
 - cuándo se cierra al completarse (en cuanto termina, al final del día o nunca),
 - cuántos días pasan hasta que vence, o que nunca venza,
@@ -81,7 +81,7 @@ Una ruta planeada para un día futuro nunca vence antes de su día, aunque se ha
 
 Una ruta sin paradas no se cierra por tiempo, y una ruta que ya tiene alguna parada abierta no se cierra solo porque se planee otra para el mismo vehículo en un día posterior.
 
-**Plazos por defecto.** La parada vence **un día después** de terminar el día de referencia; el aviso aparece **12 horas antes**; lo no recogido pasa a una solicitud nueva; y la ruta con todas sus paradas cerradas se completa al terminar su día. Cada cuenta puede ajustarlos en **Administración → Módulos → Transporte → Cierre de paradas y rutas** (vale también para Recolección y Retorno):
+**Plazos por defecto.** La parada vence **un día después** de terminar el día de referencia; el aviso aparece **12 horas antes**; lo no recogido pasa a una solicitud nueva; y la ruta con todas sus paradas cerradas se completa al terminar su día. Cada cuenta puede ajustarlos en **Administración → Operaciones → Transporte → Cierre de paradas y rutas** (vale también para Recolección y Retorno):
 
 - **Cuando la parada vence:** cerrarla y dejar lo no recogido en una solicitud nueva, cerrarla y marcar lo no recogido como no ejecutado sin solicitud nueva, o que **no venza** (sigue abierta hasta que se atienda o se cierre a mano).
 - **Plazo para vencer la parada:** cuántos días después de terminar el día de la parada.

@@ -37,7 +37,7 @@ Arriba eliges la **vista** con la que trabajas. Cada una tiene su propio menú l
 
 | Vista | Para qué | Menú |
 |-------|----------|------|
-| **Administración** | Solo el propietario de la cuenta | Cuenta · Propietario · Usuarios · Roles · Parámetros · Módulos · Integraciones |
+| **Administración** | Solo el propietario de la cuenta | Cuenta · Propietario · Usuarios · Roles · Parámetros · Operaciones · Integraciones |
 | **Configuración** | Catálogos de la cuenta | Empleados · Instalaciones · Vehículos · Residuos · Materiales · Embalajes · Insumos · Operaciones · Tratamientos · Licencias · Terceros |
 | **Operaciones** | El trabajo del día | Solicitudes de transporte y de recepción · Generación · Recepción · Recolección · Transporte · Tratamiento · Transferencia · Disposición · … |
 | **Control** | Seguimiento de lo operado | Inventario (Residuos · Materiales) · Certificados · Enviar (integraciones) · Tableros · Reportes |
@@ -162,7 +162,7 @@ Detalle: [Trabajar conectados](guia_conexiones.md#si-contratas-servicios).
 
 ## Administración
 
-Solo para el propietario de la cuenta: **Cuenta** (datos y licencias), **Propietario**, **Usuarios**, **Roles** (permisos de cada rol), **Parámetros**, **Módulos** (qué modos de solicitud tiene la cuenta) e **Integraciones** (correo, SIESA).
+Solo para el propietario de la cuenta: **Cuenta** (datos y licencias), **Propietario**, **Usuarios**, **Roles** (permisos de cada rol), **Parámetros**, **Operaciones** (qué operaciones tiene habilitadas la cuenta y cómo se configura cada una: ciclo de vida, solicitudes y cierres) e **Integraciones** (correo, SIESA).
 
 ![Usuarios de la cuenta, activos e inactivos](img/webapp-usuarios.png)
 

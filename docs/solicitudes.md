@@ -92,7 +92,7 @@ Solo se anulan solicitudes **abiertas**. Una solicitud cerrada primero se reabre
 
 ## Quiénes participan
 
-Una solicitud tiene **origen** (quién genera y dónde), **transportador** (empresa y vehículo) y **destino** (proveedor y planta). Según la configuración de la cuenta (Administración → Módulos), cada uno puede ser uno o varios:
+Una solicitud tiene **origen** (quién genera y dónde), **transportador** (empresa y vehículo) y **destino** (proveedor y planta). Según la configuración de la cuenta (Administración → Operaciones → Transporte / Recepción), cada uno puede ser uno o varios:
 
 | Participante | Opciones |
 |--------------|----------|
