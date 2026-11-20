@@ -169,4 +169,4 @@ Para el transporte, el correo incluye las paradas que vencen en las próximas 24
 
 **Aviso en el teléfono.** Cuando la cuenta tenga activados los avisos en la App, el responsable de la parada (o, si no tiene, el de la ruta) recibe un aviso cuando su parada entra en *Por vencer* (una vez por parada) y cuando el sistema la cierra por plazo; si se cierran varias paradas de una ruta juntas, recibe un solo aviso por ruta que dice cuántas fueron. Este aviso depende de que la App lo tenga disponible: mientras no sea así, la fecha de cierre se consulta en la bandeja, en el correo y en el «Se cerrará el…» de la ruta y la parada.
 
-**Limitación vigente.** Quien solo supervisa Recolección o Retorno recibe el correo, pero no ve en la bandeja de Transporte las filas de las rutas de ese módulo: esa bandeja exige permiso de ejecución o supervisión de Transporte.
+**Quién ve qué en la bandeja de Transporte.** Quien supervisa Transporte ve las paradas y rutas de transporte, recolección y retorno. Quien solo supervisa Recolección o Retorno ve en esa pestaña las de su servicio. Para abrir una ruta desde la bandeja también necesita poder ver ese servicio.
