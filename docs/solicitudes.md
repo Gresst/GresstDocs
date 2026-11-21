@@ -119,7 +119,7 @@ Lo que llega a la planta en el vehículo propio nunca requiere programación.
 ### Otras reglas del transporte
 
 - **Recepción al cargar:** lo cargado queda recibido de inmediato o queda pendiente para que la planta lo confirme en Recepción.
-- **Manifiesto de carga:** se emite al cerrar cada parada de carga, uno por solicitud. La cuenta decide si se emite y si se envía por correo al cliente.
+- **Manifiesto de carga:** se emite al cerrar cada parada de carga, **uno por orden y parada** (incluye todas las solicitudes de la parada y se reescribe si se vuelve a generar). El correo al cliente sale por cada solicitud de la parada. La cuenta decide si se emite y si se envía por correo al cliente. Quien cierra la parada recibe en la campana el aviso de su manifiesto.
 
 ## Estado de cada residuo
 

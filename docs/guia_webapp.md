@@ -64,6 +64,21 @@ Se trabajan igual en **Transporte** y **Recepción**:
 
 **Transporte (árbol):** ruta → paradas → residuos. Acciones del menú de fila: iniciar, reprogramar, recoger o rechazar, agregar residuo o parada, finalizar la ruta. Hay vista de **mapa** con placa, paradas y captura en panel.
 
+#### Manifiesto de carga de una parada
+
+En el menú de una parada, **Generar manifiesto de carga** crea el PDF de lo cargado en ella. Es **uno por orden y parada**: si la parada reúne varias solicitudes, un solo manifiesto las incluye, y volver a generarlo lo reescribe con los datos de ese momento, sin dejar copias.
+
+Generarlo toma un rato, así que no tienes que esperar:
+
+1. Al pedirlo, aparece en la **campana de notificaciones** (arriba a la derecha) como **En curso**. Puedes seguir trabajando o cambiar de pantalla.
+2. Cuando termina, la campana te avisa con un número y la entrada pasa a **Ver documento**. Si falló, dice por qué en lenguaje claro; por ejemplo, que falta la plantilla del documento (avisa a soporte) o que la orden no tiene vehículo o planeación.
+3. Si lo pides otra vez mientras sigue en curso, la campana lo muestra como **ya estaba en curso** y no lo duplica.
+4. Si pasados 10 minutos no llega respuesta, la entrada dice **Sin respuesta todavía**. Vuelve a pedirlo o revisa **Ver manifiestos**.
+
+**Ver manifiestos** (también en el menú de la parada, incluso en *Cerradas*) lista los manifiestos ya generados de esa orden, con su número, fecha y enlace al PDF.
+
+La campana es **personal**: solo ves los avisos de lo que pediste tú, no los de otros usuarios de tu cuenta. Si quien cierra una parada es un usuario, también le avisa de su manifiesto automático; si la cierra el sistema por plazo, no hay aviso (el correo al cliente sigue igual).
+
 ![Transporte: pestañas Abiertas y Cerradas, filtros y rutas con sus paradas](img/webapp-recoleccion.png)
 
 Al expandir una ruta ves sus paradas, y al expandir cada parada, sus residuos:

@@ -33,7 +33,7 @@ Los residuos que ya terminaron la operación y aún no tienen certificado. Se se
 | **Acumulado** | Igual que agrupado; el certificado queda marcado como acumulado |
 | **Externo** | Se adjunta el documento de otra empresa, con referencia y notas, y los residuos quedan cerrados |
 
-Al emitir se pueden agregar notas, responsable, **licencias** vigentes y soportes. El manifiesto de carga se agrupa por orden (un vehículo y una ruta), no por generador.
+Al emitir se pueden agregar notas, responsable, **licencias** vigentes y soportes. El manifiesto de carga se agrupa por orden (un vehículo y una ruta), no por generador. Hay **uno por orden y parada**: se genera desde la parada en Transporte y, si lo vuelves a generar, se reescribe con los datos actuales. Cómo pedirlo y dónde ves el aviso: [Guía WebApp](guia_webapp.md#manifiesto-de-carga-de-una-parada).
 
 ### Emitidos
 
