@@ -38,7 +38,8 @@ Al emitir se pueden agregar notas, responsable, **licencias** vigentes y soporte
 ### Emitidos
 
 - **Publicar:** el certificado queda visible para el cliente conectado en su cuenta (Tercerización → Certificados).
-- **Reemitir:** vuelve a generar el PDF.
+- **Ver residuos:** abre, en un panel a la derecha de alto completo, los residuos que cubre el certificado.
+- **Reemitir:** vuelve a generar el PDF. Toma un rato: aparece **En curso** en la campana de notificaciones y, al terminar, la campana te avisa con el enlace al documento o con el motivo si falló. Puedes seguir trabajando mientras tanto. Si lo pides otra vez mientras sigue en curso, no se duplica.
 - **Anular:** el certificado queda anulado, a la vista del cliente. Un certificado publicado nunca se modifica ni se borra. El residuo del cliente sigue dispuesto y queda marcado *certificado anulado, pendiente de reemplazo*.
 
 El certificado lleva los tipos del proveedor, los códigos, las cantidades **recibidas** y el tratamiento. Si el ítem salió de un tipo del cliente, agrega la columna **Tu referencia**, con el nombre que tenía ese tipo al pedir el servicio. No aparece en ítems pedidos en los términos del proveedor ni en clientes sin cuenta. En la cuenta del cliente el certificado queda ligado a **su residuo**.
